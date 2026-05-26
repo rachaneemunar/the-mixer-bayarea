@@ -1,0 +1,16 @@
+# =====================================================================
+# The Mixer  —  Netlify build configuration
+# Drop this file at the root of your GitHub repo.
+# =====================================================================
+
+[build]
+  publish   = "."
+  functions = "netlify/functions"
+
+# Pretty URL: lets the form POST to /api/signup as well as
+# /.netlify/functions/signup. Either works; the front-end uses the
+# longer form so this redirect is optional but nice to have.
+[[redirects]]
+  from   = "/api/signup"
+  to     = "/.netlify/functions/signup"
+  status = 200
