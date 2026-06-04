@@ -482,8 +482,11 @@
    ===================================================================== */
 #the-mixer-site .tm-hosts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+}
+@media (max-width: 980px) and (min-width: 741px) {
+  #the-mixer-site .tm-hosts { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
 }
 #the-mixer-site .tm-host-card {
   background: var(--white);
@@ -918,76 +921,207 @@
 }
 
 /* =====================================================================
-   17. ORGANIZERS PAGE
+   17. ORGANIZERS PAGE  —  3-column card grid + description modal
    ===================================================================== */
-#the-mixer-site .tm-org-profile {
+#the-mixer-site .tm-org-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+@media (max-width: 980px) {
+  #the-mixer-site .tm-org-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+}
+
+#the-mixer-site .tm-org-card {
   background: #fff;
   border-radius: 24px;
-  padding: 44px;
+  padding: 38px 30px;
   box-shadow: var(--shadow-md);
-  margin-bottom: 40px;
   border-top: 3px solid var(--teal);
   position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
 }
-#the-mixer-site .tm-org-profile::before {
+#the-mixer-site .tm-org-card::before {
   content: ''; position: absolute;
   bottom: -80px; right: -80px;
-  width: 240px; height: 240px;
+  width: 220px; height: 220px;
   background: radial-gradient(circle, rgba(228,201,118,0.10), transparent 70%);
-  border-radius: 50%;
+  border-radius: 50%; pointer-events: none;
 }
-@media (max-width: 800px) {
-  #the-mixer-site .tm-org-profile { grid-template-columns: 1fr; padding: 32px 24px; text-align: center; }
-}
-#the-mixer-site .tm-org-avatar {
-  width: 240px; height: 240px;
+
+#the-mixer-site .tm-org-photo {
+  width: 150px; height: 150px;
   border-radius: 24px;
+  margin: 0 auto 22px;
   background: linear-gradient(135deg, var(--teal), var(--wave-mid));
   display: flex; align-items: center; justify-content: center;
-  color: #fff;
-  font-family: var(--serif);
-  font-size: 78px; font-weight: 600;
+  color: #fff; font-family: var(--serif);
+  font-size: 52px; font-weight: 600;
   box-shadow: var(--shadow-md);
-  margin: 0 auto;
-  position: relative;
+  position: relative; overflow: hidden;
 }
-#the-mixer-site .tm-org-avatar::after {
-  content: ''; position: absolute;
-  inset: 4px;
+#the-mixer-site .tm-org-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+#the-mixer-site .tm-org-photo::after {
+  content: ''; position: absolute; inset: 4px;
   border: 2px solid rgba(255,255,255,0.25);
-  border-radius: 20px;
+  border-radius: 20px; pointer-events: none;
 }
-#the-mixer-site .tm-org-name {
-  font-family: var(--serif); font-size: 38px; font-weight: 700;
-  color: var(--charcoal); margin-bottom: 6px;
+
+#the-mixer-site .tm-org-card-name {
+  font-family: var(--serif); font-size: 27px; font-weight: 700;
+  color: var(--charcoal); margin-bottom: 6px; line-height: 1.15;
+  text-align: center;
 }
-#the-mixer-site .tm-org-title {
+#the-mixer-site .tm-org-card-title {
   font-family: var(--sans);
-  font-size: 13px; letter-spacing: 0.16em;
+  font-size: 12px; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--teal);
-  font-weight: 600; margin-bottom: 18px;
+  font-weight: 600; margin-bottom: 20px; line-height: 1.55;
+  text-align: center;
 }
-#the-mixer-site .tm-org-bio {
-  font-size: 16px; color: var(--ink); line-height: 1.75;
+#the-mixer-site .tm-org-card-bio {
+  font-size: 15px; color: var(--ink); line-height: 1.7;
   margin-bottom: 22px;
 }
-#the-mixer-site .tm-org-meta {
-  display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px;
-  padding-top: 18px; border-top: 1px solid var(--border);
+#the-mixer-site .tm-org-card-meta {
+  border-top: 1px solid var(--border);
+  padding-top: 18px; margin-bottom: 24px;
+  display: flex; flex-direction: column; gap: 13px;
 }
-#the-mixer-site .tm-org-meta-item {
-  font-size: 14px;
-}
+#the-mixer-site .tm-org-meta-item { font-size: 14px; }
 #the-mixer-site .tm-org-meta-label {
   font-family: var(--serif);
   font-size: 11px; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--muted);
   display: block; margin-bottom: 3px;
 }
-#the-mixer-site .tm-org-meta-val { color: var(--charcoal); font-weight: 500; }
+#the-mixer-site .tm-org-meta-val { color: var(--charcoal); font-weight: 500; word-break: break-word; }
+#the-mixer-site .tm-org-meta-val a { color: var(--teal-deep); }
+
+#the-mixer-site .tm-org-readmore {
+  margin-top: auto; width: 100%; justify-content: center;
+}
+#the-mixer-site .tm-org-full { display: none; }
+
+/* ---- Organizer description modal ---- */
+#the-mixer-site .tm-org-modal {
+  display: none; position: fixed; inset: 0;
+  background: rgba(26,26,26,0.78);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  z-index: 10000; align-items: center; justify-content: center;
+  padding: 24px;
+}
+#the-mixer-site .tm-org-modal.open { display: flex; }
+#the-mixer-site .tm-org-modal-inner {
+  background: var(--white);
+  border-radius: 24px;
+  border-top: 4px solid var(--teal);
+  max-width: 640px; width: 100%;
+  max-height: 86vh; overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  padding: 44px;
+  animation: tmOrgModalIn .25s ease;
+}
+@keyframes tmOrgModalIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+#the-mixer-site .tm-org-modal-close {
+  position: absolute; top: 18px; right: 18px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--cream); color: var(--charcoal);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; cursor: pointer; border: none; line-height: 1;
+  transition: background .2s;
+}
+#the-mixer-site .tm-org-modal-close:hover { background: var(--border); }
+#the-mixer-site .tm-org-modal-head {
+  display: flex; align-items: center; gap: 18px;
+  margin-bottom: 24px; padding-right: 36px;
+}
+#the-mixer-site .tm-org-modal-photo {
+  width: 72px; height: 72px; border-radius: 16px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--teal), var(--wave-mid));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-family: var(--serif); font-size: 28px; font-weight: 600;
+  overflow: hidden;
+}
+#the-mixer-site .tm-org-modal-photo img { width: 100%; height: 100%; object-fit: cover; }
+#the-mixer-site .tm-org-modal-name { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--charcoal); line-height: 1.1; }
+#the-mixer-site .tm-org-modal-title { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-top: 5px; }
+#the-mixer-site .tm-org-modal-body p { font-size: 16px; color: var(--ink); line-height: 1.78; margin-bottom: 16px; }
+#the-mixer-site .tm-org-modal-body p:last-child { margin-bottom: 0; }
+
+/* ---- Calendar event pop-out ---- */
+#the-mixer-site .tm-event-modal {
+  display: none; position: fixed; inset: 0;
+  background: rgba(26,26,26,0.78);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  z-index: 10000; align-items: center; justify-content: center;
+  padding: 24px;
+}
+#the-mixer-site .tm-event-modal.open { display: flex; }
+#the-mixer-site .tm-event-modal-inner {
+  background: var(--white);
+  border-radius: 24px;
+  max-width: 440px; width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: tmOrgModalIn .25s ease;
+}
+#the-mixer-site .tm-event-modal-top {
+  background: linear-gradient(135deg, var(--teal), var(--teal-darker));
+  padding: 32px 36px 26px;
+  color: #fff; position: relative; overflow: hidden;
+}
+#the-mixer-site .tm-event-modal-top::after {
+  content: ''; position: absolute; bottom: -60px; right: -40px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(228,201,118,0.22), transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+#the-mixer-site .tm-event-modal-eyebrow {
+  font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-hi);
+  font-weight: 600; margin-bottom: 8px;
+}
+#the-mixer-site .tm-event-modal-title {
+  font-family: var(--serif); font-size: 32px; font-weight: 700;
+  line-height: 1.1; color: #fff;
+}
+#the-mixer-site .tm-event-modal-body { padding: 26px 36px 32px; }
+#the-mixer-site .tm-event-row {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+#the-mixer-site .tm-event-row:last-of-type { border-bottom: none; }
+#the-mixer-site .tm-event-row .tm-event-ic {
+  width: 34px; height: 34px; flex-shrink: 0; border-radius: 9px;
+  background: var(--cream-soft);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--teal-deep);
+}
+#the-mixer-site .tm-event-row .tm-event-ic svg { width: 18px; height: 18px; }
+#the-mixer-site .tm-event-lbl {
+  font-family: var(--serif); font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted);
+  display: block; margin-bottom: 2px;
+}
+#the-mixer-site .tm-event-val { color: var(--charcoal); font-weight: 500; font-size: 15px; line-height: 1.45; }
+#the-mixer-site .tm-event-val a { color: var(--teal-deep); border-bottom: 1px solid rgba(18,168,157,0.4); text-decoration: none; }
+#the-mixer-site .tm-event-val a:hover { color: var(--teal-darker); }
+#the-mixer-site .tm-event-modal-cta {
+  margin-top: 22px; width: 100%; justify-content: center;
+}
+#the-mixer-site .tm-event-modal-close {
+  position: absolute; top: 16px; right: 16px; z-index: 2;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.18); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; cursor: pointer; border: none; line-height: 1;
+  transition: background .2s;
+}
+#the-mixer-site .tm-event-modal-close:hover { background: rgba(255,255,255,0.32); }
 
 /* =====================================================================
    18. CALENDAR PAGE
@@ -1436,7 +1570,7 @@
     <div class="tm-container">
       <div class="tm-eyebrow">Organized By</div>
       <h2 class="tm-section-title">Your Co-Hosts</h2>
-      <p class="tm-section-sub">Two trusted Peninsula professionals dedicated to building a stronger senior-care community.</p>
+      <p class="tm-section-sub">Three trusted Peninsula professionals dedicated to building a stronger senior-care community.</p>
       <div class="tm-hosts">
         <div class="tm-host-card">
           <div class="tm-host-avatar">VK</div>
@@ -1450,15 +1584,24 @@
           <div class="tm-host-company">Vabrato Real Estate Services · DRE #01909927</div>
         </div>
         <div class="tm-host-card">
-          <div class="tm-host-avatar">MB</div>
-          <div class="tm-host-name">Miki Bellon</div>
-          <div class="tm-host-role">Community · Senior Care</div>
+          <div class="tm-host-avatar" style="background: linear-gradient(135deg, var(--gold), var(--gold-deep));">JS</div>
+          <div class="tm-host-name">Jowett San Miguel</div>
+          <div class="tm-host-role">[ Profession / Focus ]</div>
           <p class="tm-host-bio">
-            A key voice for Synergy HomeCare in the Bay Area, Miki brings 25+ years of
-            experience building ecosystems that drive revenue, innovation, and
-            measurable community impact for Peninsula seniors.
+            [ Add a 1–2 sentence summary for Jowett here — role, focus, and what they
+            bring to the senior-care community. ]
           </p>
-          <div class="tm-host-company">SYNERGY HomeCare · Care that moves you</div>
+          <div class="tm-host-company">[ Company · Tagline ]</div>
+        </div>
+        <div class="tm-host-card">
+          <div class="tm-host-avatar" style="background: linear-gradient(135deg, var(--wave-mid), var(--teal-darker));">MM</div>
+          <div class="tm-host-name">Mark Martinho</div>
+          <div class="tm-host-role">[ Profession / Focus ]</div>
+          <p class="tm-host-bio">
+            [ Add a 1–2 sentence summary for Mark here — role, focus, and what they
+            bring to the senior-care community. ]
+          </p>
+          <div class="tm-host-company">[ Company · Tagline ]</div>
         </div>
       </div>
       <div style="text-align: center; margin-top: 32px;">
@@ -1516,27 +1659,6 @@
               <div class="tm-field tm-field-full">
                 <label class="tm-label" for="tm-address">Address</label>
                 <input class="tm-input" id="tm-address" name="address" type="text" placeholder="123 Main St, Los Altos, CA 94022">
-              </div>
-
-              <div class="tm-field">
-                <label class="tm-label" for="tm-linkedin">LinkedIn Page</label>
-                <input class="tm-input" id="tm-linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/...">
-              </div>
-              <div class="tm-field">
-                <label class="tm-label" for="tm-facebook">Facebook Page</label>
-                <input class="tm-input" id="tm-facebook" name="facebook" type="url" placeholder="https://facebook.com/...">
-              </div>
-              <div class="tm-field">
-                <label class="tm-label" for="tm-instagram">Instagram Page</label>
-                <input class="tm-input" id="tm-instagram" name="instagram" type="url" placeholder="https://instagram.com/...">
-              </div>
-              <div class="tm-field">
-                <label class="tm-label" for="tm-youtube">YouTube Page</label>
-                <input class="tm-input" id="tm-youtube" name="youtube" type="url" placeholder="https://youtube.com/...">
-              </div>
-              <div class="tm-field tm-field-full">
-                <label class="tm-label" for="tm-website">Website</label>
-                <input class="tm-input" id="tm-website" name="website" type="url" placeholder="https://yourcompany.com">
               </div>
 
               <div class="tm-field tm-field-full">
@@ -1687,7 +1809,7 @@
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Will refreshments be served?</div>
-          <div class="tm-faq-a">Always. Food and drinks are part of every Mixer &mdash; a generous charcuterie spread, fresh hors d'oeuvres, wine, and other light refreshments thoughtfully provided by the host venue. Take a look at the Gallery page for a sense of past spreads. Come hungry, come thirsty, come ready to talk.</div>
+          <div class="tm-faq-a">Always. Light refreshments are always thoughtfully provided by the host venue. In some gatherings, there are generous charcuterie spreads, fresh hors d'oeuvres, wine, and others. Take a look at the Gallery page for a sense of past spreads. Come hungry, come thirsty, come ready to talk.</div>
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Can I sponsor or host a future Mixer?</div>
@@ -1709,111 +1831,176 @@
   <div class="tm-subhero">
     <div class="tm-subhero-eyebrow">Organized By</div>
     <h1 class="tm-subhero-title">Your Hosts</h1>
-    <p class="tm-subhero-tag">Two Peninsula professionals committed to building a stronger, more connected senior-care community.</p>
+    <p class="tm-subhero-tag">Three Peninsula professionals committed to building a stronger, more connected senior-care community.</p>
   </div>
 
   <div class="tm-section">
-    <div class="tm-container" style="max-width: 1080px;">
+    <div class="tm-container" style="max-width: 1140px;">
 
-      <!-- Vivienne -->
-      <div class="tm-org-profile">
-        <div class="tm-org-avatar">VK</div>
-        <div>
-          <div class="tm-org-name">Vivienne Kelvin, SRES</div>
-          <div class="tm-org-title">Broker Associate · Partner · Interior Designer</div>
-          <p class="tm-org-bio">
-            Vivienne — known to friends and clients simply as <em>Viv</em> — is a Broker
-            Associate, Partner, and co-owner of <strong>Vabrato Real Estate Services</strong> in
-            Redwood City. With formal training in interior design and a deep love for
-            people, Viv specializes in "design to sell" and in helping Peninsula
-            families navigate the most personal — and often most emotional — real estate
-            decisions of their lives.
+      <div class="tm-org-grid">
+
+        <!-- ============ ORGANIZER 1: VIVIENNE ============ -->
+        <div class="tm-org-card">
+          <!-- To use a real photo, uncomment the <img> and remove the "VK" initials below -->
+          <div class="tm-org-photo">
+            <!-- <img src="/photos/vivienne-kelvin.jpg" alt="Vivienne Kelvin"> -->
+            VK
+          </div>
+          <div class="tm-org-card-name">Vivienne Kelvin, SRES</div>
+          <div class="tm-org-card-title">Broker Associate &middot; Partner &middot; Interior Designer</div>
+          <p class="tm-org-card-bio">
+            Known to friends and clients simply as <em>Viv</em>, she is a Broker Associate,
+            Partner, and co-owner of Vabrato Real Estate Services, and a certified Seniors
+            Real Estate Specialist who helps Peninsula families through downsizing,
+            relocation, and estate transitions.
           </p>
-          <p class="tm-org-bio">
-            As a certified <strong>Seniors Real Estate Specialist (SRES®)</strong>, she works
-            closely with older adults and their families through downsizing, relocating
-            to senior living, and estate transitions. Clients describe her as
-            "professional, creative, a friend and confidante" — the kind of realtor who
-            gets the job done and looks after the people behind the transaction.
-          </p>
-          <p class="tm-org-bio">
-            Viv is a passionate networker who has long believed that referrals and
-            real relationships beat cold sales every time. She co-founded The Mixer to
-            bring that same spirit to the senior-care community on the Peninsula.
-          </p>
-          <div class="tm-org-meta">
+          <div class="tm-org-card-meta">
             <div class="tm-org-meta-item">
               <span class="tm-org-meta-label">Company</span>
               <span class="tm-org-meta-val">Vabrato Real Estate Services</span>
             </div>
             <div class="tm-org-meta-item">
-              <span class="tm-org-meta-label">License</span>
-              <span class="tm-org-meta-val">DRE #01909927</span>
+              <span class="tm-org-meta-label">Credentials</span>
+              <span class="tm-org-meta-val">SRES&reg; &middot; DRE #01909927</span>
             </div>
             <div class="tm-org-meta-item">
               <span class="tm-org-meta-label">Service Area</span>
-              <span class="tm-org-meta-val">San Mateo & Santa Clara Counties</span>
+              <span class="tm-org-meta-val">San Mateo &amp; Santa Clara Counties</span>
             </div>
             <div class="tm-org-meta-item">
-              <span class="tm-org-meta-label">Email</span>
+              <span class="tm-org-meta-label">Contact</span>
               <span class="tm-org-meta-val"><a href="mailto:viv@vabrato.com">viv@vabrato.com</a></span>
             </div>
           </div>
-        </div>
-      </div>
+          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Click to Read Full Description</button>
 
-      <!-- Miki -->
-      <div class="tm-org-profile">
-        <div class="tm-org-avatar" style="background: linear-gradient(135deg, var(--gold), var(--gold-deep));">MB</div>
-        <div>
-          <div class="tm-org-name">Miki Bellon</div>
-          <div class="tm-org-title">Community Builder · Senior Care Advocate</div>
-          <p class="tm-org-bio">
-            Miki Bellon is a strategic partnerships leader with 25+ years in Silicon 
-            Valley spanning corporate marketing, event production, and deep expertise 
-            across the senior care continuum — including senior-focused nonprofits, 
-            assisted living communities, hospice providers, and home care organizations. 
+          <!-- Full description (shown in the pop-out) -->
+          <div class="tm-org-full">
+            <p>
+              Vivienne &mdash; known to friends and clients simply as <em>Viv</em> &mdash; is a Broker
+              Associate, Partner, and co-owner of <strong>Vabrato Real Estate Services</strong> in
+              Redwood City. With formal training in interior design and a deep love for
+              people, Viv specializes in &ldquo;design to sell&rdquo; and in helping Peninsula
+              families navigate the most personal &mdash; and often most emotional &mdash; real estate
+              decisions of their lives.
+            </p>
+            <p>
+              As a certified <strong>Seniors Real Estate Specialist (SRES&reg;)</strong>, she works
+              closely with older adults and their families through downsizing, relocating
+              to senior living, and estate transitions. Clients describe her as
+              &ldquo;professional, creative, a friend and confidante&rdquo; &mdash; the kind of realtor who
+              gets the job done and looks after the people behind the transaction.
+            </p>
+            <p>
+              Viv is a passionate networker who has long believed that referrals and
+              real relationships beat cold sales every time. She co-founded The Mixer to
+              bring that same spirit to the senior-care community on the Peninsula.
+            </p>
+          </div>
+        </div>
+
+        <!-- ============ ORGANIZER 2: JOWETT ============ -->
+        <div class="tm-org-card">
+          <div class="tm-org-photo" style="background: linear-gradient(135deg, var(--gold), var(--gold-deep));">
+            <!-- <img src="/photos/jowett-san-miguel.jpg" alt="Jowett San Miguel"> -->
+            JS
+          </div>
+          <div class="tm-org-card-name">Jowett San Miguel</div>
+          <div class="tm-org-card-title">[ Profession &middot; Credentials ]</div>
+          <p class="tm-org-card-bio">
+            [ Add a short 2&ndash;3 sentence summary for Jowett here &mdash; role, focus, and what
+            they bring to the senior-care community. This appears on the card; the longer
+            version lives in the pop-out below. ]
           </p>
-          <p class="tm-org-bio">
-            She specializes in turning relationships into long-term partnerships and 
-            partnerships into scalable platforms, bringing a rare blend of revenue 
-            leadership, community intelligence, and operational discipline to every
-            engagement. 
-          </p>
-          <p class="tm-org-bio">
-            From full-lifecycle event execution and high-level innovation convenings 
-            to sponsorship strategy and brand-building campaigns, Miki has the experience 
-            to design initiatives that are as compelling as they are results-driven.
-          </p>
-          <p class="tm-org-bio">
-            As a convener  of executive-level networks and a trusted presence in the 
-            senior care professional community, she connects the right people at the 
-            right time — driving measurable impact rooted in meaningful connection. 
-          </p>
-          <div class="tm-org-meta">
+          <div class="tm-org-card-meta">
             <div class="tm-org-meta-item">
               <span class="tm-org-meta-label">Company</span>
-              <span class="tm-org-meta-val">SYNERGY HomeCare</span>
+              <span class="tm-org-meta-val">[ Company name ]</span>
             </div>
             <div class="tm-org-meta-item">
-              <span class="tm-org-meta-label">Tagline</span>
-              <span class="tm-org-meta-val">Care that moves you</span>
+              <span class="tm-org-meta-label">Credentials</span>
+              <span class="tm-org-meta-val">[ License / certifications ]</span>
             </div>
             <div class="tm-org-meta-item">
               <span class="tm-org-meta-label">Focus</span>
-              <span class="tm-org-meta-val">In-home Senior Care</span>
+              <span class="tm-org-meta-val">[ Specialty / area of focus ]</span>
             </div>
             <div class="tm-org-meta-item">
-              <span class="tm-org-meta-label">Region</span>
-              <span class="tm-org-meta-val">San Francisco Bay Area</span>
+              <span class="tm-org-meta-label">Contact</span>
+              <span class="tm-org-meta-val"><a href="mailto:jowett@example.com">jowett@example.com</a></span>
             </div>
           </div>
+          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Click to Read Full Description</button>
+
+          <!-- Full description (shown in the pop-out) -->
+          <div class="tm-org-full">
+            <p>[ Add Jowett San Miguel's full biography here. You can include as many
+            paragraphs as you like &mdash; each wrapped in its own &lt;p&gt;&hellip;&lt;/p&gt; tag. ]</p>
+            <p>[ A second paragraph can cover background, experience, and approach. ]</p>
+          </div>
         </div>
+
+        <!-- ============ ORGANIZER 3: MARK ============ -->
+        <div class="tm-org-card">
+          <div class="tm-org-photo" style="background: linear-gradient(135deg, var(--wave-mid), var(--teal-darker));">
+            <!-- <img src="/photos/mark-martinho.jpg" alt="Mark Martinho"> -->
+            MM
+          </div>
+          <div class="tm-org-card-name">Mark Martinho</div>
+          <div class="tm-org-card-title">[ Profession &middot; Credentials ]</div>
+          <p class="tm-org-card-bio">
+            [ Add a short 2&ndash;3 sentence summary for Mark here &mdash; role, focus, and what
+            they bring to the senior-care community. This appears on the card; the longer
+            version lives in the pop-out below. ]
+          </p>
+          <div class="tm-org-card-meta">
+            <div class="tm-org-meta-item">
+              <span class="tm-org-meta-label">Company</span>
+              <span class="tm-org-meta-val">[ Company name ]</span>
+            </div>
+            <div class="tm-org-meta-item">
+              <span class="tm-org-meta-label">Credentials</span>
+              <span class="tm-org-meta-val">[ License / certifications ]</span>
+            </div>
+            <div class="tm-org-meta-item">
+              <span class="tm-org-meta-label">Focus</span>
+              <span class="tm-org-meta-val">[ Specialty / area of focus ]</span>
+            </div>
+            <div class="tm-org-meta-item">
+              <span class="tm-org-meta-label">Contact</span>
+              <span class="tm-org-meta-val"><a href="mailto:mark@example.com">mark@example.com</a></span>
+            </div>
+          </div>
+          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Click to Read Full Description</button>
+
+          <!-- Full description (shown in the pop-out) -->
+          <div class="tm-org-full">
+            <p>[ Add Mark Martinho's full biography here. You can include as many
+            paragraphs as you like &mdash; each wrapped in its own &lt;p&gt;&hellip;&lt;/p&gt; tag. ]</p>
+            <p>[ A second paragraph can cover background, experience, and approach. ]</p>
+          </div>
+        </div>
+
       </div>
 
-      <div style="text-align: center; margin-top: 40px;">
+      <div style="text-align: center; margin-top: 44px;">
         <a class="tm-btn tm-btn-gold" href="#home" data-page="home" data-scroll="tmRegister">Join Their Next Mixer</a>
       </div>
+    </div>
+  </div>
+
+  <!-- Organizer full-description pop-out -->
+  <div class="tm-org-modal" id="tmOrgModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="tm-org-modal-inner">
+      <button type="button" class="tm-org-modal-close" id="tmOrgModalClose" aria-label="Close">&times;</button>
+      <div class="tm-org-modal-head">
+        <div class="tm-org-modal-photo" id="tmOrgModalPhoto"></div>
+        <div>
+          <div class="tm-org-modal-name" id="tmOrgModalName"></div>
+          <div class="tm-org-modal-title" id="tmOrgModalTitle"></div>
+        </div>
+      </div>
+      <div class="tm-org-modal-body" id="tmOrgModalBody"></div>
     </div>
   </div>
 </section>
@@ -1853,6 +2040,32 @@
       <div class="tm-upcoming-list">
         <h3 class="tm-section-title" style="font-size: 32px; text-align: left; margin-bottom: 20px;">Upcoming Mixers</h3>
         <div id="tmUpcomingList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendar event pop-out -->
+  <div class="tm-event-modal" id="tmEventModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="tm-event-modal-inner">
+      <button type="button" class="tm-event-modal-close" id="tmEventModalClose" aria-label="Close">&times;</button>
+      <div class="tm-event-modal-top">
+        <div class="tm-event-modal-eyebrow">You're Invited</div>
+        <h3 class="tm-event-modal-title" id="tmEventTitle">Mixer</h3>
+      </div>
+      <div class="tm-event-modal-body">
+        <div class="tm-event-row">
+          <span class="tm-event-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+          <div><span class="tm-event-lbl">Date</span><span class="tm-event-val" id="tmEventDate"></span></div>
+        </div>
+        <div class="tm-event-row">
+          <span class="tm-event-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>
+          <div><span class="tm-event-lbl">Time</span><span class="tm-event-val">4:00 &ndash; 6:00 PM</span></div>
+        </div>
+        <div class="tm-event-row">
+          <span class="tm-event-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><span class="tm-event-lbl">Location</span><span class="tm-event-val" id="tmEventVenue"></span></div>
+        </div>
+        <a class="tm-btn tm-btn-primary tm-event-modal-cta" id="tmEventRegister" href="#register" data-page="home" data-scroll="tmRegister">Register &rarr;</a>
       </div>
     </div>
   </div>
@@ -2340,7 +2553,7 @@
         c.classList.add('tm-event');
         c.title = MIXER_EVENTS[key].title + ' · ' + MIXER_EVENTS[key].venue;
         c.addEventListener('click', () => {
-          alert(MIXER_EVENTS[key].title + '\n' + MIXER_EVENTS[key].venue + '\n4:00 – 6:00 PM');
+          openEventModal(y, m, d, MIXER_EVENTS[key]);
         });
       }
       if (today.getFullYear()===y && today.getMonth()===m && today.getDate()===d) {
@@ -2394,6 +2607,44 @@
   document.getElementById('tmCalPrev').addEventListener('click', () => { calDate.setMonth(calDate.getMonth()-1); renderCalendar(); });
   document.getElementById('tmCalNext').addEventListener('click', () => { calDate.setMonth(calDate.getMonth()+1); renderCalendar(); });
   document.getElementById('tmCalToday').addEventListener('click', () => { calDate = new Date(); renderCalendar(); });
+
+  /* ---------- Calendar event pop-out ---------- */
+  function ordinal(n){
+    const s = ['th','st','nd','rd'], v = n % 100;
+    return n + (s[(v-20)%10] || s[v] || s[0]);
+  }
+  function openEventModal(year, monthIdx, day, ev){
+    const modal = document.getElementById('tmEventModal');
+    if (!modal) return;
+    const dateObj = new Date(year, monthIdx, day);
+    const weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][dateObj.getDay()];
+    document.getElementById('tmEventTitle').textContent = ev.title;
+    document.getElementById('tmEventDate').innerHTML =
+      weekday + ', ' + MONTHS[monthIdx] + ' ' + ordinal(day) + ', ' + year;
+    const venueEl = document.getElementById('tmEventVenue');
+    if (ev.url) {
+      venueEl.innerHTML = '<a href="' + ev.url + '" target="_blank" rel="noopener">' + ev.venue + '</a>';
+    } else {
+      venueEl.innerHTML = ev.venue;
+    }
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  function closeEventModal(){
+    const modal = document.getElementById('tmEventModal');
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+  document.getElementById('tmEventModalClose').addEventListener('click', closeEventModal);
+  document.getElementById('tmEventModal').addEventListener('click', function(e){
+    if (e.target === this) closeEventModal();
+  });
+  // The Register button uses the global data-page navigation; just close the modal too.
+  document.getElementById('tmEventRegister').addEventListener('click', closeEventModal);
+  document.addEventListener('keydown', function(e){
+    const modal = document.getElementById('tmEventModal');
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeEventModal();
+  });
 
   /* ---------- 6. Gallery — 14 placeholder slots ---------- */
   const GALLERY = [
@@ -2458,6 +2709,53 @@
   document.getElementById('tmLightbox').addEventListener('click', function(e){
     if (e.target === this) this.classList.remove('open');
   });
+
+  /* ---------- Organizer "read full description" pop-out ---------- */
+  (function(){
+    const modal = document.getElementById('tmOrgModal');
+    if (!modal) return;
+    const photoEl = document.getElementById('tmOrgModalPhoto');
+    const nameEl  = document.getElementById('tmOrgModalName');
+    const titleEl = document.getElementById('tmOrgModalTitle');
+    const bodyEl  = document.getElementById('tmOrgModalBody');
+
+    function closeOrgModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+    function openOrgModal(card){
+      const photo = card.querySelector('.tm-org-photo');
+      const name  = card.querySelector('.tm-org-card-name');
+      const title = card.querySelector('.tm-org-card-title');
+      const full  = card.querySelector('.tm-org-full');
+      // Mirror the card photo (image or initials + its gradient)
+      const img = photo ? photo.querySelector('img') : null;
+      if (img) {
+        photoEl.innerHTML = '<img src="'+img.getAttribute('src')+'" alt="'+(img.getAttribute('alt')||'')+'">';
+        photoEl.style.background = '';
+      } else {
+        photoEl.textContent = photo ? photo.textContent.trim() : '';
+        photoEl.style.background = photo ? getComputedStyle(photo).backgroundImage : '';
+      }
+      nameEl.textContent  = name ? name.textContent.trim() : '';
+      titleEl.textContent = title ? title.textContent.trim() : '';
+      bodyEl.innerHTML    = full ? full.innerHTML : '';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    root.querySelectorAll('.tm-org-readmore').forEach(btn => {
+      btn.addEventListener('click', function(){
+        const card = this.closest('.tm-org-card');
+        if (card) openOrgModal(card);
+      });
+    });
+    document.getElementById('tmOrgModalClose').addEventListener('click', closeOrgModal);
+    modal.addEventListener('click', function(e){ if (e.target === this) closeOrgModal(); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeOrgModal();
+    });
+  })();
 
   /* Initial render */
   renderGallery();
