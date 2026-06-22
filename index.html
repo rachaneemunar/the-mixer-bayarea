@@ -20,20 +20,20 @@
 #the-mixer-site *::after { box-sizing: border-box; margin: 0; padding: 0; }
 #the-mixer-site { all: initial; }
 #the-mixer-site {
-  --teal:        #12A89D;
-  --teal-deep:   #0E8077;
-  --teal-darker: #0A5E58;
-  --wave-light:  #9ECCC4;
-  --wave-mid:    #5C9E95;
-  --wave-dark:   #3D7A72;
-  --gold-deep:   #8B6A3A;
-  --gold:        #B39156;
-  --gold-mid:    #C9A876;
-  --gold-light:  #E5D1AC;
-  --gold-hi:     #F4E4C1;
-  --gold-foil-a: #a87d33;
-  --gold-foil-b: #d8b558;
-  --gold-foil-c: #5e3a0e;
+  --teal:        #2A4A8C;
+  --teal-deep:   #1B3163;
+  --teal-darker: #12224A;
+  --wave-light:  #AEC2E6;
+  --wave-mid:    #5E7DC0;
+  --wave-dark:   #34508F;
+  --gold-deep:   #163872;
+  --gold:        #2F5BB0;
+  --gold-mid:    #5B85D6;
+  --gold-light:  #A9C4F0;
+  --gold-hi:     #D6E6FB;
+  --gold-foil-a: #3F6EC0;
+  --gold-foil-b: #8FB4EE;
+  --gold-foil-c: #102A5E;
   --charcoal:    #1A1A1A;
   --ink:         #2A2A2A;
   --muted:       #6B6B6B;
@@ -222,13 +222,13 @@
 #the-mixer-site .tm-hero::before {
   content: ''; position: absolute;
   top: -50%; left: -10%; width: 60%; height: 80%;
-  background: radial-gradient(circle, rgba(18,168,157,0.06), transparent 70%);
+  background: radial-gradient(circle, rgba(42,74,140,0.06), transparent 70%);
   pointer-events: none;
 }
 #the-mixer-site .tm-hero::after {
   content: ''; position: absolute;
   bottom: -30%; right: -10%; width: 50%; height: 60%;
-  background: radial-gradient(circle, rgba(228,201,118,0.07), transparent 70%);
+  background: radial-gradient(circle, rgba(91,133,214,0.07), transparent 70%);
   pointer-events: none;
 }
 #the-mixer-site .tm-hero-inner {
@@ -257,7 +257,7 @@
     var(--gold-foil-c) 0%,
     var(--gold-foil-a) 18%,
     var(--gold-foil-b) 32%,
-    #ead07a 42%,
+    #cfe0fb 42%,
     var(--gold-foil-b) 52%,
     var(--gold-foil-a) 65%,
     var(--gold-foil-c) 78%,
@@ -292,12 +292,12 @@
 }
 #the-mixer-site .tm-hero-tagline {
   font-family: var(--serif);
-  font-size: clamp(16px, 1.9vw, 22px);
+  font-size: clamp(17px, 2vw, 24px);
   font-weight: 500;
-  letter-spacing: 0.15em;
-  color: var(--charcoal);
-  text-transform: uppercase;
-  margin-top: 10px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--teal-deep);
+  margin-top: 12px;
 }
 #the-mixer-site .tm-hero-divider {
   width: 100%; max-width: 1240px;
@@ -352,7 +352,7 @@
   border-radius: 14px;
   padding: 18px 8px 14px;
   position: relative;
-  border: 1px solid rgba(18,168,157,0.10);
+  border: 1px solid rgba(42,74,140,0.10);
 }
 #the-mixer-site .tm-count-num {
   font-family: var(--serif);
@@ -388,12 +388,12 @@
 }
 #the-mixer-site .tm-btn-primary {
   background: var(--teal); color: #fff;
-  box-shadow: 0 6px 20px rgba(18,168,157,0.30);
+  box-shadow: 0 6px 20px rgba(42,74,140,0.30);
 }
 #the-mixer-site .tm-btn-primary:hover {
   background: var(--teal-deep);
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(18,168,157,0.40);
+  box-shadow: 0 10px 26px rgba(42,74,140,0.40);
 }
 #the-mixer-site .tm-btn-gold {
   background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-deep));
@@ -457,7 +457,7 @@
 #the-mixer-site .tm-about-card::before {
   content: ''; position: absolute;
   bottom: -60px; right: -60px; width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(18,168,157,0.06), transparent 70%);
+  background: radial-gradient(circle, rgba(42,74,140,0.06), transparent 70%);
   border-radius: 50%;
 }
 #the-mixer-site .tm-about-text {
@@ -472,7 +472,7 @@
   font-family: var(--sans);
   font-size: 13px; font-weight: 500;
   padding: 7px 16px;
-  background: rgba(18,168,157,0.10);
+  background: rgba(42,74,140,0.10);
   color: var(--teal-deep);
   border-radius: 999px;
   letter-spacing: 0.04em;
@@ -513,7 +513,7 @@
   color: #fff;
   font-family: var(--serif);
   font-size: 42px; font-weight: 600;
-  box-shadow: 0 8px 20px rgba(18,168,157,0.25);
+  box-shadow: 0 8px 20px rgba(42,74,140,0.25);
   border: 4px solid var(--cream);
   overflow: hidden;
 }
@@ -617,13 +617,13 @@
 #the-mixer-site .tm-textarea:focus {
   border-color: var(--teal);
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(18,168,157,0.10);
+  box-shadow: 0 0 0 4px rgba(42,74,140,0.10);
 }
 #the-mixer-site .tm-textarea { resize: vertical; min-height: 80px; }
 
 #the-mixer-site .tm-consent {
   display: flex; gap: 12px; align-items: flex-start;
-  background: rgba(18,168,157,0.06);
+  background: rgba(42,74,140,0.06);
   padding: 16px;
   border-radius: 12px;
   border-left: 3px solid var(--teal);
@@ -645,7 +645,7 @@
 #the-mixer-site .tm-form-summary::before {
   content: ''; position: absolute;
   top: -40px; right: -40px; width: 160px; height: 160px;
-  background: radial-gradient(circle, rgba(228,201,118,0.20), transparent 70%);
+  background: radial-gradient(circle, rgba(91,133,214,0.20), transparent 70%);
 }
 #the-mixer-site .tm-form-summary h3 {
   font-family: var(--serif);
@@ -670,7 +670,7 @@
 #the-mixer-site .tm-success {
   display: none;
   padding: 24px;
-  background: rgba(18,168,157,0.10);
+  background: rgba(42,74,140,0.10);
   border-left: 3px solid var(--teal);
   border-radius: 10px;
   margin-bottom: 20px;
@@ -790,8 +790,8 @@
   content: ''; position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 15% 30%, rgba(18,168,157,0.06), transparent 50%),
-    radial-gradient(circle at 85% 70%, rgba(228,201,118,0.08), transparent 50%);
+    radial-gradient(circle at 15% 30%, rgba(42,74,140,0.06), transparent 50%),
+    radial-gradient(circle at 85% 70%, rgba(91,133,214,0.08), transparent 50%);
   pointer-events: none;
 }
 #the-mixer-site .tm-subhero-eyebrow {
@@ -813,7 +813,7 @@
     var(--gold-foil-c) 0%,
     var(--gold-foil-a) 18%,
     var(--gold-foil-b) 32%,
-    #ead07a 42%,
+    #cfe0fb 42%,
     var(--gold-foil-b) 52%,
     var(--gold-foil-a) 65%,
     var(--gold-foil-c) 78%,
@@ -950,7 +950,7 @@
   content: ''; position: absolute;
   bottom: -80px; right: -80px;
   width: 220px; height: 220px;
-  background: radial-gradient(circle, rgba(228,201,118,0.10), transparent 70%);
+  background: radial-gradient(circle, rgba(91,133,214,0.10), transparent 70%);
   border-radius: 50%; pointer-events: none;
 }
 
@@ -1081,7 +1081,7 @@
 #the-mixer-site .tm-event-modal-top::after {
   content: ''; position: absolute; bottom: -60px; right: -40px;
   width: 180px; height: 180px;
-  background: radial-gradient(circle, rgba(228,201,118,0.22), transparent 70%);
+  background: radial-gradient(circle, rgba(91,133,214,0.22), transparent 70%);
   border-radius: 50%; pointer-events: none;
 }
 #the-mixer-site .tm-event-modal-eyebrow {
@@ -1112,7 +1112,7 @@
   display: block; margin-bottom: 2px;
 }
 #the-mixer-site .tm-event-val { color: var(--charcoal); font-weight: 500; font-size: 15px; line-height: 1.45; }
-#the-mixer-site .tm-event-val a { color: var(--teal-deep); border-bottom: 1px solid rgba(18,168,157,0.4); text-decoration: none; }
+#the-mixer-site .tm-event-val a { color: var(--teal-deep); border-bottom: 1px solid rgba(42,74,140,0.4); text-decoration: none; }
 #the-mixer-site .tm-event-val a:hover { color: var(--teal-darker); }
 #the-mixer-site .tm-event-modal-cta {
   margin-top: 22px; width: 100%; justify-content: center;
@@ -1184,12 +1184,12 @@
   border: 1px solid transparent;
 }
 #the-mixer-site .tm-cal-cell.tm-other { color: #C5C5C5; }
-#the-mixer-site .tm-cal-cell.tm-today { background: rgba(18,168,157,0.08); font-weight: 600; }
+#the-mixer-site .tm-cal-cell.tm-today { background: rgba(42,74,140,0.08); font-weight: 600; }
 #the-mixer-site .tm-cal-cell.tm-event {
   background: linear-gradient(135deg, var(--teal), var(--teal-deep));
   color: #fff; font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(18,168,157,0.30);
+  box-shadow: 0 4px 12px rgba(42,74,140,0.30);
 }
 #the-mixer-site .tm-cal-cell.tm-event::after {
   content: '✦';
@@ -1199,7 +1199,7 @@
 }
 #the-mixer-site .tm-cal-cell.tm-event:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 18px rgba(18,168,157,0.40);
+  box-shadow: 0 8px 18px rgba(42,74,140,0.40);
 }
 #the-mixer-site .tm-cal-legend {
   display: flex; gap: 22px; flex-wrap: wrap;
@@ -1214,7 +1214,7 @@
   width: 14px; height: 14px; border-radius: 4px;
 }
 #the-mixer-site .tm-dot-event { background: linear-gradient(135deg, var(--teal), var(--teal-deep)); }
-#the-mixer-site .tm-dot-today { background: rgba(18,168,157,0.20); }
+#the-mixer-site .tm-dot-today { background: rgba(42,74,140,0.20); }
 
 #the-mixer-site .tm-upcoming-list {
   max-width: 880px; margin: 40px auto 0;
@@ -1372,7 +1372,7 @@
 #the-mixer-site .tm-lightbox {
   display: none;
   position: fixed; inset: 0;
-  background: rgba(10,20,18,0.92);
+  background: rgba(10,16,38,0.92);
   z-index: 1000;
   align-items: center; justify-content: center;
   padding: 24px;
@@ -1438,7 +1438,7 @@
 }
 #the-mixer-site .tm-terms-card ul { padding-left: 22px; margin-bottom: 12px; }
 #the-mixer-site .tm-terms-meta {
-  background: rgba(18,168,157,0.06);
+  background: rgba(42,74,140,0.06);
   padding: 16px 20px;
   border-left: 3px solid var(--teal);
   border-radius: 10px;
@@ -1460,7 +1460,7 @@
 
 <!-- ====================== ANNOUNCEMENT RIBBON ====================== -->
 <div class="tm-ribbon">
-  &#x2726; Next Mixer &mdash; Wednesday, June 24th, 4:00 PM &middot; Venue To Be Determined
+  &#x2726; Next Mixer &mdash; Wednesday, July 29th, 4:00 PM &middot; Venue To Be Determined
   <span class="tm-ribbon-count" id="tmRibbonCount">&mdash;</span>
 </div>
 
@@ -1491,8 +1491,9 @@
     <div class="tm-hero-inner">
       <div class="tm-hero-top-line">Building the Network Behind Better Senior Care</div>
       <h1 class="tm-hero-wordmark">Bay Area Mixer</h1>
+      <div class="tm-hero-tagline">A professional networking event</div>
       <div class="tm-hero-divider"></div>
-      <div class="tm-hero-date">Wednesday, June 24th · 4:00 – 6:00 PM</div>
+      <div class="tm-hero-date">Wednesday, July 29th · 4:00 – 6:00 PM</div>
       <div class="tm-hero-date" style="font-size: 16px; color: var(--muted); margin-top: 8px;">
         Venue to be determined
       </div>
@@ -1622,7 +1623,7 @@
       <div class="tm-eyebrow">Reserve Your Seat</div>
       <h2 class="tm-section-title">Sign Up for Bay Area Mixer</h2>
       <p class="tm-section-sub">
-        Join us on June 24th — and stay in the loop for every future Mixer. Signing up
+        Join us on July 29th — and stay in the loop for every future Mixer. Signing up
         also subscribes you to our monthly newsletter.
       </p>
 
@@ -1689,7 +1690,7 @@
           <h3>Event Details</h3>
           <div class="tm-summary-row">
             <span class="tm-summary-label">Date</span>
-            <strong>Wednesday, June 24th, 2026</strong>
+            <strong>Wednesday, July 29th, 2026</strong>
           </div>
           <div class="tm-summary-row">
             <span class="tm-summary-label">Time</span>
@@ -1805,7 +1806,7 @@
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Where and when is the next Mixer?</div>
-          <div class="tm-faq-a">Our next gathering is Wednesday, June 24th from 4:00&ndash;6:00 PM. The venue is still being finalized &mdash; check the Calendar page for the latest details and upcoming dates.</div>
+          <div class="tm-faq-a">Our next gathering is Wednesday, July 29th from 4:00&ndash;6:00 PM. The venue is still being finalized &mdash; check the Calendar page for the latest details and upcoming dates.</div>
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Who should attend?</div>
@@ -2056,7 +2057,7 @@
     <div class="tm-container">
       <div class="tm-cal-card">
         <div class="tm-cal-head">
-          <h2 class="tm-cal-title" id="tmCalMonth">June 2026</h2>
+          <h2 class="tm-cal-title" id="tmCalMonth">July 2026</h2>
           <div class="tm-cal-nav">
             <button id="tmCalPrev" aria-label="Previous month">‹</button>
             <button id="tmCalToday" style="width:auto; padding:0 14px;" aria-label="Today">Today</button>
@@ -2361,9 +2362,9 @@
 <div class="tm-waves" aria-hidden="true">
   <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <!-- Three stacked waves: light → mid → dark, exactly like the flyer -->
-    <path fill="#9ECCC4" d="M0,90 C240,30 480,150 720,90 C960,30 1200,150 1440,90 L1440,220 L0,220 Z"/>
-    <path fill="#5C9E95" d="M0,130 C240,80 480,180 720,130 C960,80 1200,180 1440,130 L1440,220 L0,220 Z" opacity="0.95"/>
-    <path fill="#3D7A72" d="M0,170 C240,130 480,210 720,170 C960,130 1200,210 1440,170 L1440,220 L0,220 Z"/>
+    <path fill="#AEC2E6" d="M0,90 C240,30 480,150 720,90 C960,30 1200,150 1440,90 L1440,220 L0,220 Z"/>
+    <path fill="#5E7DC0" d="M0,130 C240,80 480,180 720,130 C960,80 1200,180 1440,130 L1440,220 L0,220 Z" opacity="0.95"/>
+    <path fill="#34508F" d="M0,170 C240,130 480,210 720,170 C960,130 1200,210 1440,170 L1440,220 L0,220 Z"/>
   </svg>
 </div>
 
@@ -2380,7 +2381,7 @@
   </div>
   <div class="tm-footer-bottom">
     &copy; 2026 Bay Area Mixer &middot; Co-organized by Vabrato Real Estate Services &amp; Peninsula Senior Referral Services<br>
-    Next gathering: Wednesday, June 24th &middot; 4:00 &ndash; 6:00 PM &middot; Venue to be determined
+    Next gathering: Wednesday, July 29th &middot; 4:00 &ndash; 6:00 PM &middot; Venue to be determined
   </div>
 </footer>
 
@@ -2441,9 +2442,9 @@
   });
 
   /* ---------- 2. Countdown timer ---------- */
-  // Target the next Mixer: June 24th 2026 at 4:00 PM Pacific Time
-  // PT in late June = PDT = UTC-7 → 4 PM PT = 23:00 UTC
-  const TARGET = new Date('2026-06-24T23:00:00Z').getTime();
+  // Target the next Mixer: July 29th 2026 at 4:00 PM Pacific Time
+  // PT in late July = PDT = UTC-7 → 4 PM PT = 23:00 UTC
+  const TARGET = new Date('2026-07-29T23:00:00Z').getTime();
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
   function tick() {
     const now = Date.now();
@@ -2544,7 +2545,7 @@
   });
 
   /* ---------- 5. Calendar ---------- */
-  let calDate = new Date(2026, 5, 1); // June 2026 default
+  let calDate = new Date(2026, 6, 1); // July 2026 default
   /* ============================================================
      MIXER EVENTS  —  Edit this list to add/change venues.
      ------------------------------------------------------------
@@ -2561,8 +2562,7 @@
   const MIXER_EVENTS = {
     '2026-4-1':  { title: 'Inaugural Mixer',  venue: 'Peninsula Senior-Care Community', url: '' },
     '2026-5-6':  { title: 'May Mixer',        venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
-    '2026-6-24': { title: 'June Mixer',       venue: 'To Be Determined',                url: '' },
-    '2026-7-29':  { title: 'July Mixer',       venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
+    '2026-7-29':  { title: 'July Mixer',       venue: 'To Be Determined',                url: '' },
     '2026-8-26':  { title: 'August Mixer',     venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
     '2026-9-30':  { title: 'September Mixer',  venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
     '2026-10-28': { title: 'October Mixer',    venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
@@ -2639,7 +2639,7 @@
         const item = document.createElement('div');
         item.className = 'tm-upcoming-item';
         const venueHTML = e.url
-          ? '<a href="'+e.url+'" target="_blank" rel="noopener" style="color: var(--teal-deep); text-decoration: none; border-bottom: 1px solid rgba(18,168,157,0.35);">'+e.venue+'</a>'
+          ? '<a href="'+e.url+'" target="_blank" rel="noopener" style="color: var(--teal-deep); text-decoration: none; border-bottom: 1px solid rgba(42,74,140,0.35);">'+e.venue+'</a>'
           : e.venue;
         item.innerHTML =
           '<div class="tm-up-date">'+
