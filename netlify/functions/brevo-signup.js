@@ -6,80 +6,92 @@ exports.handler = async function (event) {
   };
 
   if (event.httpMethod === "OPTIONS") {
-    return { statusCode: 200, headers, body: "" };
+    return {
+      statusCode: 200,
+      headers,
+      body: ""
+    };
   }
 
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
       headers,
-      body: JSON.stringify({ error: "Method not allowed." })
+      body: JSON.stringify({
+        error: "Method not allowed. This function only accepts form submissions."
+      })
     };
   }
 
   try {
-    const data = JSON.parse(event.body || "{}");
-
-    // Hidden anti-spam honeypot. Real visitors should never fill this field.
-    if (data.website) {
-      return {
-        statusCode: 200,
-        headers,
-        body: JSON.stringify({ success: true })
-      };
-    }
-
-    const email = String(data.email || "").trim().toLowerCase();
-    const firstName = String(data.firstName || "").trim();
-    const lastName = String(data.lastName || "").trim();
-    const profession = String(data.profession || "").trim();
-    const phone = String(data.phone || "").trim();
-    const address = String(data.address || "").trim();
-    const consent = data.newsletter === "on" || data.newsletter === true || data.consent === true;
-
-    if (!firstName) {
-      return { statusCode: 400, headers, body: JSON.stringify({ error: "Please enter your first name." }) };
-    }
-
-    if (!lastName) {
-      return { statusCode: 400, headers, body: JSON.stringify({ error: "Please enter your last name." }) };
-    }
-
-    if (!profession) {
-      return { statusCode: 400, headers, body: JSON.stringify({ error: "Please enter your profession." }) };
-    }
-
-    if (!phone) {
-      return { statusCode: 400, headers, body: JSON.stringify({ error: "Please enter your phone number." }) };
-    }
-
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return { statusCode: 400, headers, body: JSON.stringify({ error: "Please enter a valid email address." }) };
-    }
-
-    if (!consent) {
-      return { statusCode: 400, headers, body: JSON.stringify({ error: "Please confirm consent before subscribing." }) };
-    }
-
-    const listId = Number(process.env.BREVO_LIST_ID);
-
-    if (!process.env.BREVO_API_KEY || !listId) {
-      console.error("Missing BREVO_API_KEY or BREVO_LIST_ID environment variable.");
+    if (!process.env.BREVO_API_KEY) {
       return {
         statusCode: 500,
         headers,
-        body: JSON.stringify({ error: "Signup is not configured yet. Please contact the site owner." })
+        body: JSON.stringify({
+          error: "Missing BREVO_API_KEY in Netlify environment variables."
+        })
       };
     }
 
-    const attributes = {
-      FIRSTNAME: firstName,
-      LASTNAME: lastName,
-      PROFESSION: profession,
-      PHONE: phone
-    };
+    if (!process.env.BREVO_LIST_ID) {
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({
+          error: "Missing BREVO_LIST_ID in Netlify environment variables."
+        })
+      };
+    }
 
-    if (address) attributes.ADDRESS = address;
+    const data = JSON.parse(event.body || "{}");
+
+    const firstName = data.firstName || "";
+    const lastName = data.lastName || "";
+    const profession = data.profession || "";
+    const phone = data.phone || "";
+    const email = data.email || "";
+    const address = data.address || "";
+
+    if (!firstName.trim()) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({
+          error: "First name is required."
+        })
+      };
+    }
+
+    if (!lastName.trim()) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({
+          error: "Last name is required."
+        })
+      };
+    }
+
+    if (!profession.trim()) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({
+          error: "Profession is required."
+        })
+      };
+    }
+
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({
+          error: "Please enter a valid email address."
+        })
+      };
+    }
 
     const brevoResponse = await fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
@@ -89,22 +101,31 @@ exports.handler = async function (event) {
         "api-key": process.env.BREVO_API_KEY
       },
       body: JSON.stringify({
-        email,
-        attributes,
-        listIds: [listId],
+        email: email.trim(),
+        attributes: {
+          FIRSTNAME: firstName.trim(),
+          LASTNAME: lastName.trim(),
+          PROFESSION: profession.trim(),
+          PHONE: phone.trim(),
+          ADDRESS: address.trim()
+        },
+        listIds: [Number(process.env.BREVO_LIST_ID)],
         updateEnabled: true
       })
     });
 
-    const brevoResult = await brevoResponse.json().catch(() => ({}));
+    const brevoResult = await brevoResponse.json().catch(function () {
+      return {};
+    });
 
     if (!brevoResponse.ok) {
-      console.error("Brevo API error:", brevoResult);
+      console.error("Brevo signup error:", brevoResult);
+
       return {
         statusCode: brevoResponse.status,
         headers,
         body: JSON.stringify({
-          error: brevoResult.message || "Could not complete registration. Please try again."
+          error: brevoResult.message || "Brevo signup failed. Please try again."
         })
       };
     }
@@ -114,15 +135,18 @@ exports.handler = async function (event) {
       headers,
       body: JSON.stringify({
         success: true,
-        message: "Thank you. You are registered."
+        message: "Thank you. You are signed up."
       })
     };
   } catch (error) {
-    console.error("Signup function error:", error);
+    console.error("Netlify function error:", error);
+
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: "Something went wrong. Please try again." })
+      body: JSON.stringify({
+        error: "Something went wrong. Please try again."
+      })
     };
   }
 };
