@@ -6,6 +6,28 @@
      ===================================================================== -->
 <div id="the-mixer-site">
 
+<!-- ====================== MOBILE VIEWPORT GUARD ======================
+     This block is a self-contained fragment. If the host page's <head>
+     is missing a mobile viewport tag, the browser falls back to a ~980px
+     desktop layout viewport and SCALES IT DOWN on phones — so the mobile
+     @media rules never match and the page looks like a shrunk desktop
+     (4-column countdown, full nav, tiny text). The script below adds a
+     correct viewport meta only if the theme didn't already provide one,
+     making the layout respond to the real device width.
+     ================================================================== -->
+<script>
+(function () {
+  try {
+    if (!document.querySelector('meta[name="viewport"]')) {
+      var m = document.createElement('meta');
+      m.name = 'viewport';
+      m.content = 'width=device-width, initial-scale=1, viewport-fit=cover';
+      (document.head || document.documentElement).appendChild(m);
+    }
+  } catch (e) { /* no-op */ }
+})();
+</script>
+
 <!-- ====================== GOOGLE FONTS ====================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1740,9 +1762,13 @@
 
           <form id="tmRegisterForm" novalidate>
             <div class="tm-form-grid">
-              <div class="tm-field tm-field-full">
-                <label class="tm-label" for="tm-name">Full Name <span class="tm-req">*</span></label>
-                <input class="tm-input" id="tm-name" name="name" type="text" required placeholder="">
+              <div class="tm-field">
+                <label class="tm-label" for="tm-first-name">First Name <span class="tm-req">*</span></label>
+                <input class="tm-input" id="tm-first-name" name="firstName" type="text" autocomplete="given-name" required placeholder="">
+              </div>
+              <div class="tm-field">
+                <label class="tm-label" for="tm-last-name">Last Name <span class="tm-req">*</span></label>
+                <input class="tm-input" id="tm-last-name" name="lastName" type="text" autocomplete="family-name" required placeholder="">
               </div>
 
               <div class="tm-field">
@@ -2532,7 +2558,7 @@
   }
   tick(); setInterval(tick, 1000);
 
-  /* ---------- 3. Form submission  →  Netlify Function /api/signup  →  Brevo ---------- */
+  /* ---------- 3. Form submission  →  Netlify Function /.netlify/functions/brevo-signup  →  Brevo ---------- */
   const form = document.getElementById('tmRegisterForm');
   if (form) {
     const submitBtn = form.querySelector('button[type="submit"]');
