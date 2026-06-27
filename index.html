@@ -1,5 +1,5 @@
 <!-- =====================================================================
-     SENIOR PRO NETWORK — A Networking Event for Senior-Care Professionals
+     SENIOR PRO NETWORK: A Networking Event for Senior-Care Professionals
      Single-file HTML for WordPress (paste into a Custom HTML block, or
      drop into a full-width page template). All styles & scripts are
      scoped under #the-mixer-site to avoid conflicts with your theme.
@@ -9,9 +9,9 @@
 <!-- ====================== GOOGLE FONTS ====================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 /* =====================================================================
    1. RESET (scoped to #the-mixer-site so it won't break the WP theme)
    ===================================================================== */
@@ -34,7 +34,7 @@
   --gold-foil-a: #6B7A96;
   --gold-foil-b: #B9C2D4;
   --gold-foil-c: #2C3654;
-  /* Navy leather palette — sampled from the SENIOR PRO NETWORK logo */
+  /* Navy leather palette, sampled from the SENIOR PRO NETWORK logo */
   --leather-shadow: #081634;
   --leather-deep:   #0E2147;
   --leather-mid:    #173458;
@@ -288,9 +288,9 @@
   font-family: var(--wordmark);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(30px, 7vw, 96px);
+  font-size: clamp(45px, 10.5vw, 144px);
   padding-right: 0.08em;
-  white-space: nowrap;
+  white-space: normal;
   line-height: 1.05;
   letter-spacing: 0.015em;
   background:
@@ -365,7 +365,7 @@
 }
 #the-mixer-site .tm-countdown-label {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 27px;
   letter-spacing: 0.20em;
   color: var(--teal);
   text-transform: uppercase;
@@ -387,7 +387,7 @@
   border: 1px solid rgba(43,81,216,0.10);
 }
 #the-mixer-site .tm-count-num {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(34px, 5vw, 52px);
   font-weight: 600;
   color: var(--charcoal);
@@ -396,7 +396,7 @@
 }
 #the-mixer-site .tm-count-lbl {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0.18em;
   color: var(--muted);
   text-transform: uppercase;
@@ -507,7 +507,7 @@
 }
 #the-mixer-site .tm-tag {
   font-family: var(--sans);
-  font-size: 13px; font-weight: 500;
+  font-size: 19px; font-weight: 500;
   padding: 7px 16px;
   background: rgba(43,81,216,0.10);
   color: var(--teal-deep);
@@ -631,7 +631,7 @@
 #the-mixer-site .tm-field-full { grid-column: 1 / -1; }
 #the-mixer-site .tm-label {
   font-family: var(--sans);
-  font-size: 12px; font-weight: 600;
+  font-size: 19px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.10em;
   color: var(--charcoal);
   margin-bottom: 7px;
@@ -692,12 +692,12 @@
 #the-mixer-site .tm-summary-row {
   padding: 12px 0;
   border-bottom: 1px solid rgba(255,255,255,0.15);
-  font-size: 14px;
+  font-size: 19px;
 }
 #the-mixer-site .tm-summary-row:last-child { border-bottom: 0; }
 #the-mixer-site .tm-summary-label {
   font-family: var(--serif);
-  font-size: 12px;
+  font-size: 19px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold-light);
@@ -954,7 +954,7 @@
 }
 
 /* =====================================================================
-   17. ORGANIZERS PAGE  —  3-column card grid + description modal
+   17. ORGANIZERS PAGE: 3-column card grid + description modal
    ===================================================================== */
 #the-mixer-site .tm-org-grid {
   display: grid;
@@ -1022,10 +1022,10 @@
   padding-top: 18px; margin-bottom: 24px;
   display: flex; flex-direction: column; gap: 13px;
 }
-#the-mixer-site .tm-org-meta-item { font-size: 14px; }
+#the-mixer-site .tm-org-meta-item { font-size: 19px; }
 #the-mixer-site .tm-org-meta-label {
   font-family: var(--serif);
-  font-size: 11px; letter-spacing: 0.16em;
+  font-size: 19px; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--muted);
   display: block; margin-bottom: 3px;
 }
@@ -1136,11 +1136,11 @@
 }
 #the-mixer-site .tm-event-row .tm-event-ic svg { width: 18px; height: 18px; }
 #the-mixer-site .tm-event-lbl {
-  font-family: var(--serif); font-size: 11px; letter-spacing: 0.16em;
+  font-family: var(--serif); font-size: 19px; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--muted);
   display: block; margin-bottom: 2px;
 }
-#the-mixer-site .tm-event-val { color: var(--charcoal); font-weight: 500; font-size: 15px; line-height: 1.45; }
+#the-mixer-site .tm-event-val { color: var(--charcoal); font-weight: 500; font-size: 19px; line-height: 1.45; }
 #the-mixer-site .tm-event-val a { color: var(--teal-deep); border-bottom: 1px solid rgba(43,81,216,0.4); text-decoration: none; }
 #the-mixer-site .tm-event-val a:hover { color: var(--teal-darker); }
 #the-mixer-site .tm-event-modal-cta {
@@ -1489,8 +1489,8 @@
 
 <!-- ====================== ANNOUNCEMENT RIBBON ====================== -->
 <div class="tm-ribbon">
-  &#x2726; Next Senior Pro Network &mdash; Wednesday, July 29th, 4:00 PM &middot; Harbor at Hillsdale
-  <span class="tm-ribbon-count" id="tmRibbonCount">&mdash;</span>
+  &#x2726; Next Senior Pro Network: Wednesday, July 29th, 4:00 PM &middot; Harbor at Hillsdale
+  <span class="tm-ribbon-count" id="tmRibbonCount">&hellip;</span>
 </div>
 
 <!-- ====================== NAVIGATION ====================== -->
@@ -1563,17 +1563,16 @@
           <strong style="color: var(--teal-deep);">Senior Pro Network</strong> is a monthly networking event designed for senior-focused
           businesses and professionals. We bring together trusted providers, industry
           partners, and local businesses working within senior care, senior living,
-          real estate, healthcare, financial, and support services.
+          healthcare, financial, and support services.
         </p>
         <p class="tm-about-text" style="margin-top: 18px;">
           From its inaugural evening on April 1st, 2026, Senior Pro Network has been building a
-          warm, purpose-driven community on the Peninsula — one conversation,
+          warm, purpose-driven community on the Peninsula: one conversation,
           one referral, one new relationship at a time.
         </p>
         <div class="tm-tag-row">
           <span class="tm-tag">Senior Care</span>
           <span class="tm-tag">Senior Living</span>
-          <span class="tm-tag">Real Estate</span>
           <span class="tm-tag">Healthcare</span>
           <span class="tm-tag">Financial Services</span>
           <span class="tm-tag">Support Services</span>
@@ -1656,14 +1655,14 @@
       <div class="tm-eyebrow">Reserve Your Seat</div>
       <h2 class="tm-section-title">Sign Up for Senior Pro Network</h2>
       <p class="tm-section-sub">
-        Join us on July 29th — and stay in the loop for every future Senior Pro Network event. Signing up
+        Join us on July 29th, and stay in the loop for every future Senior Pro Network event. Signing up
         also means we'll send you a monthly announcement of the next event.
       </p>
 
       <div class="tm-form-wrap">
         <div class="tm-form-card">
           <div class="tm-success" id="tmFormSuccess">
-            <strong>✓ You're in!</strong> Thanks for signing up — we'll send a confirmation to your email and a monthly announcement of the next event.
+            <strong>✓ You're in!</strong> Thanks for signing up. We'll send a confirmation to your email and a monthly announcement of the next event.
           </div>
 
           <h3 class="tm-form-title">Your Details</h3>
@@ -1731,7 +1730,7 @@
           <div class="tm-summary-row">
             <span class="tm-summary-label">Venue</span>
             <strong><a href="https://harborathillsdale.com" target="_blank" rel="noopener" style="color: var(--gold-light); border-bottom: 1px solid rgba(60,95,224,0.5);">Harbor at Hillsdale</a></strong><br>
-            <a href="https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 13px;">2883 S. Norfolk St, San Mateo, CA</a>
+            <a href="https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 19px;">2883 S. Norfolk St, San Mateo, CA</a>
           </div>
           <div class="tm-summary-row">
             <span class="tm-summary-label">Hosted By</span>
@@ -1768,14 +1767,13 @@
         <div class="tm-about-block">
           <h3>Our Story</h3>
           <p>
-            Senior Pro Network was created by a small group of Peninsula professionals —
-            Vivienne Kelvin, Jowett San Miguel, and Mark Martinho — who saw a need: a
+            Senior Pro Network was created by a small group of Peninsula professionals (Vivienne Kelvin, Jowett San Miguel, and Mark Martinho) who saw a need: a
             regular, welcoming space for the people
             who serve seniors to actually know each other.
           </p>
           <p style="margin-top: 12px;">
             Our inaugural Senior Pro Network event on April 1st, 2026 brought together business leaders,
-            community partners, entrepreneurs, nonprofit professionals, and innovators —
+            community partners, entrepreneurs, nonprofit professionals, and innovators,
             all united by a shared passion for supporting our senior community.
             The energy in the room was electric, and we knew we had something special.
           </p>
@@ -1789,7 +1787,7 @@
           </p>
           <p style="margin-top: 12px;">
             No formal program. No sales pitches. Just real people who care about
-            seniors, sharing what they do and learning from each other — the
+            seniors, sharing what they do and learning from each other, the
             old-fashioned, trustworthy way of doing business.
           </p>
         </div>
@@ -1799,8 +1797,8 @@
       <h2 class="tm-section-title">A Community of Trusted Professionals</h2>
 
       <div class="tm-attendee-prose">
-        <p><strong>If you work in senior care, you belong here.</strong> Senior Pro Network is an open gathering for the professionals who serve older adults and their families &mdash; senior living and memory care, home care and healthcare, real estate and move management, financial planning, elder law, and everyone whose work touches the lives of seniors.</p>
-        <p>There&rsquo;s no membership to join and no invitation to wait for. Come as you are, bring your business cards, and spend an evening among peers who understand the work &mdash; trading referrals and resources, comparing notes, and building the relationships that help families find the right care at the right time.</p>
+        <p><strong>If you work in senior care, you belong here.</strong> Senior Pro Network is an open gathering for the professionals who serve older adults and their families: senior living and memory care, home care and healthcare, move management, financial planning, elder law, and everyone whose work touches the lives of seniors.</p>
+        <p>There&rsquo;s no membership to join and no invitation to wait for. Come as you are, bring your business cards, and spend an evening among peers who understand the work, trading referrals and resources, comparing notes, and building the relationships that help families find the right care at the right time.</p>
       </div>
 
       <div class="tm-eyebrow" style="margin-top: 60px;">Frequently Asked</div>
@@ -1809,7 +1807,7 @@
       <div class="tm-faq">
         <div class="tm-faq-item">
           <div class="tm-faq-q">What is the purpose of Senior Pro Network?</div>
-          <div class="tm-faq-a">Senior Pro Network is a small, intentional gathering of senior-service professionals across the Peninsula &mdash; senior living, home care, real estate, healthcare, elder law, financial planning, move managers, and the nonprofits that work alongside them. The goal is simple: get to know each other in person, build genuine relationships over time, and eventually pass referrals back and forth with people you actually trust. No pitches, no panels &mdash; just real conversations between the people who serve seniors every day.</div>
+          <div class="tm-faq-a">Senior Pro Network is a small, intentional gathering of senior-service professionals across the Peninsula: senior living, home care, healthcare, elder law, financial planning, move managers, and the nonprofits that work alongside them. The goal is simple: get to know each other in person, build genuine relationships over time, and eventually pass referrals back and forth with people you actually trust. No pitches, no panels, just real conversations between the people who serve seniors every day.</div>
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Is there a cost to attend?</div>
@@ -1817,11 +1815,11 @@
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Where and when is the next Senior Pro Network event?</div>
-          <div class="tm-faq-a">Our next gathering is Wednesday, July 29th from 4:00&ndash;6:00 PM on the rooftop at <a href="https://harborathillsdale.com" target="_blank" rel="noopener">Harbor at Hillsdale Senior Living</a> &mdash; <a href="https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38" target="_blank" rel="noopener">2883 S. Norfolk St, San Mateo, CA</a>. See the Calendar page for upcoming dates.</div>
+          <div class="tm-faq-a">Our next gathering is Wednesday, July 29th from 4:00&ndash;6:00 PM on the rooftop at <a href="https://harborathillsdale.com" target="_blank" rel="noopener">Harbor at Hillsdale Senior Living</a>, <a href="https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38" target="_blank" rel="noopener">2883 S. Norfolk St, San Mateo, CA</a>. See the Calendar page for upcoming dates.</div>
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Who should attend?</div>
-          <div class="tm-faq-a">Anyone whose work touches the senior community &mdash; senior living operators, home-care providers, SRES realtors, geriatric care managers, elder-law attorneys, move managers, financial planners, healthcare professionals, memory care specialists, and the nonprofit partners who serve them.</div>
+          <div class="tm-faq-a">Anyone whose work touches the senior community: senior living operators, home-care providers, SRES realtors, geriatric care managers, elder-law attorneys, move managers, financial planners, healthcare professionals, memory care specialists, and the nonprofit partners who serve them.</div>
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Will refreshments be served?</div>
@@ -1829,11 +1827,11 @@
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">Can I sponsor or host a future Senior Pro Network event?</div>
-          <div class="tm-faq-a">Yes &mdash; please. Hosting a Senior Pro Network event is a beautiful way to introduce your community or service to peers in the senior-care space. Reach out via the registration form and we'll be in touch.</div>
+          <div class="tm-faq-a">Yes, please. Hosting a Senior Pro Network event is a beautiful way to introduce your community or service to peers in the senior-care space. Reach out via the registration form and we'll be in touch.</div>
         </div>
         <div class="tm-faq-item">
           <div class="tm-faq-q">What's the dress code?</div>
-          <div class="tm-faq-a">Business casual. Bring plenty of cards &mdash; and an open mind.</div>
+          <div class="tm-faq-a">Business casual. Bring plenty of cards and an open mind.</div>
         </div>
       </div>
     </div>
@@ -1887,23 +1885,23 @@
               <span class="tm-org-meta-val"><a href="tel:+16502917241">(650) 291-7241</a><br><a href="mailto:viv@vabrato.com">viv@vabrato.com</a></span>
             </div>
           </div>
-          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Click to Read Full Description</button>
+          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Read Full Description</button>
 
           <!-- Full description (shown in the pop-out) -->
           <div class="tm-org-full">
             <p>
-              Vivienne &mdash; known to friends and clients simply as <em>Viv</em> &mdash; is a Broker
+              Vivienne, known to friends and clients simply as <em>Viv</em>, is a Broker
               Associate, Partner, and co-owner of <strong>Vabrato Real Estate Services</strong> in
               Redwood City. With formal training in interior design and a deep love for
               people, Viv specializes in &ldquo;design to sell&rdquo; and in helping Peninsula
-              families navigate the most personal &mdash; and often most emotional &mdash; real estate
+              families navigate the most personal, and often most emotional, real estate
               decisions of their lives.
             </p>
             <p>
               As a certified <strong>Seniors Real Estate Specialist (SRES&reg;)</strong>, she works
               closely with older adults and their families through downsizing, relocating
               to senior living, and estate transitions. Clients describe her as
-              &ldquo;professional, creative, a friend and confidante&rdquo; &mdash; the kind of realtor who
+              &ldquo;professional, creative, a friend and confidante&rdquo;, the kind of realtor who
               gets the job done and looks after the people behind the transaction.
             </p>
             <p>
@@ -1923,7 +1921,7 @@
           <div class="tm-org-card-title">Owner &amp; Senior Care Advisor &middot; Certified Dementia Practitioner</div>
           <p class="tm-org-card-bio">
             Owner and Senior Care Advisor at Peninsula Senior Referral Services, Jowett has
-            spent 20+ years in senior care &mdash; starting as a caregiver &mdash; and now guides Bay
+            spent 20+ years in senior care, starting as a caregiver, and now guides Bay
             Area families to the right home care and senior living options with clarity and
             compassion.
           </p>
@@ -1945,7 +1943,7 @@
               <span class="tm-org-meta-val"><a href="tel:+15104614286">(510) 461-4286</a><br><a href="mailto:Jowett@PeninsulaSRS.com">Jowett@PeninsulaSRS.com</a></span>
             </div>
           </div>
-          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Click to Read Full Description</button>
+          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Read Full Description</button>
 
           <!-- Full description (shown in the pop-out) -->
           <div class="tm-org-full">
@@ -1953,13 +1951,13 @@
               Jowett San Miguel, CDP, is the Owner and Senior Care Advisor of
               <strong>Peninsula Senior Referral Services</strong>. She has worked in the home-care
               industry for more than 20 years, beginning her career as a caregiver supporting
-              seniors with a wide range of conditions, disabilities, and care needs &mdash; hands-on
+              seniors with a wide range of conditions, disabilities, and care needs, hands-on
               experience that informs the practical and emotional sides of every care decision
               she helps families make.
             </p>
             <p>
-              Over the years she expanded into home-care operations &mdash; care management, client
-              assessments, and family support &mdash; becoming a passionate advocate for both clients
+              Over the years she expanded into home-care operations (care management, client
+              assessments, and family support), becoming a passionate advocate for both clients
               and caregivers. Through Peninsula Senior Referral Services she offers personalized,
               one-on-one guidance and trusted referrals for home care as well as independent
               living, assisted living, memory care, and board-and-care homes, each tailored to
@@ -2003,7 +2001,7 @@
               <span class="tm-org-meta-val"><a href="tel:+16503461595">(650) 346-1595</a><br><a href="mailto:mark@vabrato.com">mark@vabrato.com</a></span>
             </div>
           </div>
-          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Click to Read Full Description</button>
+          <button type="button" class="tm-btn tm-btn-outline tm-org-readmore">Read Full Description</button>
 
           <!-- Full description (shown in the pop-out) -->
           <div class="tm-org-full">
@@ -2011,14 +2009,14 @@
               Mark Martinho is a Broker, attorney (J.D.), and licensed General Contractor with
               <strong>Vabrato Real Estate Services</strong>. After earning a Mechanical Engineering
               degree and working as an engineer at companies like IBM, Seagate, and Applied
-              Materials &mdash; and later as a research analyst at Merrill Lynch &mdash; he moved into real
+              Materials, and later as a research analyst at Merrill Lynch, he moved into real
               estate full-time in 2003, completing his law degree in 2013 along the way.
             </p>
             <p>
               Born in Canada, raised in Portugal, and a Bay Area resident for three decades,
               Mark pairs deep local market knowledge with an unusual toolkit spanning law,
               structural engineering, finance, and hands-on construction. He likens that
-              combination to an insurance policy for clients &mdash; skills you hope you never need,
+              combination to an insurance policy for clients: skills you hope you never need,
               but are glad are there.
             </p>
             <p>
@@ -2127,7 +2125,7 @@
   <div class="tm-subhero">
     <div class="tm-subhero-eyebrow">Memories</div>
     <h1 class="tm-subhero-title">Gallery</h1>
-    <p class="tm-subhero-tag">Moments from past Senior Pro Network events — the people, the conversations, the connections.</p>
+    <p class="tm-subhero-tag">Moments from past Senior Pro Network events: the people, the conversations, the connections.</p>
   </div>
 
   <div class="tm-section">
@@ -2190,7 +2188,7 @@
         <h2>2. Eligibility</h2>
         <p>
           You must be at least 18 years of age and a professional, business owner, or
-          community partner connected to the senior-care, senior living, real estate,
+          community partner connected to the senior-care, senior living, healthcare,
           healthcare, financial, or related support-services industries to register
           for the Event. The Organizers reserve the right, at their sole discretion,
           to decline or cancel any registration.
@@ -2292,8 +2290,8 @@
           To the fullest extent permitted by California law, the Organizers, the
           host venue, and their respective officers, employees, agents, and
           affiliates shall <strong>not</strong> be liable for any indirect, incidental,
-          consequential, or punitive damages — including but not limited to loss of
-          business, profits, or data — arising out of your registration,
+          consequential, or punitive damages (including but not limited to loss of
+          business, profits, or data) arising out of your registration,
           attendance, or use of the Site, even if advised of the possibility of
           such damages. In no event shall the aggregate liability exceed
           one hundred U.S. dollars ($100.00).
@@ -2310,7 +2308,7 @@
 
         <h2>10. Intellectual Property</h2>
         <p>
-          All content on this Site — including text, graphics, logos, the "Senior Pro Network" wordmark, photos, and design — is the property of the Organizers
+          All content on this Site (including text, graphics, logos, the "Senior Pro Network" wordmark, photos, and design) is the property of the Organizers
           or used with permission and is protected by United States copyright and
           trademark law. You may not reproduce, distribute, or create derivative
           works without prior written consent.
@@ -2354,8 +2352,8 @@
         <h2>15. Contact</h2>
         <p>
           Questions about these Terms or your personal information:<br>
-          <strong>Vivienne Kelvin</strong> &mdash; <a href="mailto:viv@vabrato.com">viv@vabrato.com</a> &middot; <a href="tel:+16502917241">(650) 291-7241</a><br>
-          <strong>Vabrato Real Estate Services</strong> &mdash; <a href="https://www.google.com/maps/place/1005+Edgewood+Rd,+Redwood+City,+CA+94062" target="_blank" rel="noopener">1005 Edgewood Rd, Redwood City, CA</a>
+          <strong>Vivienne Kelvin</strong>: <a href="mailto:viv@vabrato.com">viv@vabrato.com</a> &middot; <a href="tel:+16502917241">(650) 291-7241</a><br>
+          <strong>Vabrato Real Estate Services</strong>: <a href="https://www.google.com/maps/place/1005+Edgewood+Rd,+Redwood+City,+CA+94062" target="_blank" rel="noopener">1005 Edgewood Rd, Redwood City, CA</a>
         </p>
 
         <div style="text-align: center; margin-top: 40px;">
@@ -2512,16 +2510,16 @@
           form.reset();
           document.getElementById('tmFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
-          alert('Sorry — we couldn\'t register you just now. ' + (result.error || 'Please try again or email viv@vabrato.com.'));
+          alert('Sorry, we couldn\'t register you just now. ' + (result.error || 'Please try again or email viv@vabrato.com.'));
         }
       } catch (err) {
         // file:// previews and pre-deploy testing throw TypeError because the
         // function endpoint doesn't exist yet. Treat that as demo success so
         // the form is still testable. Real production failures (network drops)
-        // also land here — that's an acceptable trade-off; users can retry.
+        // also land here, that's an acceptable trade-off; users can retry.
         const isLocalPreview = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
         if (isLocalPreview) {
-          console.warn('Senior Pro Network registration (local preview — no backend):', data);
+          console.warn('Senior Pro Network registration (local preview, no backend):', data);
           document.getElementById('tmFormSuccess').classList.add('show');
           form.reset();
           document.getElementById('tmFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -2548,11 +2546,11 @@
   /* ---------- 5. Calendar ---------- */
   let calDate = new Date(2026, 6, 1); // July 2026 default
   /* ============================================================
-     SENIOR PRO NETWORK EVENTS  —  Edit this list to add/change venues.
+     SENIOR PRO NETWORK EVENTS: Edit this list to add/change venues.
      ------------------------------------------------------------
      Each event has:
        title  : Display title for the event
-       venue  : Venue name shown to visitors. Use 'TBA — Venue Coming Soon'
+       venue  : Venue name shown to visitors. Use 'TBA: Venue Coming Soon'
                 as placeholder until confirmed.
        url    : Link target. Use a Google Maps URL for the venue
                 (e.g. 'https://www.google.com/maps/place/...'),
@@ -2562,14 +2560,14 @@
      ============================================================ */
   const MIXER_EVENTS = {
     '2026-4-1':  { title: 'Inaugural Senior Pro Network',  venue: 'Peninsula Senior-Care Community', url: '' },
-    '2026-5-6':  { title: 'May Senior Pro Network',        venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
+    '2026-5-6':  { title: 'May Senior Pro Network',        venue: 'TBA: Venue Coming Soon',   url: '' },
     '2026-7-29':  { title: 'July Senior Pro Network',       venue: 'Harbor at Hillsdale',  url: 'https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38' },
-    '2026-8-26':  { title: 'August Senior Pro Network',     venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
-    '2026-9-30':  { title: 'September Senior Pro Network',  venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
-    '2026-10-28': { title: 'October Senior Pro Network',    venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
-    '2026-11-25': { title: 'November Senior Pro Network',   venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
-    '2026-12-30': { title: 'December Senior Pro Network',   venue: 'TBA &mdash; Venue Coming Soon',   url: '' },
-    '2027-1-27':  { title: 'January Senior Pro Network',    venue: 'TBA &mdash; Venue Coming Soon',   url: '' }
+    '2026-8-26':  { title: 'August Senior Pro Network',     venue: 'TBA: Venue Coming Soon',   url: '' },
+    '2026-9-30':  { title: 'September Senior Pro Network',  venue: 'TBA: Venue Coming Soon',   url: '' },
+    '2026-10-28': { title: 'October Senior Pro Network',    venue: 'TBA: Venue Coming Soon',   url: '' },
+    '2026-11-25': { title: 'November Senior Pro Network',   venue: 'TBA: Venue Coming Soon',   url: '' },
+    '2026-12-30': { title: 'December Senior Pro Network',   venue: 'TBA: Venue Coming Soon',   url: '' },
+    '2027-1-27':  { title: 'January Senior Pro Network',    venue: 'TBA: Venue Coming Soon',   url: '' }
   };
   const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -2698,7 +2696,7 @@
     if (e.key === 'Escape' && modal.classList.contains('open')) closeEventModal();
   });
 
-  /* ---------- 6. Gallery — 14 placeholder slots ---------- */
+  /* ---------- 6. Gallery: 14 placeholder slots ---------- */
   const GALLERY = [
     { n: 1,  cat: 'hosts',      cap: 'Your Hosts',                        src: '/photos/the-mixer-trousdale-16.jpg' },
     { n: 2,  cat: 'networking', cap: 'A Room Full of Smiles',             src: '/photos/the-mixer-trousdale-9.jpg' },
