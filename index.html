@@ -1481,6 +1481,76 @@
    ===================================================================== */
 @keyframes tmFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
+/* =====================================================================
+   22. RESPONSIVE LAYER  (consolidated mobile/tablet refinements)
+   Appended last so equal-specificity rules win by source order.
+   ===================================================================== */
+
+/* ---- Tablet & large phones ---- */
+@media (max-width: 880px) {
+  #the-mixer-site .tm-section { padding: 60px 0; }
+  #the-mixer-site .tm-section-tight { padding: 40px 0; }
+  #the-mixer-site .tm-eyebrow { font-size: 20px; letter-spacing: 0.18em; }
+  #the-mixer-site .tm-countdown-label { font-size: 22px; letter-spacing: 0.14em; }
+  #the-mixer-site .tm-cal-card { padding: 28px; }
+  #the-mixer-site .tm-form-card { padding: 36px 28px; }
+  #the-mixer-site .tm-org-modal-inner { padding: 36px; }
+}
+
+/* ---- Phones ---- */
+@media (max-width: 600px) {
+  #the-mixer-site .tm-container { padding: 0 18px; }
+  #the-mixer-site .tm-hero-inner { padding: 0 18px; }
+  #the-mixer-site .tm-section { padding: 48px 0; }
+  #the-mixer-site .tm-section-tight { padding: 34px 0; }
+  #the-mixer-site .tm-hero { padding: 40px 0 36px; }
+  #the-mixer-site p { font-size: 17px; }
+
+  /* Headings / eyebrows scaled down for small screens */
+  #the-mixer-site .tm-eyebrow { font-size: 17px; letter-spacing: 0.16em; }
+  #the-mixer-site .tm-section-sub { font-size: 17px; margin-bottom: 36px; }
+  #the-mixer-site .tm-hero-top-line { font-size: 18px; letter-spacing: 0.12em; margin-bottom: 12px; }
+
+  /* COUNTDOWN — the key fix: 2x2 grid so labels never clip */
+  #the-mixer-site .tm-countdown-wrap { padding: 26px 18px 22px; border-radius: 18px; }
+  #the-mixer-site .tm-countdown { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  #the-mixer-site .tm-countdown-label { font-size: 18px; letter-spacing: 0.10em; margin-bottom: 14px; }
+  #the-mixer-site .tm-count-cell { padding: 16px 6px 12px; }
+  #the-mixer-site .tm-count-num { font-size: clamp(30px, 11vw, 46px); }
+  #the-mixer-site .tm-count-lbl { font-size: 12px; letter-spacing: 0.10em; }
+
+  /* Form */
+  #the-mixer-site .tm-form-card { padding: 28px 20px; }
+  #the-mixer-site .tm-form-title { font-size: 26px; }
+  #the-mixer-site .tm-form-summary { padding: 26px 22px; }
+  #the-mixer-site .tm-label { font-size: 16px; }
+
+  /* Calendar */
+  #the-mixer-site .tm-cal-card { padding: 20px 16px; border-radius: 18px; }
+  #the-mixer-site .tm-cal-head { margin-bottom: 18px; }
+  #the-mixer-site .tm-cal-title { font-size: 24px; }
+  #the-mixer-site .tm-cal-nav button { width: 36px; height: 36px; font-size: 16px; }
+  #the-mixer-site .tm-cal-grid { gap: 4px; }
+  #the-mixer-site .tm-cal-cell { font-size: 14px; border-radius: 9px; }
+  #the-mixer-site .tm-cal-cell.tm-event::after { top: 2px; right: 5px; font-size: 9px; }
+  #the-mixer-site .tm-up-info p { font-size: 17px; }
+
+  /* Organizer modal header — stack avatar above name on narrow screens */
+  #the-mixer-site .tm-org-modal-inner { padding: 30px 22px; }
+  #the-mixer-site .tm-org-modal-head {
+    flex-direction: column; align-items: center; text-align: center;
+    gap: 12px; padding-right: 0;
+  }
+  #the-mixer-site .tm-org-modal-body p { font-size: 17px; }
+  #the-mixer-site .tm-event-modal-inner { padding: 26px 22px; }
+}
+
+/* ---- Very small phones ---- */
+@media (max-width: 360px) {
+  #the-mixer-site .tm-count-num { font-size: 30px; }
+  #the-mixer-site .tm-cal-cell { font-size: 13px; }
+}
+
 /* Print-friendly fallback */
 @media print {
   #the-mixer-site .tm-nav, #the-mixer-site .tm-ribbon { display: none !important; }
@@ -2433,7 +2503,10 @@
       location.hash = page;        // triggers hashchange -> applyHash (adds history entry)
     }
   });
-  applyHash();  // honor deep links / refresh on load
+  // NOTE: the initial applyHash() call is deferred to the very end of this IIFE
+  // (see "honor deep links on load" below) so that everything it can reach —
+  // e.g. calDate and the GALLERY data — is initialized before a deep link such
+  // as #calendar is honored on first paint or refresh.
 
   /* Mobile menu toggle */
   document.getElementById('tmMenuToggle').addEventListener('click', function(){
@@ -2809,6 +2882,10 @@
 
   /* Initial render */
   renderGallery();
+
+  /* Honor deep links / refresh on load — runs last so calDate, GALLERY, and all
+     render helpers are fully initialized before any #calendar / #gallery hash. */
+  applyHash();
 })();
 </script>
 
