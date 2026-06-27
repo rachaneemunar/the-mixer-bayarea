@@ -18,11 +18,19 @@
 <script>
 (function () {
   try {
-    if (!document.querySelector('meta[name="viewport"]')) {
-      var m = document.createElement('meta');
-      m.name = 'viewport';
-      m.content = 'width=device-width, initial-scale=1, viewport-fit=cover';
+    var content = 'width=device-width, initial-scale=1, viewport-fit=cover';
+    var m = document.querySelector('meta[name="viewport"]');
+    if (!m) {
+      // No viewport tag at all: the browser would use a ~980px desktop layout
+      // viewport and shrink it on phones. Add a correct one.
+      m = document.createElement('meta');
+      m.setAttribute('name', 'viewport');
+      m.setAttribute('content', content);
       (document.head || document.documentElement).appendChild(m);
+    } else if (!/width\s*=\s*device-width/i.test(m.getAttribute('content') || '')) {
+      // A viewport tag exists but lacks width=device-width (some themes do this),
+      // which also forces a desktop layout on phones. Correct it.
+      m.setAttribute('content', content);
     }
   } catch (e) { /* no-op */ }
 })();
@@ -1508,69 +1516,111 @@
    Appended last so equal-specificity rules win by source order.
    ===================================================================== */
 
-/* ---- Tablet & large phones ---- */
-@media (max-width: 880px) {
-  #the-mixer-site .tm-section { padding: 60px 0; }
-  #the-mixer-site .tm-section-tight { padding: 40px 0; }
-  #the-mixer-site .tm-eyebrow { font-size: 20px; letter-spacing: 0.18em; }
+/* ---------------------------------------------------------------------
+   Breakpoints are intentionally distinct:
+     • Desktop  > 1024px            full multi-column layouts
+     • Tablet   601px – 1024px      balanced 2-up grids, 4-up countdown
+     • Mobile   <= 600px            single full-width column, 2x2 countdown
+   --------------------------------------------------------------------- */
+
+/* ============================ TABLET (601–1024px) ============================ */
+@media (min-width: 601px) and (max-width: 1024px) {
+  #the-mixer-site .tm-section { padding: 64px 0; }
+  #the-mixer-site .tm-section-tight { padding: 44px 0; }
+  #the-mixer-site .tm-eyebrow { font-size: 20px; }
   #the-mixer-site .tm-countdown-label { font-size: 22px; letter-spacing: 0.14em; }
-  #the-mixer-site .tm-cal-card { padding: 28px; }
-  #the-mixer-site .tm-form-card { padding: 36px 28px; }
-  #the-mixer-site .tm-org-modal-inner { padding: 36px; }
+
+  /* 3-up desktop grids become a balanced 2-up on tablets — clearly different
+     from the single full-width column phones get. These also override the
+     theme's older 1-column rules in this range. */
+  #the-mixer-site .tm-hosts,
+  #the-mixer-site .tm-org-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 760px;
+    margin-left: auto; margin-right: auto;
+    gap: 24px;
+  }
+  #the-mixer-site .tm-about-grid { grid-template-columns: 1fr 1fr; }
+
+  #the-mixer-site .tm-cal-card { padding: 30px; }
+  #the-mixer-site .tm-form-card { padding: 36px 30px; }
+  #the-mixer-site .tm-org-modal-inner { padding: 38px; }
 }
 
-/* ---- Phones ---- */
+/* ============================ MOBILE (<=600px) ============================ */
 @media (max-width: 600px) {
-  #the-mixer-site .tm-container { padding: 0 18px; }
-  #the-mixer-site .tm-hero-inner { padding: 0 18px; }
-  #the-mixer-site .tm-section { padding: 48px 0; }
-  #the-mixer-site .tm-section-tight { padding: 34px 0; }
-  #the-mixer-site .tm-hero { padding: 40px 0 36px; }
+  /* Every multi-column grid collapses to ONE column that spans the full width,
+     edge to edge — no leftover max-width caps or auto-centering that would
+     pinch the column into the middle of the screen. */
+  #the-mixer-site .tm-trio,
+  #the-mixer-site .tm-hosts,
+  #the-mixer-site .tm-org-grid,
+  #the-mixer-site .tm-about-grid,
+  #the-mixer-site .tm-form-wrap,
+  #the-mixer-site .tm-form-grid {
+    grid-template-columns: 1fr !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 16px;
+  }
+  /* Cards/items inside those grids also fill the full width */
+  #the-mixer-site .tm-host-card,
+  #the-mixer-site .tm-org-card,
+  #the-mixer-site .tm-form-card,
+  #the-mixer-site .tm-form-summary { width: 100%; }
+
+  #the-mixer-site .tm-container { padding: 0 16px; }
+  #the-mixer-site .tm-hero-inner { padding: 0 16px; }
+  #the-mixer-site .tm-section { padding: 44px 0; }
+  #the-mixer-site .tm-section-tight { padding: 32px 0; }
+  #the-mixer-site .tm-hero { padding: 36px 0 32px; }
   #the-mixer-site p { font-size: 17px; }
 
-  /* Headings / eyebrows scaled down for small screens */
   #the-mixer-site .tm-eyebrow { font-size: 17px; letter-spacing: 0.16em; }
-  #the-mixer-site .tm-section-sub { font-size: 17px; margin-bottom: 36px; }
-  #the-mixer-site .tm-hero-top-line { font-size: 18px; letter-spacing: 0.12em; margin-bottom: 12px; }
+  #the-mixer-site .tm-section-sub { font-size: 17px; margin-bottom: 32px; }
+  #the-mixer-site .tm-hero-top-line { font-size: 17px; letter-spacing: 0.12em; margin-bottom: 12px; }
 
-  /* COUNTDOWN — the key fix: 2x2 grid so labels never clip */
-  #the-mixer-site .tm-countdown-wrap { padding: 26px 18px 22px; border-radius: 18px; }
+  /* COUNTDOWN -> 2x2 grid so DAYS / HOURS / MINUTES / SECONDS never clip */
+  #the-mixer-site .tm-countdown-wrap { padding: 24px 16px 20px; border-radius: 18px; }
   #the-mixer-site .tm-countdown { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  #the-mixer-site .tm-countdown-label { font-size: 18px; letter-spacing: 0.10em; margin-bottom: 14px; }
+  #the-mixer-site .tm-countdown-label { font-size: 18px; letter-spacing: 0.08em; margin-bottom: 14px; }
   #the-mixer-site .tm-count-cell { padding: 16px 6px 12px; }
-  #the-mixer-site .tm-count-num { font-size: clamp(30px, 11vw, 46px); }
-  #the-mixer-site .tm-count-lbl { font-size: 12px; letter-spacing: 0.10em; }
+  #the-mixer-site .tm-count-num { font-size: clamp(28px, 11vw, 44px); }
+  #the-mixer-site .tm-count-lbl { font-size: 11px; letter-spacing: 0.08em; }
 
   /* Form */
-  #the-mixer-site .tm-form-card { padding: 28px 20px; }
-  #the-mixer-site .tm-form-title { font-size: 26px; }
-  #the-mixer-site .tm-form-summary { padding: 26px 22px; }
-  #the-mixer-site .tm-label { font-size: 16px; }
+  #the-mixer-site .tm-form-card { padding: 26px 18px; }
+  #the-mixer-site .tm-form-title { font-size: 25px; }
+  #the-mixer-site .tm-form-summary { padding: 24px 20px; }
+  #the-mixer-site .tm-label { font-size: 15px; }
 
   /* Calendar */
-  #the-mixer-site .tm-cal-card { padding: 20px 16px; border-radius: 18px; }
-  #the-mixer-site .tm-cal-head { margin-bottom: 18px; }
-  #the-mixer-site .tm-cal-title { font-size: 24px; }
-  #the-mixer-site .tm-cal-nav button { width: 36px; height: 36px; font-size: 16px; }
-  #the-mixer-site .tm-cal-grid { gap: 4px; }
-  #the-mixer-site .tm-cal-cell { font-size: 14px; border-radius: 9px; }
-  #the-mixer-site .tm-cal-cell.tm-event::after { top: 2px; right: 5px; font-size: 9px; }
-  #the-mixer-site .tm-up-info p { font-size: 17px; }
+  #the-mixer-site .tm-cal-card { padding: 18px 12px; border-radius: 16px; }
+  #the-mixer-site .tm-cal-head { margin-bottom: 16px; }
+  #the-mixer-site .tm-cal-title { font-size: 22px; }
+  #the-mixer-site .tm-cal-nav button { width: 34px; height: 34px; font-size: 15px; }
+  #the-mixer-site .tm-cal-grid { gap: 3px; }
+  #the-mixer-site .tm-cal-day-name { font-size: 10px; padding: 6px 0; }
+  #the-mixer-site .tm-cal-cell { font-size: 13px; border-radius: 8px; }
+  #the-mixer-site .tm-cal-cell.tm-event::after { top: 2px; right: 4px; font-size: 9px; }
+  #the-mixer-site .tm-up-info p { font-size: 16px; }
 
-  /* Organizer modal header — stack avatar above name on narrow screens */
-  #the-mixer-site .tm-org-modal-inner { padding: 30px 22px; }
+  /* Organizer / event modals */
+  #the-mixer-site .tm-org-modal-inner { padding: 28px 20px; }
   #the-mixer-site .tm-org-modal-head {
     flex-direction: column; align-items: center; text-align: center;
     gap: 12px; padding-right: 0;
   }
-  #the-mixer-site .tm-org-modal-body p { font-size: 17px; }
-  #the-mixer-site .tm-event-modal-inner { padding: 26px 22px; }
+  #the-mixer-site .tm-org-modal-body p { font-size: 16px; }
+  #the-mixer-site .tm-event-modal-inner { padding: 24px 20px; }
 }
 
-/* ---- Very small phones ---- */
+/* ============================ SMALL PHONES (<=360px) ============================ */
 @media (max-width: 360px) {
-  #the-mixer-site .tm-count-num { font-size: 30px; }
-  #the-mixer-site .tm-cal-cell { font-size: 13px; }
+  #the-mixer-site .tm-count-num { font-size: 28px; }
+  #the-mixer-site .tm-cal-cell { font-size: 12px; }
+  #the-mixer-site .tm-count-lbl { font-size: 10px; letter-spacing: 0.06em; }
 }
 
 /* Print-friendly fallback */
