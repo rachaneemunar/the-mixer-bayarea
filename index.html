@@ -569,6 +569,60 @@
 
 /* ---- form error message ---- */
 #the-mixer-site .tm-form-error{ color:#d6455e; font-size:15px; font-weight:600; margin:2px 0 14px; }
+     /* ---- TEXT ON PHOTO ORGANIZERS ---- */
+     #the-mixer-site .tm-trio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+#the-mixer-site .tm-trio-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#the-mixer-site .tm-trio-item p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: 0 !important;
+  padding: clamp(10px, 2vw, 16px) clamp(12px, 3vw, 20px);
+
+  color: #ffffff !important;
+  font-size: clamp(12px, 2vw, 15px);
+  line-height: 1.35;
+  font-weight: 500;
+  text-align: center;
+
+  z-index: 5;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.25),
+    transparent
+  );
+}
+
+     @media (max-width: 768px) {
+  #the-mixer-site .tm-trio-item p {
+    font-size: 12px;
+    line-height: 1.3;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #the-mixer-site .tm-trio-item p {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+}
+     
 </style>
 
 <!-- ====================  RIBBON  ==================== -->
