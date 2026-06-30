@@ -205,13 +205,14 @@
 #the-mixer-site .tm-bene p{color:var(--muted); font-size:14.5px;}
 
 /* ---- host venue strip ---- */
-#the-mixer-site .tm-venue{display:flex; align-items:center; gap:34px; background:#fff; border:1px solid var(--line);
-  border-radius:var(--r-lg); padding:30px 38px; box-shadow:var(--sh-md); flex-wrap:wrap;}
-#the-mixer-site .tm-venue-logo{height:70px; width:auto; flex:none;}
-#the-mixer-site .tm-venue-info{flex:1; min-width:220px;}
-#the-mixer-site .tm-venue-info .tm-vn{font-family:var(--serif); font-weight:600; font-size:26px; color:var(--navy);}
-#the-mixer-site .tm-venue-info .tm-va{color:var(--muted); font-size:15px; margin-top:2px;}
-#the-mixer-site .tm-venue-links{display:flex; gap:10px; flex-wrap:wrap;}
+#the-mixer-site .tm-venue{display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px;
+  background:#fff; border:1px solid var(--line);
+  border-radius:var(--r-lg); padding:50px 38px; box-shadow:var(--sh-md);}
+#the-mixer-site .tm-venue-logo{height:128px; width:auto; flex:none;}
+#the-mixer-site .tm-venue-info{min-width:0;}
+#the-mixer-site .tm-venue-info .tm-vn{font-family:var(--serif); font-weight:600; font-size:32px; color:var(--navy);}
+#the-mixer-site .tm-venue-info .tm-va{color:var(--muted); font-size:16px; margin-top:4px;}
+#the-mixer-site .tm-venue-links{display:flex; gap:12px; flex-wrap:wrap; justify-content:center;}
 
 /* ---- organizer cards ---- */
 #the-mixer-site .tm-org-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:50px;}
@@ -414,7 +415,7 @@
   #the-mixer-site .tm-section{padding:64px 0;}
 }
 @media (max-width:600px){
-  #the-mixer-site .tm-trio{grid-template-columns:1fr; gap:14px; transform:none; margin-bottom:8px;}
+  #the-mixer-site .tm-trio{grid-template-columns:1fr; gap:14px; transform:none; margin-top:46px; margin-bottom:8px;}
   #the-mixer-site .tm-trust{padding-top:34px;}
   #the-mixer-site .tm-trio-item:nth-child(2){transform:none;}
   #the-mixer-site .tm-count{grid-template-columns:repeat(2,1fr);}
@@ -624,7 +625,7 @@
       <h1>Senior Pro Network</h1>
       <div class="tm-hero-tag">A professional networking event</div>
       <div class="tm-hero-photo">
-        <img src="https://raw.githubusercontent.com/rachaneemunar/the-mixer-bayarea/main/photos/venue4.jpg" alt="Rooftop networking event at sunset">
+        <img src="venue4.jpg" alt="Rooftop networking event at sunset">
       </div>
       <div class="tm-hero-where">
         <b>Wednesday, July 29th &middot; 4:00&nbsp;&ndash;&nbsp;6:00&nbsp;PM</b><br>
@@ -827,7 +828,6 @@
       <div class="tm-story-block">
         <h3>What to Expect</h3>
         <p>Each Senior Pro Network event is hosted at a senior-living community or partner venue on the Peninsula. Expect a two-hour evening of networking and meaningful introductions.</p>
-        <p>No formal program. No sales pitches. Just real people who care about seniors, sharing what they do and learning from each other, the old-fashioned, trustworthy way of doing business.</p>
       </div>
     </div>
   </div>
@@ -851,7 +851,7 @@
       <h2 class="tm-h2">Common Questions</h2>
     </div>
     <div class="tm-container tm-faq" id="tmFaq">
-      <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">What is the purpose of Senior Pro Network?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Senior Pro Network is a small, intentional gathering of senior-service professionals across the Peninsula: senior living, home care, healthcare, elder law, financial planning, move managers, and the nonprofits that work alongside them. The goal is simple: get to know each other in person, build genuine relationships over time, and eventually pass referrals back and forth with people you actually trust. No pitches, no panels, just real conversations between the people who serve seniors every day.</div></div></div>
+      <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">What is the purpose of Senior Pro Network?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Senior Pro Network is a small, intentional gathering of senior-service professionals across the Peninsula: senior living, home care, healthcare, elder law, financial planning, move managers, and the nonprofits that work alongside them. The goal is simple: get to know each other in person, build genuine relationships over time, and eventually pass referrals back and forth with people you actually trust.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Is there a cost to attend?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Senior Pro Network is complimentary thanks to our generous hosts and sponsors. We ask only that you register in advance so we can plan for refreshments and seating.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Where and when is the next Senior Pro Network event?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Our next gathering is Wednesday, July 29th from 4:00&ndash;6:00 PM on the rooftop at <a href="https://harborathillsdale.com" target="_blank" rel="noopener">Rooftop, Harbor at Hillsdale Senior Living</a>, <a href="https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38" target="_blank" rel="noopener">2883 S. Norfolk St, San Mateo, CA</a>. See the Calendar page for upcoming dates.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Who should attend?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Anyone whose work touches the senior community: senior living operators, home-care providers, geriatric care managers, elder-law attorneys, move managers, financial planners, healthcare professionals, memory care specialists, and the nonprofit partners who serve them.</div></div></div>
