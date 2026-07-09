@@ -1388,16 +1388,20 @@
       }).filter(function(e){ return e.date.getTime() + 7200000 > now; })
         .sort(function(a,b){ return a.date - b.date; })
         .slice(0,4)
-        .forEach(function(e){
+     .forEach(function(e, idx){
           var venueHTML = e.url
             ? '<a href="'+e.url+'" target="_blank" rel="noopener">'+e.venue+'</a>'
             : e.venue;
+          // Show the RSVP button only on the soonest upcoming event
+          var rsvpHTML = (idx === 0)
+            ? '<a class="tm-btn tm-btn-outline" href="#register" data-page="home" data-scroll="tmRegister">RSVP</a>'
+            : '';
           var item = document.createElement('div');
           item.className = 'tm-upcoming-item';
           item.innerHTML =
             '<div class="tm-up-date"><div class="tm-up-month">'+MONTHS[e.date.getMonth()].slice(0,3)+'</div><div class="tm-up-day">'+e.date.getDate()+'</div></div>'+
             '<div class="tm-up-info"><h4>'+e.title+'</h4><p>'+venueHTML+' \u00b7 4:00 \u2013 6:00 PM</p></div>'+
-            '<a class="tm-btn tm-btn-outline" href="#register" data-page="home" data-scroll="tmRegister">RSVP</a>';
+            rsvpHTML;
           list.appendChild(item);
         });
     }
@@ -1409,7 +1413,19 @@
 
   /* ---------- Event modal ---------- */
   var eventModal = document.getElementById('tmEventModal');
-  function openEventModal(year, monthIdx, day, ev){
+// Returns the date key (e.g. "2026-7-29") of the soonest upcoming event, or null
+  function nextEventKey(){
+    var now = Date.now();
+    var soonest = null, soonestTime = Infinity;
+    Object.keys(MIXER_EVENTS).forEach(function(k){
+      var p = k.split('-').map(Number);
+      var t = new Date(p[0], p[1]-1, p[2], 16).getTime() + 7200000; // event end (~6 PM)
+      if(t > now && t < soonestTime){ soonestTime = t; soonest = k; }
+    });
+    return soonest;
+  }
+     
+ function openEventModal(year, monthIdx, day, ev){
     var dateObj = new Date(year, monthIdx, day);
     var weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][dateObj.getDay()];
     document.getElementById('tmEventTitle').textContent = ev.title;
@@ -1417,6 +1433,10 @@
     document.getElementById('tmEventVenue').innerHTML = ev.url
       ? 'Venue: <a href="'+ev.url+'" target="_blank" rel="noopener">'+ev.venue+'</a>'
       : 'Venue: ' + ev.venue;
+    // Show "Reserve Your Spot" only if this is the soonest upcoming event
+    var clickedKey = year + '-' + (monthIdx+1) + '-' + day;
+    var regBtn = document.getElementById('tmEventRegister');
+    if(regBtn){ regBtn.parentElement.style.display = (clickedKey === nextEventKey()) ? '' : 'none'; }
     eventModal.classList.add('tm-open'); eventModal.setAttribute('aria-hidden','false');
   }
   function closeEvent(){ eventModal.classList.remove('tm-open'); eventModal.setAttribute('aria-hidden','true'); }
