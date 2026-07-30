@@ -1568,10 +1568,12 @@
         if(!r.ok){ throw new Error('Request failed (' + r.status + ')'); }
         return r.json().catch(function(){ return {}; });
       }).then(function(){
-        form.style.display = 'none';
-        var ok2 = document.getElementById('tmFormSuccess');
-        ok2.classList.add('tm-show');
-        ok2.scrollIntoView({behavior:'smooth', block:'center'});
+        /* Registration succeeded -> send them to the confirmation page.
+           The form is reset first so it's clean if they navigate back. */
+        form.reset();
+        if(submitBtn){ submitBtn.disabled = false; submitBtn.innerHTML = 'Complete Registration &rarr;'; }
+        try { history.replaceState(null, '', '#confirmation'); } catch(err){}
+        showPage('confirmation', null);
       }).catch(function(){
         if(submitBtn){ submitBtn.disabled = false; submitBtn.innerHTML = 'Complete Registration &rarr;'; }
         if(errEl){ errEl.style.display = 'block'; errEl.textContent = 'Sorry, something went wrong submitting your registration. Please try again, or email us directly.'; }
