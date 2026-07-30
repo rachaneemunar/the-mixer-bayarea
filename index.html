@@ -672,6 +672,73 @@
   #the-mixer-site .tm-confirm-closing{ font-size:20px; }
   #the-mixer-site .tm-confirm-actions .tm-btn{ width:100%; }
 }
+
+/* ============================================================
+   CAN'T ATTEND / FEEDBACK PAGE  (#cant-attend)
+   ============================================================ */
+#the-mixer-site .tm-miss-wrap{ max-width:780px; margin:0 auto; }
+#the-mixer-site .tm-miss-note{
+  background:var(--panel); border:1px solid var(--panel-line);
+  padding:40px 36px; box-shadow:var(--sh-sm); text-align:center; margin-bottom:34px;
+}
+#the-mixer-site .tm-miss-note h2{
+  font-family:var(--serif); font-weight:600; letter-spacing:-.01em;
+  font-size:clamp(28px,4.4vw,42px); color:var(--navy);
+}
+#the-mixer-site .tm-miss-note p{ color:var(--slate); font-size:18px; margin-top:16px; }
+#the-mixer-site .tm-miss-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
+
+#the-mixer-site .tm-fb-card{
+  background:#fff; border:1px solid var(--line);
+  padding:40px 36px; box-shadow:var(--sh-md); border-radius:0;
+}
+#the-mixer-site .tm-fb-card .tm-form-title{ text-align:center; }
+#the-mixer-site .tm-fb-intro{
+  text-align:center; color:var(--muted); font-size:16px; margin:10px 0 30px;
+}
+#the-mixer-site .tm-field textarea{
+  width:100%; padding:13px 15px; border:1px solid var(--line); border-radius:0;
+  font-family:inherit; font-size:16px; color:var(--ink); background:var(--tint3);
+  min-height:110px; resize:vertical; line-height:1.55;
+  transition:border-color .18s, box-shadow .18s;
+}
+#the-mixer-site .tm-field textarea:focus{
+  outline:none; border-color:var(--blue); background:#fff; box-shadow:0 0 0 4px rgba(43,81,216,.12);
+}
+#the-mixer-site .tm-radio-group{ display:flex; gap:12px; flex-wrap:wrap; margin-top:4px; }
+#the-mixer-site .tm-radio{
+  flex:1 1 120px; position:relative; display:block; cursor:pointer;
+}
+#the-mixer-site .tm-radio input{
+  position:absolute; opacity:0; width:0; height:0;
+}
+#the-mixer-site .tm-radio span{
+  display:block; text-align:center; padding:13px 14px;
+  border:1px solid var(--line); background:var(--tint3);
+  font-size:16px; font-weight:600; color:var(--slate);
+  transition:border-color .18s, background .18s, color .18s, box-shadow .18s;
+}
+#the-mixer-site .tm-radio:hover span{ border-color:var(--blue); color:var(--blue-deep); }
+#the-mixer-site .tm-radio input:checked + span{
+  background:var(--panel); border-color:var(--blue); color:var(--navy);
+  box-shadow:inset 0 0 0 1px var(--blue);
+}
+#the-mixer-site .tm-radio input:focus-visible + span{ box-shadow:0 0 0 4px rgba(43,81,216,.18); }
+#the-mixer-site .tm-fb-submit{ width:100%; margin-top:8px; }
+@media (max-width:600px){
+  #the-mixer-site .tm-miss-note{ padding:28px 20px; }
+  #the-mixer-site .tm-fb-card{ padding:26px 20px; }
+  #the-mixer-site .tm-miss-actions .tm-btn{ width:100%; }
+  #the-mixer-site .tm-radio{ flex:1 1 100%; }
+}
+
+/* ---- raffle page actions ---- */
+#the-mixer-site .tm-raffle-actions{
+  display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:44px;
+}
+@media (max-width:600px){
+  #the-mixer-site .tm-raffle-actions .tm-btn{ width:100%; white-space:normal; }
+}
 </style>
 
 <!-- ====================  RIBBON  ==================== -->
@@ -1103,16 +1170,23 @@
      ===================================================================== -->
 <section class="tm-page" id="tm-page-raffle">
   <div class="tm-subhero">
-    <span class="tm-eyebrow">Coming Soon</span>
+    <span class="tm-eyebrow">Donate a Prize</span>
     <h1>Raffle</h1>
-    <p class="tm-subhero-tag">A little something extra for everyone who joins us. Details are on the way.</p>
+    <p class="tm-subhero-tag">We&rsquo;re now accepting raffle prizes from anyone who&rsquo;d like to send one.</p>
   </div>
   <div class="tm-section">
     <div class="tm-container tm-center" style="max-width:760px;">
       <div class="tm-raffle-card">
-        <h2 class="tm-h2">Our Raffle Is On the Way</h2>
-        <p style="color:var(--slate); font-size:18px; margin-top:18px;">We're putting together a raffle for our Senior Pro Network events, and you're welcome to bring a prize to add to it. It's a great way to spotlight your business in front of everyone in the room and give guests something extra to look forward to.</p>
-        <div class="tm-mt-lg"><a class="tm-btn tm-btn-primary tm-btn-lg" href="#register" data-page="home" data-scroll="tmRegister">Reserve Your Spot</a></div>
+        <h2 class="tm-h2">We Accept Raffle Prizes</h2>
+        <p style="color:var(--slate); font-size:18px; margin-top:18px;">Our raffle is a favorite part of every Senior Pro Network gathering, and we welcome prizes from anyone who&rsquo;d like to contribute one. It&rsquo;s a great way to spotlight your business in front of everyone in the room and give guests something extra to look forward to.</p>
+        <p style="color:var(--slate); font-size:18px;">If you&rsquo;d like to send a raffle prize, give Jowett a call and she&rsquo;ll take care of the details.</p>
+        <div class="tm-raffle-actions">
+          <a class="tm-btn tm-btn-primary tm-btn-lg" href="tel:+15104614286">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M21.5 16.9v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.7 16.7 0 0 1-5.1-5.1A17 17 0 0 1 4.5 6.1 1.7 1.7 0 0 1 6.2 4.2h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.9.3 1.7.6 2.5a1.7 1.7 0 0 1-.4 1.8l-1.1 1.1a13.6 13.6 0 0 0 5.1 5.1l1.1-1.1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.6.5 2.5.6a1.7 1.7 0 0 1 1.4 1.7z"></path></svg>
+            Call Jowett &middot; (510) 461-4286
+          </a>
+          <a class="tm-btn tm-btn-outline tm-btn-lg" href="#register" data-page="home" data-scroll="tmRegister">Reserve Your Spot</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1264,6 +1338,85 @@
           </div>
 
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     PAGE: CAN'T ATTEND + FEEDBACK  (direct link:  #cant-attend )
+     Form posts JSON to /.netlify/functions/brevo-feedback
+     ===================================================================== -->
+<section class="tm-page" id="tm-page-cant-attend">
+  <div class="tm-subhero">
+    <span class="tm-eyebrow">We&rsquo;ll Miss You</span>
+    <h1>Can&rsquo;t Make It?</h1>
+    <p class="tm-subhero-tag">No problem at all &mdash; we&rsquo;d still love to hear from you before the next one.</p>
+  </div>
+
+  <div class="tm-section">
+    <div class="tm-container">
+      <div class="tm-miss-wrap">
+
+        <div class="tm-miss-note">
+          <h2>Thanks for Letting Us Know</h2>
+          <p>We&rsquo;re sorry you can&rsquo;t join us this time, but you&rsquo;re still part of the Senior Pro Network. We&rsquo;ll keep you posted on the next gathering, and your input below helps us make it worth your while.</p>
+          <div class="tm-miss-actions">
+            <a class="tm-btn tm-btn-primary tm-btn-lg" href="#calendar" data-page="calendar">See Upcoming Dates</a>
+            <a class="tm-btn tm-btn-outline tm-btn-lg" href="#home" data-page="home">&larr; Back to Home</a>
+          </div>
+        </div>
+
+        <div class="tm-fb-card">
+          <div class="tm-form-success" id="tmFeedbackSuccess">
+            <b>Thank You!</b>
+            Your feedback has been received. We really appreciate you taking the time &mdash; it helps shape every event we plan.
+          </div>
+
+          <form id="tmFeedbackForm" novalidate>
+            <div class="tm-form-title">Share Your Feedback</div>
+            <p class="tm-fb-intro">A few quick questions. Only your name and email are required.</p>
+
+            <div class="tm-field-row">
+              <div class="tm-field">
+                <label for="tmFbName">Name *</label>
+                <input id="tmFbName" name="fbName" autocomplete="name" required>
+              </div>
+              <div class="tm-field">
+                <label for="tmFbEmail">Email *</label>
+                <input id="tmFbEmail" name="fbEmail" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmFbEnjoyed">What did you enjoy most?</label>
+              <textarea id="tmFbEnjoyed" name="enjoyedMost" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmFbImprove">What could we improve?</label>
+              <textarea id="tmFbImprove" name="couldImprove" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmFbTopics">What topics or activities would you like at future events?</label>
+              <textarea id="tmFbTopics" name="futureTopics" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label>Would you recommend Senior Pro Network to a colleague?</label>
+              <div class="tm-radio-group">
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="Yes"><span>Yes</span></label>
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="Maybe"><span>Maybe</span></label>
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="No"><span>No</span></label>
+              </div>
+            </div>
+
+            <div id="tmFeedbackError" class="tm-form-error" style="display:none;"></div>
+            <button type="submit" class="tm-btn tm-btn-primary tm-btn-lg tm-fb-submit">Send Feedback &rarr;</button>
+          </form>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1422,6 +1575,61 @@
       }).catch(function(){
         if(submitBtn){ submitBtn.disabled = false; submitBtn.innerHTML = 'Complete Registration &rarr;'; }
         if(errEl){ errEl.style.display = 'block'; errEl.textContent = 'Sorry, something went wrong submitting your registration. Please try again, or email us directly.'; }
+      });
+    });
+  }
+
+  /* ---------- Feedback form (Can't Attend page) -> Brevo ---------- */
+  var fbForm = document.getElementById('tmFeedbackForm');
+  if(fbForm){
+    fbForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var ok = true;
+      fbForm.querySelectorAll('[required]').forEach(function(f){
+        if(!f.value.trim()){ ok = false; f.style.borderColor = '#d6455e'; }
+        else { f.style.borderColor = ''; }
+      });
+      var emailEl = document.getElementById('tmFbEmail');
+      if(ok && emailEl && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())){
+        ok = false; emailEl.style.borderColor = '#d6455e';
+      }
+      var fbErr = document.getElementById('tmFeedbackError');
+      if(!ok){
+        if(fbErr){ fbErr.style.display = 'block'; fbErr.textContent = 'Please enter your name and a valid email address.'; }
+        return;
+      }
+      if(fbErr){ fbErr.style.display = 'none'; }
+
+      var rec = fbForm.querySelector('input[name="wouldRecommend"]:checked');
+      var payload = {
+        name: fbForm.fbName.value.trim(),
+        email: fbForm.fbEmail.value.trim(),
+        enjoyedMost: fbForm.enjoyedMost.value.trim(),
+        couldImprove: fbForm.couldImprove.value.trim(),
+        futureTopics: fbForm.futureTopics.value.trim(),
+        wouldRecommend: rec ? rec.value : '',
+        attending: false,
+        source: 'cant-attend-feedback'
+      };
+
+      var fbBtn = fbForm.querySelector('button[type=submit]');
+      if(fbBtn){ fbBtn.disabled = true; fbBtn.textContent = 'Sending\u2026'; }
+
+      fetch('/.netlify/functions/brevo-feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(r){
+        if(!r.ok){ throw new Error('Request failed (' + r.status + ')'); }
+        return r.json().catch(function(){ return {}; });
+      }).then(function(){
+        fbForm.style.display = 'none';
+        var fbOk = document.getElementById('tmFeedbackSuccess');
+        fbOk.classList.add('tm-show');
+        fbOk.scrollIntoView({behavior:'smooth', block:'center'});
+      }).catch(function(){
+        if(fbBtn){ fbBtn.disabled = false; fbBtn.innerHTML = 'Send Feedback &rarr;'; }
+        if(fbErr){ fbErr.style.display = 'block'; fbErr.textContent = 'Sorry, something went wrong sending your feedback. Please try again, or email us directly.'; }
       });
     });
   }
