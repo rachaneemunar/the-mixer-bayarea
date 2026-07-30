@@ -739,6 +739,9 @@
 @media (max-width:600px){
   #the-mixer-site .tm-raffle-actions .tm-btn{ width:100%; white-space:normal; }
 }
+
+/* feedback card when it sits under the confirmation panel */
+#the-mixer-site .tm-fb-card-confirm{ margin-top:34px; }
 </style>
 
 <!-- ====================  RIBBON  ==================== -->
@@ -1338,6 +1341,58 @@
           </div>
 
         </div>
+
+        <!-- ---- Feedback form (same form as the Can't Attend page) ---- -->
+        <div class="tm-fb-card tm-fb-card-confirm">
+          <div class="tm-form-success tm-fb-success" id="tmConfFeedbackSuccess">
+            <b>Thank You!</b>
+            Your feedback has been received. We really appreciate you taking the time &mdash; it helps shape every event we plan.
+          </div>
+
+          <form id="tmConfFeedbackForm" class="tm-feedback-form" data-source="confirmation-feedback" data-attending="true" novalidate>
+            <div class="tm-form-title">Been to One of Our Events?</div>
+            <p class="tm-fb-intro">If you&rsquo;ve attended one of our events before, we&rsquo;d love to hear your feedback. Only your name and email are required.</p>
+
+            <div class="tm-field-row">
+              <div class="tm-field">
+                <label for="tmConfFbName">Name *</label>
+                <input id="tmConfFbName" name="fbName" autocomplete="name" required>
+              </div>
+              <div class="tm-field">
+                <label for="tmConfFbEmail">Email *</label>
+                <input id="tmConfFbEmail" name="fbEmail" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmConfFbEnjoyed">What did you enjoy most?</label>
+              <textarea id="tmConfFbEnjoyed" name="enjoyedMost" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmConfFbImprove">What could we improve?</label>
+              <textarea id="tmConfFbImprove" name="couldImprove" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmConfFbTopics">What topics or activities would you like at future events?</label>
+              <textarea id="tmConfFbTopics" name="futureTopics" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label>Would you recommend Senior Pro Network to a colleague?</label>
+              <div class="tm-radio-group">
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="Yes"><span>Yes</span></label>
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="Maybe"><span>Maybe</span></label>
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="No"><span>No</span></label>
+              </div>
+            </div>
+
+            <div id="tmConfFeedbackError" class="tm-form-error tm-fb-error" style="display:none;"></div>
+            <button type="submit" class="tm-btn tm-btn-primary tm-btn-lg tm-fb-submit">Send Feedback &rarr;</button>
+          </form>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1368,12 +1423,12 @@
         </div>
 
         <div class="tm-fb-card">
-          <div class="tm-form-success" id="tmFeedbackSuccess">
+          <div class="tm-form-success tm-fb-success" id="tmFeedbackSuccess">
             <b>Thank You!</b>
             Your feedback has been received. We really appreciate you taking the time &mdash; it helps shape every event we plan.
           </div>
 
-          <form id="tmFeedbackForm" novalidate>
+          <form id="tmFeedbackForm" class="tm-feedback-form" data-source="cant-attend-feedback" data-attending="false" novalidate>
             <div class="tm-form-title">Share Your Feedback</div>
             <p class="tm-fb-intro">A few quick questions. Only your name and email are required.</p>
 
@@ -1412,7 +1467,7 @@
               </div>
             </div>
 
-            <div id="tmFeedbackError" class="tm-form-error" style="display:none;"></div>
+            <div id="tmFeedbackError" class="tm-form-error tm-fb-error" style="display:none;"></div>
             <button type="submit" class="tm-btn tm-btn-primary tm-btn-lg tm-fb-submit">Send Feedback &rarr;</button>
           </form>
         </div>
@@ -1581,9 +1636,16 @@
     });
   }
 
-  /* ---------- Feedback form (Can't Attend page) -> Brevo ---------- */
-  var fbForm = document.getElementById('tmFeedbackForm');
-  if(fbForm){
+  /* ---------- Feedback forms -> Brevo ----------
+     Runs on every <form class="tm-feedback-form"> on the site, so the same
+     form can appear on the Can't Attend page and the Confirmation page. */
+  document.querySelectorAll('.tm-feedback-form').forEach(function(fbForm){
+    var card   = fbForm.closest('.tm-fb-card') || fbForm.parentNode;
+    var fbErr  = fbForm.querySelector('.tm-fb-error');
+    var fbOk   = card.querySelector('.tm-fb-success');
+    var fbBtn  = fbForm.querySelector('button[type=submit]');
+    var btnHTML = fbBtn ? fbBtn.innerHTML : 'Send Feedback';
+
     fbForm.addEventListener('submit', function(e){
       e.preventDefault();
       var ok = true;
@@ -1591,11 +1653,10 @@
         if(!f.value.trim()){ ok = false; f.style.borderColor = '#d6455e'; }
         else { f.style.borderColor = ''; }
       });
-      var emailEl = document.getElementById('tmFbEmail');
+      var emailEl = fbForm.querySelector('input[type=email]');
       if(ok && emailEl && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())){
         ok = false; emailEl.style.borderColor = '#d6455e';
       }
-      var fbErr = document.getElementById('tmFeedbackError');
       if(!ok){
         if(fbErr){ fbErr.style.display = 'block'; fbErr.textContent = 'Please enter your name and a valid email address.'; }
         return;
@@ -1610,11 +1671,10 @@
         couldImprove: fbForm.couldImprove.value.trim(),
         futureTopics: fbForm.futureTopics.value.trim(),
         wouldRecommend: rec ? rec.value : '',
-        attending: false,
-        source: 'cant-attend-feedback'
+        attending: fbForm.getAttribute('data-attending') === 'true',
+        source: fbForm.getAttribute('data-source') || 'feedback'
       };
 
-      var fbBtn = fbForm.querySelector('button[type=submit]');
       if(fbBtn){ fbBtn.disabled = true; fbBtn.textContent = 'Sending\u2026'; }
 
       fetch('/.netlify/functions/brevo-feedback', {
@@ -1626,15 +1686,16 @@
         return r.json().catch(function(){ return {}; });
       }).then(function(){
         fbForm.style.display = 'none';
-        var fbOk = document.getElementById('tmFeedbackSuccess');
-        fbOk.classList.add('tm-show');
-        fbOk.scrollIntoView({behavior:'smooth', block:'center'});
+        if(fbOk){
+          fbOk.classList.add('tm-show');
+          fbOk.scrollIntoView({behavior:'smooth', block:'center'});
+        }
       }).catch(function(){
-        if(fbBtn){ fbBtn.disabled = false; fbBtn.innerHTML = 'Send Feedback &rarr;'; }
+        if(fbBtn){ fbBtn.disabled = false; fbBtn.innerHTML = btnHTML; }
         if(fbErr){ fbErr.style.display = 'block'; fbErr.textContent = 'Sorry, something went wrong sending your feedback. Please try again, or email us directly.'; }
       });
     });
-  }
+  });
 
   /* ---------- Organizer modal ---------- */
   var orgModal = document.getElementById('tmOrgModal');
