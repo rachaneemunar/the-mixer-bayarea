@@ -742,6 +742,45 @@
 
 /* feedback card when it sits under the confirmation panel */
 #the-mixer-site .tm-fb-card-confirm{ margin-top:34px; }
+
+/* ============================================================
+   ADD TO CALENDAR  (confirmation page)
+   ============================================================ */
+#the-mixer-site .tm-cal{ margin-top:32px; }
+#the-mixer-site .tm-cal-label{
+  font-family:var(--sans); font-weight:700; font-size:12.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+  text-align:center; margin:0 0 16px;
+}
+#the-mixer-site .tm-cal-grid{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:12px;
+  max-width:460px; margin:0 auto;
+}
+#the-mixer-site .tm-cal-grid .tm-btn{
+  width:100%; white-space:normal; text-align:center; line-height:1.3;
+}
+#the-mixer-site .tm-cal-file{ grid-column:1 / -1; }
+#the-mixer-site .tm-cal-ico{ width:15px; height:15px; flex:0 0 auto; opacity:.75; }
+#the-mixer-site .tm-cal-file .tm-cal-ico{ opacity:.95; }
+#the-mixer-site .tm-cal-note{
+  font-family:var(--sans); font-size:14px; color:var(--muted);
+  text-align:center; margin:16px auto 0; max-width:44ch; line-height:1.55;
+}
+#the-mixer-site .tm-cal-grid .tm-btn:focus-visible{
+  outline:none; box-shadow:0 0 0 4px rgba(43,81,216,.28);
+}
+#the-mixer-site .tm-cal-sr{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+@media (max-width:600px){
+  #the-mixer-site .tm-cal-grid{ grid-template-columns:1fr; }
+  #the-mixer-site .tm-cal-grid .tm-btn{ padding:15px 18px; }
+}
+@media (prefers-reduced-motion:reduce){
+  #the-mixer-site .tm-cal-grid .tm-btn{ transition:none; }
+  #the-mixer-site .tm-cal-grid .tm-btn:hover{ transform:none; }
+}
 </style>
 
 <!-- ====================  RIBBON  ==================== -->
@@ -1331,6 +1370,19 @@
             </div>
           </div>
 
+
+          <div class="tm-cal">
+            <p class="tm-cal-label">Add it to your calendar</p>
+            <div class="tm-cal-grid">
+              <a class="tm-btn tm-btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=August%20Senior%20Pro%20Network&amp;dates=20260826T160000/20260826T180000&amp;details=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA&amp;ctz=America%2FLos_Angeles" target="_blank" rel="noopener noreferrer">Google Calendar<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=August%20Senior%20Pro%20Network&amp;startdt=2026-08-26T23%3A00%3A00Z&amp;enddt=2026-08-27T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook.com<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=August%20Senior%20Pro%20Network&amp;startdt=2026-08-26T23%3A00%3A00Z&amp;enddt=2026-08-27T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook &ndash; work or school<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://calendar.yahoo.com/?v=60&amp;title=August%20Senior%20Pro%20Network&amp;st=20260826T230000Z&amp;et=20260827T010000Z&amp;desc=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;in_loc=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Yahoo Calendar<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-primary tm-btn-lg tm-cal-file" id="tmCalIcs" href="#" download="senior-pro-network-aug-26.ics">Apple Calendar or other app (.ics)<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
+            </div>
+            <p class="tm-cal-note">Times are Pacific. Your calendar will convert to your own time zone.</p>
+          </div>
+
           <p class="tm-confirm-closing">We look forward to seeing you there.</p>
 
           <div class="tm-confirm-actions">
@@ -1895,6 +1947,33 @@
     if(h === 'register'){ showPage('home', 'tmRegister'); }
     else { showPage(h, null); }
   })();
+})();
+</script>
+<script>
+/* Builds the .ics in the browser, so nothing needs uploading to the server.
+   (WordPress blocks .ics in the Media Library by default.) */
+(function(){
+  var a=document.getElementById('tmCalIcs'); if(!a) return;
+  var ics=[
+    'BEGIN:VCALENDAR','VERSION:2.0',
+    'PRODID:-//Senior Pro Network//Save the Date//EN',
+    'CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',
+    'UID:spn-20260826@seniorpronetwork.org',
+    'DTSTAMP:20260805T000000Z',
+    'DTSTART:20260826T230000Z',
+    'DTEND:20260827T010000Z',
+    'SUMMARY:August Senior Pro Network',
+    'DESCRIPTION:Senior Pro Network networking event. Details: https://seniorpronetwork.org/#confirmation',
+    'LOCATION:Cogir at Belmont\\, 2883 S. Norfolk St\\, San Mateo\\, CA',
+    'STATUS:CONFIRMED','BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY',
+    'DESCRIPTION:Tomorrow: Senior Pro Network at Cogir at Belmont',
+    'END:VALARM','END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+  if(/iP(hone|ad|od)|Macintosh/.test(navigator.userAgent)){
+    a.setAttribute('href','data:text/calendar;charset=utf-8,'+encodeURIComponent(ics));
+  }else{
+    a.setAttribute('href',URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'})));
+  }
 })();
 </script>
 </div>
