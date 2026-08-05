@@ -982,8 +982,10 @@
   <!-- HERO -->
   <div class="tm-hero">
     <div class="tm-hero-bg"></div>
-    <!-- HERO BACKGROUND VIDEO (hosted on GitHub, autoplay, muted, looping).
-         Replace VIDEO_URL_HERE below with your raw GitHub link (e.g., https://raw.githubusercontent.com/yourrepo/main/video.mp4).
+    <!-- HERO BACKGROUND VIDEO (autoplay, muted, looping).
+         Put the file in /photos/ and use src="/photos/video.mp4".
+         Do NOT hot-link raw.githubusercontent.com - it is rate-limited and
+         bypasses Netlify's CDN.
          Recommended: ~1080p, ~8-15MB, H.264 video codec, AAC audio, .mp4 format. -->
     <video class="tm-hero-video" autoplay muted loop playsinline poster="">
       <!--<source src="https://raw.githubusercontent.com/rachaneemunar/the-mixer-bayarea/main/photos/video.mp4" type="video/mp4">*/-->
@@ -995,12 +997,12 @@
       <h1>Senior Pro Network</h1>
       <div class="tm-hero-tag">A professional networking event</div>
       <div class="tm-hero-photo">
-        <img src="/photos/SPN-Cogir-at-Belmont.jpg" alt="Senior Pro Network at Cogir in Belmont">
+        <img src="/photos/SPN-Cogir-at-Belmont.jpg" alt="Senior Pro Network at Cogir at Belmont">
       </div>
       <div class="tm-hero-where">
         <b>Wednesday, August 26th &middot; 4:00&nbsp;&ndash;&nbsp;6:00&nbsp;PM</b><br>
-        <a href="https://harborathillsdale.com" target="_blank" rel="noopener">Cogir at Belmont</a>
-        &middot; <a href="https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38" target="_blank" rel="noopener">900 6th Ave, Belmont</a>
+        <a href="https://cogirusa.com/communities/vista-terrace-of-belmont-by-cogir/" target="_blank" rel="noopener">Cogir at Belmont</a>
+        &middot; <a href="https://www.google.com/maps/search/?api=1&amp;query=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA" target="_blank" rel="noopener">900 6th Ave, Belmont</a>
       </div>
       <div class="tm-hero-cta">
         <a class="tm-btn tm-btn-primary tm-btn-lg" href="#register" data-page="home" data-scroll="tmRegister">Reserve Your Spot</a>
@@ -1074,11 +1076,11 @@
         </div>
         <div class="tm-venue-links">
           <a class="tm-btn tm-btn-outline" href="https://cogirusa.com/communities/vista-terrace-of-belmont-by-cogir/" target="_blank" rel="noopener">Website</a>
-          <a class="tm-btn tm-btn-outline" href="https://maps.app.goo.gl/7XyP6Cw88B8bt4fv5" target="_blank" rel="noopener">View map</a>
+          <a class="tm-btn tm-btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA" target="_blank" rel="noopener">View map</a>
         </div>
       </div>
-      <!-- HOST VENUE PHOTO (large, boxed). Hosted on GitHub. Replace the src below with your raw GitHub link.
-           Example: https://raw.githubusercontent.com/yourrepo/main/venue.jpg -->
+      <!-- HOST VENUE PHOTO (large, boxed). Put the file in /photos/ and use
+           src="/.netlify/images?url=/photos/venue.jpg&w=1200&q=80" -->
      <!--  <figure class="tm-venue-photo">
         <img src="https://raw.githubusercontent.com/rachaneemunar/the-mixer-bayarea/main/photos/venue2a.jpg" alt="Guests mingling at a Harbor at Hillsdale rooftop gathering">
       </figure> -->
@@ -1165,7 +1167,7 @@
         </div>
         <div class="tm-sum-row">
           <div class="tm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="tm-sum-k">Venue</div><div class="tm-sum-v"><a href="https://cogirusa.com/communities/vista-terrace-of-belmont-by-cogir/" target="_blank" rel="noopener">Cogir at Belmont</a><br><a href="https://maps.app.goo.gl/7XyP6Cw88B8bt4fv5" target="_blank" rel="noopener">900 6th Ave, Belmont, CA</a></div></div>
+          <div><div class="tm-sum-k">Venue</div><div class="tm-sum-v"><a href="https://cogirusa.com/communities/vista-terrace-of-belmont-by-cogir/" target="_blank" rel="noopener">Cogir at Belmont</a><br><a href="https://www.google.com/maps/search/?api=1&amp;query=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA" target="_blank" rel="noopener">900 6th Ave, Belmont, CA</a></div></div>
         </div>
         <div class="tm-sum-row">
           <div class="tm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
@@ -1225,7 +1227,7 @@
     <div class="tm-container tm-faq" id="tmFaq">
       <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">What is the purpose of Senior Pro Network?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Senior Pro Network is a small, intentional gathering of senior-service professionals across the Peninsula: senior living, home care, healthcare, elder law, financial planning, move managers, and the nonprofits that work alongside them. The goal is simple: get to know each other in person, build genuine relationships over time, and eventually pass referrals back and forth with people you actually trust.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Is there a cost to attend?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Senior Pro Network is complimentary thanks to our generous hosts and sponsors. We ask only that you register in advance so we can plan for refreshments and seating.</div></div></div>
-<div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Where and when is the next Senior Pro Network event?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Our next gathering is Wednesday, August 26th from 4:00&ndash;6:00 PM at <a href="https://cogirusa.com/communities/vista-terrace-of-belmont-by-cogir/" target="_blank" rel="noopener">Cogir at Belmont</a>, <a href="https://maps.app.goo.gl/7XyP6Cw88B8bt4fv5" target="_blank" rel="noopener">2883 S. Norfolk St, San Mateo, CA</a>. See the Calendar page for upcoming dates.</div></div></div>
+<div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Where and when is the next Senior Pro Network event?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Our next gathering is Wednesday, August 26th from 4:00&ndash;6:00 PM at <a href="https://cogirusa.com/communities/vista-terrace-of-belmont-by-cogir/" target="_blank" rel="noopener">Cogir at Belmont</a>, <a href="https://www.google.com/maps/search/?api=1&amp;query=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA" target="_blank" rel="noopener">900 6th Ave, Belmont, CA</a>. See the Calendar page for upcoming dates.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Who should attend?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Anyone whose work touches the senior community: senior living operators, home-care providers, geriatric care managers, elder-law attorneys, move managers, financial planners, healthcare professionals, memory care specialists, and the nonprofit partners who serve them.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Will refreshments be served?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Always. Light refreshments are always thoughtfully provided by the host venue.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Can I sponsor or host a future Senior Pro Network event?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Yes, please. Hosting a Senior Pro Network event is a beautiful way to introduce your community or service to peers in the senior-care space. Reach out via the registration form and we'll be in touch.</div></div></div>
@@ -1517,7 +1519,7 @@
             </div>
             <div class="tm-confirm-row">
               <span class="tm-confirm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.2 7-11.3A7 7 0 0 0 5 10.2c0 5.1 7 11.3 7 11.3z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span>
-              <span class="tm-confirm-txt">Cogir of Belmont</span>
+              <span class="tm-confirm-txt">Cogir at Belmont</span>
             </div>
           </div>
 
@@ -1525,10 +1527,10 @@
           <div class="tm-cal">
             <p class="tm-cal-label">Add it to your calendar</p>
             <div class="tm-cal-grid">
-              <a class="tm-btn tm-btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=August%20Senior%20Pro%20Network&amp;dates=20260826T160000/20260826T180000&amp;details=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA&amp;ctz=America%2FLos_Angeles" target="_blank" rel="noopener noreferrer">Google Calendar<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-outline" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=August%20Senior%20Pro%20Network&amp;startdt=2026-08-26T23%3A00%3A00Z&amp;enddt=2026-08-27T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook.com<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-outline" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=August%20Senior%20Pro%20Network&amp;startdt=2026-08-26T23%3A00%3A00Z&amp;enddt=2026-08-27T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook &ndash; work or school<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-outline" href="https://calendar.yahoo.com/?v=60&amp;title=August%20Senior%20Pro%20Network&amp;st=20260826T230000Z&amp;et=20260827T010000Z&amp;desc=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;in_loc=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Yahoo Calendar<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=August%20Senior%20Pro%20Network&amp;dates=20260826T160000/20260826T180000&amp;details=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA&amp;ctz=America%2FLos_Angeles" target="_blank" rel="noopener noreferrer">Google Calendar<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=August%20Senior%20Pro%20Network&amp;startdt=2026-08-26T23%3A00%3A00Z&amp;enddt=2026-08-27T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook.com<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=August%20Senior%20Pro%20Network&amp;startdt=2026-08-26T23%3A00%3A00Z&amp;enddt=2026-08-27T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook &ndash; work or school<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://calendar.yahoo.com/?v=60&amp;title=August%20Senior%20Pro%20Network&amp;st=20260826T230000Z&amp;et=20260827T010000Z&amp;desc=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;in_loc=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA" target="_blank" rel="noopener noreferrer">Yahoo Calendar<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
               <a class="tm-btn tm-btn-primary tm-btn-lg tm-cal-file" id="tmCalIcs" href="/save-the-date.ics" download="senior-pro-network-aug-26.ics">Apple Calendar or other app (.ics)<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
             </div>
             <p class="tm-cal-note">Times are Pacific. Your calendar will convert to your own time zone.</p>
@@ -1694,7 +1696,7 @@
   </div>
   <div class="tm-footer-bottom">
     &copy; 2026 Senior Pro Network &middot; Co-organized by Vabrato Real Estate Services &amp; Peninsula Senior Referral Services<br>
-    Next gathering: Wednesday, July 29th &middot; 4:00&nbsp;&ndash;&nbsp;6:00&nbsp;PM &middot; Rooftop, Harbor at Hillsdale, San Mateo
+    Next gathering: Wednesday, August 26th &middot; 4:00&nbsp;&ndash;&nbsp;6:00&nbsp;PM &middot; Cogir at Belmont &middot; 900 6th Ave, Belmont
   </div>
 </footer>
 
@@ -1924,7 +1926,7 @@
     '2026-4-1':   { title: 'Inaugural Senior Pro Network', venue: 'Peninsula Senior-Care Community', url: '' },
     '2026-5-6':   { title: 'May Senior Pro Network',       venue: 'TBA: Venue Coming Soon',          url: '' },
     '2026-7-29':  { title: 'July Senior Pro Network',      venue: 'Rooftop, Harbor at Hillsdale',             url: 'https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38' },
-    '2026-8-26':  { title: 'August Senior Pro Network',    venue: 'Cogir of Belmont',          url: 'https://maps.app.goo.gl/iJo4CsDJz6QLT3oN9' },
+    '2026-8-26':  { title: 'August Senior Pro Network',    venue: 'Cogir at Belmont',          url: 'https://www.google.com/maps/search/?api=1&query=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA' },
     '2026-9-30':  { title: 'September Senior Pro Network', venue: 'TBA: Venue Coming Soon',          url: '' },
     '2026-10-28': { title: 'October Senior Pro Network',   venue: 'TBA: Venue Coming Soon',          url: '' },
     '2026-11-25': { title: 'November Senior Pro Network',  venue: 'TBA: Venue Coming Soon',          url: '' },
@@ -2060,26 +2062,26 @@
       /* REPLACE: paste your shared Google Drive folder link here */
       drive: 'https://drive.google.com/drive/folders/REPLACE-WITH-FOLDER-ID',
       photos: [
-        { file:'', cap:'Your Hosts',                ar:'4/3'  },
-        { file:'', cap:'A Room Full of Smiles',     ar:'3/2'  },
-        { file:'', cap:'Welcome Table',             ar:'3/4'  },
-        { file:'', cap:'The Spread',                ar:'1/1'  },
-        { file:'', cap:'Cheese and Fruit Platter',  ar:'4/3'  },
-        { file:'', cap:'Viv Kelvin',                ar:'2/3'  },
-        { file:'', cap:'Wonderful Guests',          ar:'3/2'  },
-        { file:'', cap:'Rooftop Views',             ar:'16/9' },
-        { file:'', cap:'Lots of Smiles',            ar:'1/1'  },
-        { file:'', cap:'Having Fun',                ar:'3/4'  },
-        { file:'', cap:'Gifts for Guests',          ar:'4/3'  },
-        { file:'', cap:'Mingling and Introductions',ar:'3/2'  },
-        { file:'', cap:'Sponsor Spotlight',         ar:'2/3'  },
-        { file:'', cap:'Three Lovely Ladies',       ar:'1/1'  },
-        { file:'', cap:'Selfies',                   ar:'3/4'  },
-        { file:'', cap:'New Connections',           ar:'3/2'  },
-        { file:'', cap:'Raffle Winners',            ar:'4/3'  },
-        { file:'', cap:'More Fun Moments',          ar:'1/1'  },
-        { file:'', cap:'Conversations That Count',  ar:'2/3'  },
-        { file:'', cap:'Group Photo',               ar:'16/9' }
+        { file:'jul2026-01.jpg', cap:'Your Hosts',                ar:'4/3'  },
+        { file:'jul2026-02.jpg', cap:'A Room Full of Smiles',     ar:'3/2'  },
+        { file:'jul2026-03.jpg', cap:'Welcome Table',             ar:'3/4'  },
+        { file:'jul2026-04.jpg', cap:'The Spread',                ar:'1/1'  },
+        { file:'jul2026-05.jpg', cap:'Cheese and Fruit Platter',  ar:'4/3'  },
+        { file:'jul2026-06.jpg', cap:'Viv Kelvin',                ar:'2/3'  },
+        { file:'jul2026-07.jpg', cap:'Wonderful Guests',          ar:'3/2'  },
+        { file:'jul2026-08.jpg', cap:'Rooftop Views',             ar:'16/9' },
+        { file:'jul2026-09.jpg', cap:'Lots of Smiles',            ar:'1/1'  },
+        { file:'jul2026-10.jpg', cap:'Having Fun',                ar:'3/4'  },
+        { file:'jul2026-11.jpg', cap:'Gifts for Guests',          ar:'4/3'  },
+        { file:'jul2026-12.jpg', cap:'Mingling and Introductions',ar:'3/2'  },
+        { file:'jul2026-13.jpg', cap:'Sponsor Spotlight',         ar:'2/3'  },
+        { file:'jul2026-14.jpg', cap:'Three Lovely Ladies',       ar:'1/1'  },
+        { file:'jul2026-15.jpg', cap:'Selfies',                   ar:'3/4'  },
+        { file:'jul2026-16.jpg', cap:'New Connections',           ar:'3/2'  },
+        { file:'jul2026-17.jpg', cap:'Raffle Winners',            ar:'4/3'  },
+        { file:'jul2026-18.jpg', cap:'More Fun Moments',          ar:'1/1'  },
+        { file:'jul2026-19.jpg', cap:'Conversations That Count',  ar:'2/3'  },
+        { file:'jul2026-20.jpg', cap:'Group Photo',               ar:'16/9' }
       ]
     },
     {
@@ -2101,9 +2103,19 @@
 
   var galIndex = 0, lbList = [], lbAt = 0, lbReturn = null;
 
+  /* If a filename is listed but not yet uploaded, fall back to the placeholder
+     instead of showing a broken image. Lets the filenames be pre-filled. */
+  window.tmImgFail = function(img, i){
+    var d = document.createElement('div');
+    d.className = img.closest('.tm-lb-stage') ? 'tm-lb-ph' : 'tm-ph';
+    d.style.aspectRatio = img.getAttribute('data-ar') || '4/3';
+    d.innerHTML = PH_ICON + '<b>Photo ' + (i<10?'0':'') + i + '</b>';
+    img.replaceWith(d);
+  };
+
   function tileHTML(p, i){
     var inner = p.file
-      ? '<img src="'+esc(imgURL(p.file,600))+'" alt="'+esc(p.cap)+'" loading="lazy" decoding="async">'
+      ? '<img src="'+esc(imgURL(p.file,600))+'" alt="'+esc(p.cap)+'" loading="lazy" decoding="async" data-ar="'+p.ar+'" onerror="tmImgFail(this,'+(i+1)+')">'
       : '<div class="tm-ph" style="aspect-ratio:'+p.ar+'">'+PH_ICON+'<b>Photo '+(i+1<10?'0':'')+(i+1)+'</b></div>';
     return '<button type="button" class="tm-tile" data-i="'+i+'" aria-label="Open photo: '+esc(p.cap)+'">'
          + inner + '<span class="tm-tile-cap">'+esc(p.cap)+'</span></button>';
@@ -2154,7 +2166,7 @@
     var p = lbList[lbAt];
     var stage = document.getElementById('tmLbStage');
     stage.innerHTML = p.file
-      ? '<img src="'+esc(imgURL(p.file,1600,80))+'" alt="'+esc(p.cap)+'">'
+      ? '<img src="'+esc(imgURL(p.file,1600,80))+'" alt="'+esc(p.cap)+'" data-ar="'+p.ar+'" onerror="tmImgFail(this,'+(lbAt+1)+')">'
       : '<div class="tm-lb-ph" style="aspect-ratio:'+p.ar+'">'+PH_ICON+'<b>Photo '+(lbAt+1<10?'0':'')+(lbAt+1)+'</b></div>';
     document.getElementById('tmLightboxCap').textContent = p.cap;
     document.getElementById('tmLightboxCat').textContent =
@@ -2266,7 +2278,7 @@
     'DTEND:20260827T010000Z',
     'SUMMARY:August Senior Pro Network',
     'DESCRIPTION:Senior Pro Network networking event. Details: https://seniorpronetwork.org/#confirmation',
-    'LOCATION:Cogir at Belmont\\, 2883 S. Norfolk St\\, San Mateo\\, CA',
+    'LOCATION:Cogir at Belmont\\, 900 6th Ave\\, Belmont\\, CA',
     'STATUS:CONFIRMED','BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY',
     'DESCRIPTION:Tomorrow: Senior Pro Network at Cogir at Belmont',
     'END:VALARM','END:VEVENT','END:VCALENDAR'
