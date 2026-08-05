@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Senior Pro Network | Monthly Networking for Peninsula Senior-Care Professionals</title>
+<meta name="description" content="A free monthly gathering where Bay Area senior-care professionals connect: senior living, home care, healthcare, elder law, and financial services. Next event Wednesday, August 26, 2026, 4-6 PM at Cogir at Belmont.">
+<link rel="canonical" href="https://seniorpronetwork.org/">
+<meta name="theme-color" content="#2B51D8">
+<meta name="robots" content="index, follow">
+
+<!-- Social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Senior Pro Network">
+<meta property="og:url" content="https://seniorpronetwork.org/">
+<meta property="og:title" content="Senior Pro Network | Peninsula Senior-Care Networking">
+<meta property="og:description" content="A free monthly gathering of senior-care professionals on the Peninsula. Next event Wednesday, August 26, 2026, 4-6 PM at Cogir at Belmont.">
+<meta property="og:image" content="https://seniorpronetwork.org/photos/SPN-Cogir-at-Belmont.jpg">
+<meta property="og:image:alt" content="Senior Pro Network gathering at Cogir at Belmont">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Senior Pro Network | Peninsula Senior-Care Networking">
+<meta name="twitter:description" content="A free monthly gathering of senior-care professionals on the Peninsula. Next event August 26, 2026.">
+<meta name="twitter:image" content="https://seniorpronetwork.org/photos/SPN-Cogir-at-Belmont.jpg">
+
+<!-- Favicon: add these files to your publish folder -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
 <!-- =====================================================================
      SENIOR PRO NETWORK  -  Redesigned single-file site (WordPress-ready)
      Paste this entire block into a WordPress "Custom HTML" block or a
@@ -326,23 +355,152 @@
 #the-mixer-site .tm-up-info p{font-size:14px; color:var(--muted); margin:2px 0 0;}
 #the-mixer-site .tm-up-info a{color:var(--blue-deep); border-bottom:1px solid rgba(43,81,216,.35);}
 
-/* ---- gallery ---- */
-#the-mixer-site .tm-filters{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:34px;}
-#the-mixer-site .tm-filter{padding:9px 20px; border-radius:999px; border:1px solid var(--line); background:#fff;
-  font-size:14px; font-weight:600; color:var(--slate); transition:.18s;}
-#the-mixer-site .tm-filter:hover{border-color:var(--blue); color:var(--blue);}
-#the-mixer-site .tm-filter.tm-active{background:linear-gradient(135deg,var(--blue),var(--blue-deep)); color:#fff; border-color:transparent;}
-#the-mixer-site .tm-gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
-#the-mixer-site .tm-gal-tile{aspect-ratio:1; border-radius:var(--r-md); overflow:hidden; cursor:pointer; position:relative;
-  background:linear-gradient(150deg,var(--tint2),#fff); border:1px solid var(--line); display:flex; align-items:flex-end;
-  padding:16px; transition:transform .2s, box-shadow .25s;}
-#the-mixer-site .tm-gal-tile:hover{transform:translateY(-3px); box-shadow:var(--sh-md);}
-#the-mixer-site .tm-gal-tile::before{content:""; position:absolute; inset:0;
-  background:radial-gradient(120px 90px at 70% 25%, rgba(43,81,216,.18), transparent 70%);}
-#the-mixer-site .tm-gal-cap{position:relative; font-size:13.5px; font-weight:600; color:var(--navy); line-height:1.3;}
-#the-mixer-site .tm-gal-cat{position:absolute; top:14px; left:14px; font-size:10px; font-weight:700; letter-spacing:.1em;
-  text-transform:uppercase; color:var(--blue); background:#fff; padding:4px 9px; border-radius:999px; border:1px solid var(--line);}
-#the-mixer-site .tm-gal-note{text-align:center; color:var(--faint); font-size:13px; margin-top:22px;}
+/* ---- gallery : event tabs ---- */
+#the-mixer-site .tm-galtabs{display:flex; flex-wrap:wrap; gap:10px; justify-content:center;}
+#the-mixer-site .tm-galtab{
+  padding:11px 24px; border-radius:999px; border:1px solid var(--line); background:#fff;
+  font-family:var(--sans); font-size:14.5px; font-weight:600; color:var(--slate);
+  cursor:pointer; transition:border-color .18s, color .18s, background .18s, box-shadow .25s;
+  display:flex; flex-direction:column; align-items:center; gap:1px; line-height:1.3;
+}
+#the-mixer-site .tm-galtab small{font-size:12px; font-weight:500; color:var(--faint); transition:color .18s;}
+#the-mixer-site .tm-galtab:hover{border-color:var(--blue); color:var(--blue);}
+#the-mixer-site .tm-galtab[aria-selected="true"]{
+  background:linear-gradient(135deg,var(--blue),var(--blue-deep)); color:#fff; border-color:transparent;
+  box-shadow:0 12px 26px -12px rgba(43,81,216,.7);
+}
+#the-mixer-site .tm-galtab[aria-selected="true"] small{color:#C7D6FF;}
+#the-mixer-site .tm-galtab:focus-visible{outline:none; box-shadow:0 0 0 4px rgba(43,81,216,.3);}
+
+/* ---- gallery : drive bar ---- */
+#the-mixer-site .tm-gal-drive{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  background:var(--panel); border:1px solid var(--panel-line); padding:18px 24px; margin:30px 0 26px;
+}
+#the-mixer-site .tm-gal-drive-txt{font-family:var(--sans); font-size:15.5px; font-weight:600; color:var(--navy); line-height:1.4;}
+#the-mixer-site .tm-gal-drive-txt span{display:block; font-size:13.5px; font-weight:500; color:var(--muted); margin-top:3px;}
+#the-mixer-site .tm-gal-drive .tm-btn{white-space:nowrap;}
+
+/* ---- gallery : masonry wall ---- */
+#the-mixer-site .tm-masonry{columns:4 250px; column-gap:16px;}
+#the-mixer-site .tm-masonry > *{break-inside:avoid; margin:0 0 16px; display:block; width:100%;}
+#the-mixer-site .tm-tile{
+  position:relative; padding:0; border:1px solid var(--line); background:#fff;
+  overflow:hidden; cursor:pointer; box-shadow:var(--sh-sm); text-align:left;
+  transition:transform .2s ease, box-shadow .25s ease;
+}
+#the-mixer-site .tm-tile:hover{transform:translateY(-3px); box-shadow:var(--sh-md);}
+#the-mixer-site .tm-tile:focus-visible{outline:none; box-shadow:0 0 0 4px rgba(43,81,216,.35);}
+#the-mixer-site .tm-tile img{width:100%; height:auto; display:block;}
+#the-mixer-site .tm-ph{
+  width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px;
+  background:linear-gradient(150deg,var(--tint2) 0%,#fff 70%);
+}
+#the-mixer-site .tm-ph svg{width:28px; height:28px; color:var(--blue); opacity:.42;}
+#the-mixer-site .tm-ph b{
+  font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--faint);
+}
+#the-mixer-site .tm-tile-cap{
+  position:absolute; left:0; right:0; bottom:0; padding:30px 14px 12px;
+  background:linear-gradient(180deg,transparent,rgba(14,26,87,.88));
+  color:#fff; font-family:var(--sans); font-size:13px; font-weight:600; line-height:1.35;
+  opacity:0; transform:translateY(6px); transition:opacity .2s ease, transform .2s ease;
+}
+#the-mixer-site .tm-tile:hover .tm-tile-cap,
+#the-mixer-site .tm-tile:focus-visible .tm-tile-cap{opacity:1; transform:none;}
+
+/* ---- gallery : coming soon ---- */
+#the-mixer-site .tm-gal-soon{
+  text-align:center; background:var(--panel); border:1px solid var(--panel-line);
+  padding:72px 30px; margin-top:30px;
+}
+#the-mixer-site .tm-gal-soon-ico{
+  width:64px; height:64px; margin:0 auto 22px; border-radius:999px;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 14px 30px -14px rgba(43,81,216,.75);
+}
+#the-mixer-site .tm-gal-soon-ico svg{width:28px; height:28px; color:#fff;}
+#the-mixer-site .tm-gal-soon h3{
+  font-family:var(--serif); font-weight:600; font-size:clamp(26px,4vw,38px); color:var(--navy);
+}
+#the-mixer-site .tm-gal-soon p{color:var(--slate); font-size:16.5px; margin:14px auto 0; max-width:46ch; line-height:1.6;}
+#the-mixer-site .tm-gal-soon .tm-btn{margin-top:26px;}
+#the-mixer-site .tm-gal-count{
+  text-align:center; font-family:var(--sans); font-size:13px; color:var(--faint);
+  letter-spacing:.04em; margin:0 0 22px;
+}
+
+/* ---- lightbox ---- */
+#the-mixer-site .tm-lightbox{
+  position:fixed; inset:0; z-index:210; display:none; align-items:center; justify-content:center;
+  padding:34px; background:rgba(10,18,46,.88); backdrop-filter:blur(6px);
+}
+#the-mixer-site .tm-lightbox.tm-open{display:flex; animation:tmFade .2s ease;}
+#the-mixer-site .tm-lb-figure{
+  margin:0; display:flex; flex-direction:column; align-items:center;
+  max-width:min(1040px,92vw);
+}
+#the-mixer-site .tm-lb-stage{
+  background:#fff; box-shadow:var(--sh-lg); display:flex; align-items:center; justify-content:center;
+  max-width:100%;
+}
+#the-mixer-site .tm-lb-stage img{display:block; width:auto; height:auto; max-width:min(1040px,92vw); max-height:68vh;}
+#the-mixer-site .tm-lb-ph{
+  width:min(620px,86vw); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;
+  background:linear-gradient(150deg,var(--tint2) 0%,#fff 70%);
+}
+#the-mixer-site .tm-lb-ph svg{width:40px; height:40px; color:var(--blue); opacity:.4;}
+#the-mixer-site .tm-lb-ph b{font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--faint);}
+#the-mixer-site .tm-lb-cap{
+  font-family:var(--serif); font-weight:600; font-size:clamp(20px,3vw,28px); color:#fff;
+  text-align:center; margin-top:20px; line-height:1.3; max-width:40ch;
+}
+#the-mixer-site .tm-lb-meta{
+  font-family:var(--sans); font-size:11.5px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:#9FB2EC; margin-top:9px;
+}
+#the-mixer-site .tm-lb-nav{
+  position:absolute; top:50%; transform:translateY(-50%); width:54px; height:54px; border-radius:999px;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.34); color:#fff;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  transition:background .18s, border-color .18s;
+}
+#the-mixer-site .tm-lb-nav:hover{background:rgba(255,255,255,.22); border-color:#fff;}
+#the-mixer-site .tm-lb-nav:focus-visible{outline:none; box-shadow:0 0 0 4px rgba(255,255,255,.4);}
+#the-mixer-site .tm-lb-nav svg{width:22px; height:22px;}
+#the-mixer-site .tm-lb-prev{left:22px;}
+#the-mixer-site .tm-lb-next{right:22px;}
+#the-mixer-site .tm-lightbox-close{
+  position:absolute; top:22px; right:26px; width:48px; height:48px; border-radius:999px;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.34);
+  color:#fff; font-size:26px; line-height:1; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:background .18s, border-color .18s;
+}
+#the-mixer-site .tm-lightbox-close:hover{background:rgba(255,255,255,.22); border-color:#fff;}
+#the-mixer-site .tm-lightbox-close:focus-visible{outline:none; box-shadow:0 0 0 4px rgba(255,255,255,.4);}
+
+@media (max-width:1080px){ #the-mixer-site .tm-nav-links{gap:22px;} }
+@media (max-width:600px){
+  #the-mixer-site .tm-masonry{columns:2 130px; column-gap:11px;}
+  #the-mixer-site .tm-masonry > *{margin-bottom:11px;}
+  #the-mixer-site .tm-galtab{padding:10px 18px; font-size:13.5px;}
+  #the-mixer-site .tm-gal-drive{padding:16px 18px;}
+  #the-mixer-site .tm-gal-drive .tm-btn{width:100%;}
+  #the-mixer-site .tm-gal-soon{padding:48px 22px;}
+  #the-mixer-site .tm-lightbox{padding:16px;}
+  #the-mixer-site .tm-lb-nav{width:44px; height:44px;}
+  #the-mixer-site .tm-lb-prev{left:6px;}
+  #the-mixer-site .tm-lb-next{right:6px;}
+  #the-mixer-site .tm-lightbox-close{top:12px; right:12px;}
+  #the-mixer-site .tm-lb-stage img{max-height:56vh;}
+}
+@media (prefers-reduced-motion:reduce){
+  #the-mixer-site .tm-tile{transition:none;}
+  #the-mixer-site .tm-tile:hover{transform:none;}
+  #the-mixer-site .tm-lightbox.tm-open{animation:none;}
+}
 
 /* ---- terms ---- */
 #the-mixer-site .tm-terms-card{max-width:860px; margin:0 auto; background:#fff; border:1px solid var(--line);
@@ -403,7 +561,6 @@
 /* ====================  RESPONSIVE  ==================== */
 @media (max-width:1024px){
   #the-mixer-site .tm-bene-grid{grid-template-columns:repeat(2,1fr);}
-  #the-mixer-site .tm-gallery-grid{grid-template-columns:repeat(3,1fr);}
 }
 @media (max-width:860px){
   #the-mixer-site .tm-nav-links{display:none;}
@@ -420,7 +577,6 @@
   #the-mixer-site .tm-trio-item:nth-child(2){transform:none;}
   #the-mixer-site .tm-count{grid-template-columns:repeat(2,1fr);}
   #the-mixer-site .tm-bene-grid{grid-template-columns:1fr;}
-  #the-mixer-site .tm-gallery-grid{grid-template-columns:repeat(2,1fr);}
   #the-mixer-site .tm-field-row{grid-template-columns:1fr;}
   #the-mixer-site .tm-form-card,#the-mixer-site .tm-terms-card{padding:26px;}
   #the-mixer-site .tm-venue{flex-direction:column; text-align:center; align-items:center;}
@@ -798,6 +954,7 @@
       <a href="#about" data-page="about">About</a>
       <a href="#organizers" data-page="organizers">Organizers</a>
       <a href="#calendar" data-page="calendar">Calendar</a>
+      <a href="#gallery" data-page="gallery">Gallery</a>
       <a href="#raffle" data-page="raffle">Raffle</a>
     </div>
     <div class="tm-nav-cta">
@@ -810,6 +967,7 @@
     <a href="#about" data-page="about">About</a>
     <a href="#organizers" data-page="organizers">Organizers</a>
     <a href="#calendar" data-page="calendar">Calendar</a>
+    <a href="#gallery" data-page="gallery">Gallery</a>
     <a href="#raffle" data-page="raffle">Raffle</a>
     <a href="#terms" data-page="terms">Terms &amp; Conditions</a>
     <a class="tm-btn tm-btn-primary" href="#register" data-page="home" data-scroll="tmRegister">Reserve Your Spot</a>
@@ -1194,15 +1352,8 @@
   </div>
   <div class="tm-section">
     <div class="tm-container">
-      <div class="tm-filters" id="tmFilters">
-        <button class="tm-filter tm-active" data-cat="all">All</button>
-        <button class="tm-filter" data-cat="networking">Networking</button>
-        <button class="tm-filter" data-cat="venues">Venues</button>
-        <button class="tm-filter" data-cat="hosts">Hosts</button>
-        <button class="tm-filter" data-cat="food">Food &amp; Drinks</button>
-      </div>
-      <div class="tm-gallery-grid" id="tmGalleryGrid"></div>
-      <p class="tm-gal-note">Tip: drop your event photos into your media library and wire them into the gallery data to show images here.</p>
+      <div class="tm-galtabs" id="tmGalTabs" role="tablist" aria-label="Photo galleries"></div>
+      <div id="tmGalPanel" role="tabpanel" tabindex="0"></div>
     </div>
   </div>
 </section>
@@ -1378,7 +1529,7 @@
               <a class="tm-btn tm-btn-outline" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=August%20Senior%20Pro%20Network&amp;startdt=2026-08-26T23%3A00%3A00Z&amp;enddt=2026-08-27T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook.com<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
               <a class="tm-btn tm-btn-outline" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=August%20Senior%20Pro%20Network&amp;startdt=2026-08-26T23%3A00%3A00Z&amp;enddt=2026-08-27T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook &ndash; work or school<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
               <a class="tm-btn tm-btn-outline" href="https://calendar.yahoo.com/?v=60&amp;title=August%20Senior%20Pro%20Network&amp;st=20260826T230000Z&amp;et=20260827T010000Z&amp;desc=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;in_loc=Cogir%20at%20Belmont%2C%202883%20S.%20Norfolk%20St%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener noreferrer">Yahoo Calendar<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-cal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-primary tm-btn-lg tm-cal-file" id="tmCalIcs" href="#" download="senior-pro-network-aug-26.ics">Apple Calendar or other app (.ics)<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
+              <a class="tm-btn tm-btn-primary tm-btn-lg tm-cal-file" id="tmCalIcs" href="/save-the-date.ics" download="senior-pro-network-aug-26.ics">Apple Calendar or other app (.ics)<svg class="tm-cal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
             </div>
             <p class="tm-cal-note">Times are Pacific. Your calendar will convert to your own time zone.</p>
           </div>
@@ -1536,6 +1687,7 @@
     <a href="#about" data-page="about">About</a>
     <a href="#organizers" data-page="organizers">Organizers</a>
     <a href="#calendar" data-page="calendar">Calendar</a>
+    <a href="#gallery" data-page="gallery">Gallery</a>
     <a href="#raffle" data-page="raffle">Raffle</a>
     <a href="#register" data-page="home" data-scroll="tmRegister">Register</a>
     <a href="#terms" data-page="terms">Terms &amp; Conditions</a>
@@ -1569,14 +1721,17 @@
   </div>
 </div>
 
-<div class="tm-lightbox" id="tmLightbox">
-  <div class="tm-lightbox-close" id="tmLightboxClose">&times;</div>
-  <div class="tm-lightbox-inner">
-    <div class="tm-lightbox-card">
-      <div class="tm-lightbox-cat" id="tmLightboxCat"></div>
-      <div class="tm-lightbox-cap" id="tmLightboxCap"></div>
-    </div>
-  </div>
+<div class="tm-lightbox" id="tmLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button type="button" class="tm-lightbox-close" id="tmLightboxClose" aria-label="Close photo viewer">&times;</button>
+  <button type="button" class="tm-lb-nav tm-lb-prev" id="tmLbPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 5 8 12 15 19"/></svg></button>
+  <button type="button" class="tm-lb-nav tm-lb-next" id="tmLbNext" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg></button>
+  <figure class="tm-lb-figure">
+    <div class="tm-lb-stage" id="tmLbStage"></div>
+    <figcaption>
+      <div class="tm-lb-cap" id="tmLightboxCap"></div>
+      <div class="tm-lb-meta" id="tmLightboxCat"></div>
+    </figcaption>
+  </figure>
 </div>
 
 <!-- ====================  SCRIPTS  ==================== -->
@@ -1874,55 +2029,202 @@
   eventModal.addEventListener('click', function(e){ if(e.target === eventModal) closeEvent(); });
   document.getElementById('tmEventRegister').addEventListener('click', closeEvent);
 
-  /* ---------- Gallery ---------- */
-  var GALLERY = [
-    { cat:'hosts',      cap:'Your Hosts' },
-    { cat:'networking', cap:'A Room Full of Smiles' },
-    { cat:'food',       cap:'The Spread' },
-    { cat:'food',       cap:'Cheese and Fruit Platter' },
-    { cat:'hosts',      cap:'Viv Kelvin' },
-    { cat:'networking', cap:'Wonderful Guests' },
-    { cat:'networking', cap:'Lots of Smiles' },
-    { cat:'networking', cap:'Having Fun' },
-    { cat:'venues',     cap:'Gifts for Guests' },
-    { cat:'networking', cap:'Mingling & Introductions' },
-    { cat:'hosts',      cap:'Sponsor Spotlight' },
-    { cat:'networking', cap:'Three Lovely Ladies' },
-    { cat:'networking', cap:'Selfies' },
-    { cat:'networking', cap:'New Connections' },
-    { cat:'networking', cap:'More Fun Moments' },
-    { cat:'networking', cap:'Wonderful Guests' }
+  /* ---------- Gallery ----------------------------------------------------
+     TO ADD REAL PHOTOS: paste the image URL into src:''. That is the only
+     edit needed - the layout adapts to any shape, portrait or landscape.
+     The "ar" value only shapes the grey placeholder box and is ignored
+     once a real src is present, so photos are never cropped or stretched.
+     ---------------------------------------------------------------------- */
+  /* ---------- Gallery ----------------------------------------------------
+     TO ADD PHOTOS: drop the files in /photos/ and put the FILENAME in file:''.
+     Nothing else to edit. Netlify's Image CDN resizes and reformats on the
+     fly, so you can upload full-resolution originals once and every visitor
+     gets a small, modern-format version sized for their screen.
+       - tiles     -> 600px wide
+       - lightbox  -> 1600px wide
+     Format is auto-negotiated (AVIF/WebP) per browser.
+     The "ar" value only shapes the grey placeholder and is ignored once a
+     real file is present, so photos are never cropped or stretched.
+     ---------------------------------------------------------------------- */
+  var PHOTO_DIR = '/photos/';
+  function imgURL(file, w, q){
+    return '/.netlify/images?url=' + encodeURIComponent(PHOTO_DIR + file)
+         + '&w=' + w + '&q=' + (q || 75) + '&fit=contain';
+  }
+
+  var GALLERIES = [
+    {
+      id: 'jul2026',
+      tab: 'July 2026',
+      sub: 'Harbor at Hillsdale',
+      /* REPLACE: paste your shared Google Drive folder link here */
+      drive: 'https://drive.google.com/drive/folders/REPLACE-WITH-FOLDER-ID',
+      photos: [
+        { file:'', cap:'Your Hosts',                ar:'4/3'  },
+        { file:'', cap:'A Room Full of Smiles',     ar:'3/2'  },
+        { file:'', cap:'Welcome Table',             ar:'3/4'  },
+        { file:'', cap:'The Spread',                ar:'1/1'  },
+        { file:'', cap:'Cheese and Fruit Platter',  ar:'4/3'  },
+        { file:'', cap:'Viv Kelvin',                ar:'2/3'  },
+        { file:'', cap:'Wonderful Guests',          ar:'3/2'  },
+        { file:'', cap:'Rooftop Views',             ar:'16/9' },
+        { file:'', cap:'Lots of Smiles',            ar:'1/1'  },
+        { file:'', cap:'Having Fun',                ar:'3/4'  },
+        { file:'', cap:'Gifts for Guests',          ar:'4/3'  },
+        { file:'', cap:'Mingling and Introductions',ar:'3/2'  },
+        { file:'', cap:'Sponsor Spotlight',         ar:'2/3'  },
+        { file:'', cap:'Three Lovely Ladies',       ar:'1/1'  },
+        { file:'', cap:'Selfies',                   ar:'3/4'  },
+        { file:'', cap:'New Connections',           ar:'3/2'  },
+        { file:'', cap:'Raffle Winners',            ar:'4/3'  },
+        { file:'', cap:'More Fun Moments',          ar:'1/1'  },
+        { file:'', cap:'Conversations That Count',  ar:'2/3'  },
+        { file:'', cap:'Group Photo',               ar:'16/9' }
+      ]
+    },
+    {
+      id: 'aug2026',
+      tab: 'August 2026',
+      sub: 'Cogir at Belmont',
+      soon: true,
+      soonText: 'Photos from our August 26th gathering at Cogir at Belmont will be posted here shortly after the event.',
+      photos: []
+    }
   ];
-  var CAT_LABELS = { hosts:'Hosts', networking:'Networking', food:'Food & Drinks', venues:'Venues' };
-  function renderGallery(filter){
-    var grid = document.getElementById('tmGalleryGrid');
-    if(!grid) return;
-    grid.innerHTML = '';
-    GALLERY.filter(function(g){ return filter==='all' || g.cat===filter; }).forEach(function(g){
-      var tile = document.createElement('div');
-      tile.className = 'tm-gal-tile';
-      tile.innerHTML = '<span class="tm-gal-cat">'+CAT_LABELS[g.cat]+'</span><span class="tm-gal-cap">'+g.cap+'</span>';
-      tile.addEventListener('click', function(){
-        document.getElementById('tmLightboxCat').textContent = CAT_LABELS[g.cat];
-        document.getElementById('tmLightboxCap').textContent = g.cap;
-        document.getElementById('tmLightbox').classList.add('tm-open');
-      });
-      grid.appendChild(tile);
-    });
+
+  var PH_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="m3 16.5 5-4 4.5 3.5L16 13l5 4"/></svg>';
+
+  function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+                    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
-  var filters = document.getElementById('tmFilters');
-  if(filters){
-    filters.addEventListener('click', function(e){
-      var b = e.target.closest('.tm-filter'); if(!b) return;
-      filters.querySelectorAll('.tm-filter').forEach(function(x){ x.classList.remove('tm-active'); });
-      b.classList.add('tm-active');
-      renderGallery(b.getAttribute('data-cat'));
-    });
+
+  var galIndex = 0, lbList = [], lbAt = 0, lbReturn = null;
+
+  function tileHTML(p, i){
+    var inner = p.file
+      ? '<img src="'+esc(imgURL(p.file,600))+'" alt="'+esc(p.cap)+'" loading="lazy" decoding="async">'
+      : '<div class="tm-ph" style="aspect-ratio:'+p.ar+'">'+PH_ICON+'<b>Photo '+(i+1<10?'0':'')+(i+1)+'</b></div>';
+    return '<button type="button" class="tm-tile" data-i="'+i+'" aria-label="Open photo: '+esc(p.cap)+'">'
+         + inner + '<span class="tm-tile-cap">'+esc(p.cap)+'</span></button>';
   }
-  var lb = document.getElementById('tmLightbox');
-  function closeLb(){ lb.classList.remove('tm-open'); }
-  document.getElementById('tmLightboxClose').addEventListener('click', closeLb);
-  lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
+
+  function renderGallery(){
+    var g = GALLERIES[galIndex];
+    var panel = document.getElementById('tmGalPanel');
+    if(!panel) return;
+
+    document.querySelectorAll('#tmGalTabs .tm-galtab').forEach(function(b,i){
+      b.setAttribute('aria-selected', i === galIndex ? 'true' : 'false');
+      b.setAttribute('tabindex', i === galIndex ? '0' : '-1');
+    });
+    panel.setAttribute('aria-labelledby','tmGalTab-'+g.id);
+
+    if(g.soon){
+      panel.innerHTML =
+        '<div class="tm-gal-soon">'
+        + '<div class="tm-gal-soon-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 6.8 12 12 15.6 14"/></svg></div>'
+        + '<h3>Photos Coming Soon</h3>'
+        + '<p>'+esc(g.soonText)+'</p>'
+        + '<a class="tm-btn tm-btn-primary tm-btn-lg" href="#register" data-page="home" data-scroll="tmRegister">Reserve Your Spot</a>'
+        + '</div>';
+      return;
+    }
+
+    var html = '';
+    if(g.drive){
+      html += '<div class="tm-gal-drive">'
+           +  '<div class="tm-gal-drive-txt">Want the full-resolution photos?'
+           +  '<span>Browse and download every shot from this event.</span></div>'
+           +  '<a class="tm-btn tm-btn-outline" href="'+esc(g.drive)+'" target="_blank" rel="noopener noreferrer">'
+           +  'View all in Google Drive'
+           +  '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>'
+           +  '<span class="tm-cal-sr"> (opens in a new tab)</span></a>'
+           +  '</div>';
+    }
+    html += '<p class="tm-gal-count">'+g.photos.length+' photos &middot; '+esc(g.sub)+'</p>';
+    html += '<div class="tm-masonry">'
+         +  g.photos.map(tileHTML).join('')
+         +  '</div>';
+    panel.innerHTML = html;
+  }
+
+  /* ---------- Lightbox ---------- */
+  function lbRender(){
+    var p = lbList[lbAt];
+    var stage = document.getElementById('tmLbStage');
+    stage.innerHTML = p.file
+      ? '<img src="'+esc(imgURL(p.file,1600,80))+'" alt="'+esc(p.cap)+'">'
+      : '<div class="tm-lb-ph" style="aspect-ratio:'+p.ar+'">'+PH_ICON+'<b>Photo '+(lbAt+1<10?'0':'')+(lbAt+1)+'</b></div>';
+    document.getElementById('tmLightboxCap').textContent = p.cap;
+    document.getElementById('tmLightboxCat').textContent =
+      GALLERIES[galIndex].tab + ' \u00b7 ' + GALLERIES[galIndex].sub + ' \u00b7 ' + (lbAt+1) + ' of ' + lbList.length;
+    var multi = lbList.length > 1;
+    document.getElementById('tmLbPrev').style.display = multi ? 'flex' : 'none';
+    document.getElementById('tmLbNext').style.display = multi ? 'flex' : 'none';
+  }
+  function lbOpen(i, from){
+    lbList = GALLERIES[galIndex].photos; lbAt = i; lbReturn = from || null;
+    lbRender();
+    document.getElementById('tmLightbox').classList.add('tm-open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('tmLightboxClose').focus();
+  }
+  function lbClose(){
+    document.getElementById('tmLightbox').classList.remove('tm-open');
+    document.body.style.overflow = '';
+    if(lbReturn && document.contains(lbReturn)) lbReturn.focus();
+  }
+  function lbStep(d){
+    if(!lbList.length) return;
+    lbAt = (lbAt + d + lbList.length) % lbList.length;
+    lbRender();
+  }
+
+  function initGallery(){
+    var tabs = document.getElementById('tmGalTabs');
+    var panel = document.getElementById('tmGalPanel');
+    if(!tabs || !panel) return;
+
+    tabs.innerHTML = GALLERIES.map(function(g,i){
+      return '<button type="button" role="tab" class="tm-galtab" id="tmGalTab-'+g.id+'"'
+           + ' aria-controls="tmGalPanel" aria-selected="'+(i===0?'true':'false')+'"'
+           + ' tabindex="'+(i===0?'0':'-1')+'" data-i="'+i+'">'
+           + esc(g.tab)+'<small>'+esc(g.sub)+'</small></button>';
+    }).join('');
+
+    tabs.addEventListener('click', function(e){
+      var b = e.target.closest('.tm-galtab'); if(!b) return;
+      galIndex = +b.getAttribute('data-i'); renderGallery();
+    });
+    tabs.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if(!d) return;
+      e.preventDefault();
+      galIndex = (galIndex + d + GALLERIES.length) % GALLERIES.length;
+      renderGallery();
+      tabs.querySelectorAll('.tm-galtab')[galIndex].focus();
+    });
+
+    panel.addEventListener('click', function(e){
+      var t = e.target.closest('.tm-tile'); if(!t) return;
+      lbOpen(+t.getAttribute('data-i'), t);
+    });
+
+    document.getElementById('tmLightboxClose').addEventListener('click', lbClose);
+    document.getElementById('tmLbPrev').addEventListener('click', function(){ lbStep(-1); });
+    document.getElementById('tmLbNext').addEventListener('click', function(){ lbStep(1); });
+    var lb = document.getElementById('tmLightbox');
+    lb.addEventListener('click', function(e){ if(e.target === lb) lbClose(); });
+    document.addEventListener('keydown', function(e){
+      if(!lb.classList.contains('tm-open')) return;
+      if(e.key === 'Escape') lbClose();
+      else if(e.key === 'ArrowRight') lbStep(1);
+      else if(e.key === 'ArrowLeft') lbStep(-1);
+    });
+
+    renderGallery();
+  }
 
   /* ---------- FAQ accordion ---------- */
   site.querySelectorAll('.tm-faq-q').forEach(function(q){
@@ -1936,11 +2238,11 @@
 
   /* ---------- Esc closes overlays ---------- */
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){ closeOrg(); closeEvent(); closeLb(); }
+    if(e.key === 'Escape'){ closeOrg(); closeEvent(); lbClose(); }
   });
 
   /* ---------- Initial render / deep-link ---------- */
-  renderGallery('all');
+  initGallery();
   renderCalendar();
   (function(){
     var h = (location.hash || '#home').replace('#','');
@@ -1969,12 +2271,20 @@
     'DESCRIPTION:Tomorrow: Senior Pro Network at Cogir at Belmont',
     'END:VALARM','END:VEVENT','END:VCALENDAR'
   ].join('\r\n');
-  if(/iP(hone|ad|od)|Macintosh/.test(navigator.userAgent)){
-    a.setAttribute('href','data:text/calendar;charset=utf-8,'+encodeURIComponent(ics));
-  }else{
-    a.setAttribute('href',URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'})));
-  }
+  /* The hosted /save-the-date.ics is the primary path - iOS hands a real
+     hosted file straight to Calendar. Only take over if it is missing. */
+  fetch(a.getAttribute('href'),{method:'HEAD'})
+    .then(function(r){ if(!r.ok) throw 0; })
+    .catch(function(){
+      if(/iP(hone|ad|od)|Macintosh/.test(navigator.userAgent)){
+        a.setAttribute('href','data:text/calendar;charset=utf-8,'+encodeURIComponent(ics));
+      }else{
+        a.setAttribute('href',URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'})));
+      }
+    });
 })();
 </script>
 </div>
 <!-- ===================  END SENIOR PRO NETWORK  =================== -->
+</body>
+</html>
