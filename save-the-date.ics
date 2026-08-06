@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Senior Pro Network//Save the Date//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:spn-20260826@seniorpronetwork.org
+DTSTAMP:20260805T000000Z
+DTSTART:20260826T230000Z
+DTEND:20260827T010000Z
+SUMMARY:August Senior Pro Network
+DESCRIPTION:Senior Pro Network networking event. Details: https://seniorpronetwork.org/#confirmation
+LOCATION:Cogir at Belmont\, 900 6th Ave\, Belmont\, CA
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: Senior Pro Network at Cogir at Belmont
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,7 @@
+/save-the-date.ics
+  Content-Type: text/calendar; charset=utf-8
+  Content-Disposition: attachment; filename="senior-pro-network-aug-26.ics"
+  Cache-Control: public, max-age=3600
+
+/photos/*
+  Cache-Control: public, max-age=31536000, immutable
