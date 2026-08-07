@@ -49,6 +49,7 @@ exports.handler = async function (event) {
     const firstName = data.firstName || "";
     const lastName = data.lastName || "";
     const profession = data.profession || "";
+    const company = data.company || "";
     const phone = data.phone || "";
     const email = data.email || "";
     const address = data.address || "";
@@ -106,6 +107,7 @@ exports.handler = async function (event) {
           FIRSTNAME: firstName.trim(),
           LASTNAME: lastName.trim(),
           PROFESSION: profession.trim(),
+          COMPANY: company.trim(),
           PHONE: phone.trim(),
           ADDRESS: address.trim()
         },
