@@ -94,6 +94,26 @@ exports.handler = async function (event) {
       };
     }
 
+    // BREVO_LIST_ID accepts one ID ("32") or several, comma-separated ("3,32").
+    const listIds = process.env.BREVO_LIST_ID
+      .split(",")
+      .map(function (id) {
+        return Number(id.trim());
+      })
+      .filter(function (id) {
+        return Number.isInteger(id) && id > 0;
+      });
+
+    if (listIds.length === 0) {
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({
+          error: "BREVO_LIST_ID is not a valid list ID or comma-separated list of IDs."
+        })
+      };
+    }
+
     const brevoResponse = await fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
       headers: {
@@ -111,7 +131,7 @@ exports.handler = async function (event) {
           PHONE: phone.trim(),
           ADDRESS: address.trim()
         },
-        listIds: [Number(process.env.BREVO_LIST_ID)],
+        listIds: listIds,
         updateEnabled: true
       })
     });
