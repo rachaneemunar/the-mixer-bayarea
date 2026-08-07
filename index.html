@@ -830,19 +830,8 @@
 }
 
 /* ============================================================
-   CAN'T ATTEND / FEEDBACK PAGE  (#cant-attend)
+   FEEDBACK FORM (confirmation page)
    ============================================================ */
-#the-mixer-site .tm-miss-wrap{ max-width:780px; margin:0 auto; }
-#the-mixer-site .tm-miss-note{
-  background:var(--panel); border:1px solid var(--panel-line);
-  padding:40px 36px; box-shadow:var(--sh-sm); text-align:center; margin-bottom:34px;
-}
-#the-mixer-site .tm-miss-note h2{
-  font-family:var(--serif); font-weight:600; letter-spacing:-.01em;
-  font-size:clamp(28px,4.4vw,42px); color:var(--navy);
-}
-#the-mixer-site .tm-miss-note p{ color:var(--slate); font-size:18px; margin-top:16px; }
-#the-mixer-site .tm-miss-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
 
 #the-mixer-site .tm-fb-card{
   background:#fff; border:1px solid var(--line);
@@ -882,9 +871,7 @@
 #the-mixer-site .tm-radio input:focus-visible + span{ box-shadow:0 0 0 4px rgba(43,81,216,.18); }
 #the-mixer-site .tm-fb-submit{ width:100%; margin-top:8px; }
 @media (max-width:600px){
-  #the-mixer-site .tm-miss-note{ padding:28px 20px; }
   #the-mixer-site .tm-fb-card{ padding:26px 20px; }
-  #the-mixer-site .tm-miss-actions .tm-btn{ width:100%; }
   #the-mixer-site .tm-radio{ flex:1 1 100%; }
 }
 
@@ -1592,85 +1579,6 @@
             </div>
 
             <div id="tmConfFeedbackError" class="tm-form-error tm-fb-error" style="display:none;"></div>
-            <button type="submit" class="tm-btn tm-btn-primary tm-btn-lg tm-fb-submit">Send Feedback &rarr;</button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================================================
-     PAGE: CAN'T ATTEND + FEEDBACK  (direct link:  #cant-attend )
-     Form posts JSON to /.netlify/functions/brevo-feedback
-     ===================================================================== -->
-<section class="tm-page" id="tm-page-cant-attend">
-  <div class="tm-subhero">
-    <span class="tm-eyebrow">We&rsquo;ll Miss You</span>
-    <h1>Can&rsquo;t Make It?</h1>
-    <p class="tm-subhero-tag">No problem at all &mdash; we&rsquo;d still love to hear from you before the next one.</p>
-  </div>
-
-  <div class="tm-section">
-    <div class="tm-container">
-      <div class="tm-miss-wrap">
-
-        <div class="tm-miss-note">
-          <h2>Thanks for Letting Us Know</h2>
-          <p>We&rsquo;re sorry you can&rsquo;t join us this time, but you&rsquo;re still part of the Senior Pro Network. We&rsquo;ll keep you posted on the next gathering, and your input below helps us make it worth your while.</p>
-          <div class="tm-miss-actions">
-            <a class="tm-btn tm-btn-primary tm-btn-lg" href="#calendar" data-page="calendar">See Upcoming Dates</a>
-            <a class="tm-btn tm-btn-outline tm-btn-lg" href="#home" data-page="home">&larr; Back to Home</a>
-          </div>
-        </div>
-
-        <div class="tm-fb-card">
-          <div class="tm-form-success tm-fb-success" id="tmFeedbackSuccess">
-            <b>Thank You!</b>
-            Your feedback has been received. We really appreciate you taking the time &mdash; it helps shape every event we plan.
-          </div>
-
-          <form id="tmFeedbackForm" class="tm-feedback-form" data-source="cant-attend-feedback" data-attending="false" novalidate>
-            <div class="tm-form-title">Share Your Feedback</div>
-            <p class="tm-fb-intro">A few quick questions. Only your name and email are required.</p>
-
-            <div class="tm-field-row">
-              <div class="tm-field">
-                <label for="tmFbName">Name *</label>
-                <input id="tmFbName" name="fbName" autocomplete="name" required>
-              </div>
-              <div class="tm-field">
-                <label for="tmFbEmail">Email *</label>
-                <input id="tmFbEmail" name="fbEmail" type="email" autocomplete="email" required>
-              </div>
-            </div>
-
-            <div class="tm-field">
-              <label for="tmFbEnjoyed">What did you enjoy most?</label>
-              <textarea id="tmFbEnjoyed" name="enjoyedMost" rows="3"></textarea>
-            </div>
-
-            <div class="tm-field">
-              <label for="tmFbImprove">What could we improve?</label>
-              <textarea id="tmFbImprove" name="couldImprove" rows="3"></textarea>
-            </div>
-
-            <div class="tm-field">
-              <label for="tmFbTopics">What topics or activities would you like at future events?</label>
-              <textarea id="tmFbTopics" name="futureTopics" rows="3"></textarea>
-            </div>
-
-            <div class="tm-field">
-              <label>Would you recommend Senior Pro Network to a colleague?</label>
-              <div class="tm-radio-group">
-                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="Yes"><span>Yes</span></label>
-                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="Maybe"><span>Maybe</span></label>
-                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="No"><span>No</span></label>
-              </div>
-            </div>
-
-            <div id="tmFeedbackError" class="tm-form-error tm-fb-error" style="display:none;"></div>
             <button type="submit" class="tm-btn tm-btn-primary tm-btn-lg tm-fb-submit">Send Feedback &rarr;</button>
           </form>
         </div>
