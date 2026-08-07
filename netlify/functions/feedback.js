@@ -1,25 +1,34 @@
-document.querySelector("#feedback-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const form = e.target;
+exports.handler = async (event) => {
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method Not Allowed" };
+  }
 
-  const payload = {
-    name: form.name.value,
-    email: form.email.value,
-    enjoyed: form.enjoyed.value,
-    improve: form.improve.value,
-    topics: form.topics.value,
-    recommend: form.recommend.value,
-  };
+  const data = JSON.parse(event.body);
 
-  const res = await fetch("/.netlify/functions/feedback", {
+  const response = await fetch("https://api.brevo.com/v3/contacts", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
+    headers: {
+      "accept": "application/json",
+      "content-type": "application/json",
+      "api-key": process.env.BREVO_API_KEY, // stored as an env var, never in code
+    },
+    body: JSON.stringify({
+      email: data.email,
+      updateEnabled: true, // updates the contact if this email already exists
+      attributes: {
+        FIRSTNAME: data.name,
+        FEEDBACK_ENJOYED: data.enjoyed,
+        FEEDBACK_IMPROVE: data.improve,
+        FEEDBACK_TOPICS: data.topics,
+        FEEDBACK_RECOMMEND: data.recommend,
+      },
+    }),
   });
 
-  if (res.ok) {
-    // show your existing "Thank You" confirmation state
-  } else {
-    // show an error message
+  if (!response.ok) {
+    const err = await response.text();
+    return { statusCode: 500, body: err };
   }
-});
+
+  return { statusCode: 200, body: JSON.stringify({ success: true }) };
+};
