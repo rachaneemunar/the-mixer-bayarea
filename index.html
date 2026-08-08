@@ -956,6 +956,7 @@
     <a href="#calendar" data-page="calendar">Calendar</a>
     <a href="#gallery" data-page="gallery">Gallery</a>
     <a href="#raffle" data-page="raffle">Raffle</a>
+    <a href="#feedback" data-page="feedback">Feedback</a>
     <a href="#terms" data-page="terms">Terms &amp; Conditions</a>
     <a class="tm-btn tm-btn-primary" href="#register" data-page="home" data-scroll="tmRegister">Reserve Your Spot</a>
   </div>
@@ -1588,6 +1589,81 @@
   </div>
 </section>
 
+<!-- =====================================================================
+     PAGE: STANDALONE FEEDBACK  (direct link:  #feedback )
+     Identical form to the confirmation page. The only difference is
+     data-source, which the function stores in Brevo as FEEDBACK_SOURCE.
+     ================================================================== -->
+<section class="tm-page" id="tm-page-feedback">
+  <div class="tm-subhero">
+    <span class="tm-eyebrow">We&rsquo;d Love Your Feedback</span>
+    <h1>Tell Us How We Did</h1>
+    <p class="tm-subhero-tag">Your thoughts help shape every event we plan. It only takes a minute.</p>
+  </div>
+
+  <div class="tm-section">
+    <div class="tm-container">
+      <div class="tm-confirm-wrap">
+
+        <div class="tm-fb-card">
+          <div class="tm-form-success tm-fb-success" id="tmPageFeedbackSuccess">
+            <b>Thank You!</b>
+            Your feedback has been received. We really appreciate you taking the time &mdash; it helps shape every event we plan.
+          </div>
+
+          <form id="tmPageFeedbackForm" class="tm-feedback-form" data-source="feedback-page" data-attending="true" novalidate>
+            <div class="tm-form-title">Have You Attended One of Our Events?</div>
+            <p class="tm-fb-intro">We&rsquo;d love to hear your feedback. Only your name and email are required.</p>
+
+            <div class="tm-field-row">
+              <div class="tm-field">
+                <label for="tmPageFbName">Name *</label>
+                <input id="tmPageFbName" name="fbName" autocomplete="name" required>
+              </div>
+              <div class="tm-field">
+                <label for="tmPageFbEmail">Email *</label>
+                <input id="tmPageFbEmail" name="fbEmail" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmPageFbEnjoyed">What did you enjoy most?</label>
+              <textarea id="tmPageFbEnjoyed" name="enjoyedMost" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmPageFbImprove">What could we improve?</label>
+              <textarea id="tmPageFbImprove" name="couldImprove" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label for="tmPageFbTopics">What topics or activities would you like at future events?</label>
+              <textarea id="tmPageFbTopics" name="futureTopics" rows="3"></textarea>
+            </div>
+
+            <div class="tm-field">
+              <label>Would you recommend Senior Pro Network to a colleague?</label>
+              <div class="tm-radio-group">
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="Yes"><span>Yes</span></label>
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="Maybe"><span>Maybe</span></label>
+                <label class="tm-radio"><input type="radio" name="wouldRecommend" value="No"><span>No</span></label>
+              </div>
+            </div>
+
+            <div id="tmPageFeedbackError" class="tm-form-error tm-fb-error" style="display:none;"></div>
+            <button type="submit" class="tm-btn tm-btn-primary tm-btn-lg tm-fb-submit">Send Feedback &rarr;</button>
+          </form>
+        </div>
+
+        <div class="tm-confirm-actions" style="margin-top:30px;">
+          <a class="tm-btn tm-btn-outline tm-btn-lg" href="#home" data-page="home">&larr; Back to Home</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ====================  FOOTER  ==================== -->
 <footer class="tm-footer">
   <div class="tm-footer-logo">Senior Pro Network</div>
@@ -1600,6 +1676,7 @@
     <a href="#gallery" data-page="gallery">Gallery</a>
     <a href="#raffle" data-page="raffle">Raffle</a>
     <a href="#register" data-page="home" data-scroll="tmRegister">Register</a>
+    <a href="#feedback" data-page="feedback">Feedback</a>
     <a href="#terms" data-page="terms">Terms &amp; Conditions</a>
   </div>
   <div class="tm-footer-bottom">
@@ -1753,7 +1830,7 @@
 
   /* ---------- Feedback forms -> Brevo ----------
      Runs on every <form class="tm-feedback-form"> on the site, so the same
-     form can appear on the Can't Attend page and the Confirmation page. */
+     form can appear on the Confirmation page and the Feedback page. */
   document.querySelectorAll('.tm-feedback-form').forEach(function(fbForm){
     var card   = fbForm.closest('.tm-fb-card') || fbForm.parentNode;
     var fbErr  = fbForm.querySelector('.tm-fb-error');
