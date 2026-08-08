@@ -6,11 +6,7 @@ exports.handler = async function (event) {
   };
 
   if (event.httpMethod === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers,
-      body: ""
-    };
+    return { statusCode: 200, headers, body: "" };
   }
 
   if (event.httpMethod !== "POST") {
@@ -58,9 +54,7 @@ exports.handler = async function (event) {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({
-          error: "First name is required."
-        })
+        body: JSON.stringify({ error: "First name is required." })
       };
     }
 
@@ -68,9 +62,7 @@ exports.handler = async function (event) {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({
-          error: "Last name is required."
-        })
+        body: JSON.stringify({ error: "Last name is required." })
       };
     }
 
@@ -78,9 +70,7 @@ exports.handler = async function (event) {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({
-          error: "Profession is required."
-        })
+        body: JSON.stringify({ error: "Profession is required." })
       };
     }
 
@@ -88,9 +78,7 @@ exports.handler = async function (event) {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({
-          error: "Please enter a valid email address."
-        })
+        body: JSON.stringify({ error: "Please enter a valid email address." })
       };
     }
 
