@@ -83,10 +83,11 @@ exports.handler = async function (event) {
     }
 
     // BREVO_LIST_ID accepts one ID ("32") or several, comma-separated ("3,32").
+    // Non-digits are stripped, so "#3, #32" works too.
     const listIds = process.env.BREVO_LIST_ID
       .split(",")
       .map(function (id) {
-        return Number(id.trim());
+        return Number(String(id).replace(/[^0-9]/g, ""));
       })
       .filter(function (id) {
         return Number.isInteger(id) && id > 0;
