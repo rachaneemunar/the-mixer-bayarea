@@ -6,11 +6,7 @@ exports.handler = async function (event) {
   };
 
   if (event.httpMethod === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers,
-      body: ""
-    };
+    return { statusCode: 200, headers, body: "" };
   }
 
   if (event.httpMethod !== "POST") {
@@ -48,9 +44,7 @@ exports.handler = async function (event) {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({
-          error: "Name is required."
-        })
+        body: JSON.stringify({ error: "Name is required." })
       };
     }
 
@@ -58,9 +52,7 @@ exports.handler = async function (event) {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({
-          error: "Please enter a valid email address."
-        })
+        body: JSON.stringify({ error: "Please enter a valid email address." })
       };
     }
 
@@ -98,8 +90,27 @@ exports.handler = async function (event) {
     // Optional. Set BREVO_FEEDBACK_LIST_ID in Netlify only if you want
     // feedback submitters added to a list. Left unset, they are still
     // saved to your contact database.
+    // Accepts one ID ("36") or several, comma-separated ("3,36").
+    // Strips stray characters like the "#" Brevo shows in its UI, so a
+    // bad value can never reach Brevo as null.
     if (process.env.BREVO_FEEDBACK_LIST_ID) {
-      payload.listIds = [Number(process.env.BREVO_FEEDBACK_LIST_ID)];
+      const listIds = process.env.BREVO_FEEDBACK_LIST_ID
+        .split(",")
+        .map(function (id) {
+          return Number(String(id).replace(/[^0-9]/g, ""));
+        })
+        .filter(function (id) {
+          return Number.isInteger(id) && id > 0;
+        });
+
+      if (listIds.length > 0) {
+        payload.listIds = listIds;
+      } else {
+        console.error(
+          "BREVO_FEEDBACK_LIST_ID is not a valid list ID:",
+          process.env.BREVO_FEEDBACK_LIST_ID
+        );
+      }
     }
 
     const brevoResponse = await fetch("https://api.brevo.com/v3/contacts", {
