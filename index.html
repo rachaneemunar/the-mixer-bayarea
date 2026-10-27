@@ -2636,7 +2636,59 @@
     </figcaption>
   </figure>
 </div>
+<!-- ====================  PARKING GUIDELINES POP-UP  ==================== -->
+<style>
+#the-mixer-site .tm-parking-btn{
+  display:inline-flex; align-items:center; gap:7px; margin-top:10px;
+  padding:7px 14px; border-radius:999px; border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.1); color:#fff; font-family:var(--sans);
+  font-size:14px; font-weight:600; line-height:1.2; cursor:pointer;
+  transition:background .18s, border-color .18s;
+}
+#the-mixer-site .tm-parking-btn:hover{ background:rgba(255,255,255,.2); border-color:#fff; }
+#the-mixer-site .tm-parking-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
+#the-mixer-site .tm-parking-modal{
+  position:fixed; inset:0; z-index:220; display:none; align-items:center; justify-content:center;
+  padding:24px; background:rgba(10,18,46,.78); backdrop-filter:blur(4px);
+}
+#the-mixer-site .tm-parking-modal.tm-open{ display:flex; animation:tmFade .25s ease; }
+#the-mixer-site .tm-parking-inner{
+  position:relative; background:#fff; padding:18px; max-width:min(560px,94vw);
+  max-height:92vh; overflow:auto; box-shadow:var(--sh-lg); text-align:center;
+}
+#the-mixer-site .tm-parking-inner h3{
+  font-family:var(--serif); font-weight:600; font-size:26px; color:var(--navy); margin:4px 44px 14px;
+}
+#the-mixer-site .tm-parking-inner img{ display:block; width:100%; height:auto; max-height:78vh; object-fit:contain; margin:0 auto; }
+#the-mixer-site .tm-parking-close{
+  position:absolute; top:12px; right:12px; width:38px; height:38px; border-radius:50%;
+  border:1px solid var(--line); background:#fff; font-size:22px; line-height:1; color:var(--slate); cursor:pointer;
+}
+#the-mixer-site .tm-parking-close:hover{ border-color:var(--blue); color:var(--blue); }
+</style>
 
+<div class="tm-parking-modal" id="tmParkingModal" role="dialog" aria-modal="true" aria-labelledby="tmParkingTitle" aria-hidden="true">
+  <div class="tm-parking-inner">
+    <button type="button" class="tm-parking-close" id="tmParkingClose" aria-label="Close parking guidelines">&times;</button>
+    <h3 id="tmParkingTitle">Parking Guidelines</h3>
+    <img src="/photos/parking-guidelines.png" alt="Parking and event directions for Ivy Park at Belmont: enter from Alameda de las Pulgas, follow the gold arrows to Event Parking, then walk to the entrance of Ivy Park. Do not park in the Immaculate Heart of Mary School lot or the front drive.">
+  </div>
+</div>
+
+<script>
+(function(){
+  var modal = document.getElementById('tmParkingModal');
+  var openBtn = document.getElementById('tmParkingOpen');
+  var closeBtn = document.getElementById('tmParkingClose');
+  if(!modal || !openBtn) return;
+  function open(){ modal.classList.add('tm-open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; closeBtn.focus(); }
+  function close(){ modal.classList.remove('tm-open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; openBtn.focus(); }
+  openBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', function(e){ if(e.target === modal) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('tm-open')) close(); });
+})();
+</script>
 <!-- ====================  SCRIPTS  ==================== -->
 <script>
 (function(){
