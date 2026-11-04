@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Senior Pro Network | Monthly Networking for Peninsula Senior-Care Professionals</title>
-<meta name="description" content="A free monthly gathering where Bay Area senior-care professionals connect: senior living, home care, healthcare, elder law, and financial services. Next event Wednesday, October 28, 2026, 4-6 PM at Ivy Park at Belmont: Halloween Networking Event.">
+<meta name="description" content="A free monthly gathering where Bay Area senior-care professionals connect: senior living, home care, healthcare, elder law, and financial services. Next event Wednesday, December 16, 2026, 4-6 PM at Atria at Foster Square, Foster City: Christmas Networking Event.">
 <link rel="canonical" href="https://seniorpronetwork.org/">
 <meta name="theme-color" content="#2B51D8">
 <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="Senior Pro Network">
 <meta property="og:url" content="https://seniorpronetwork.org/">
 <meta property="og:title" content="Senior Pro Network | Peninsula Senior-Care Networking">
-<meta property="og:description" content="A free monthly gathering of senior-care professionals on the Peninsula. Next event Wednesday, October 28, 2026, 4-6 PM at Ivy Park at Belmont: Halloween Networking Event.">
-<meta property="og:image" content="https://seniorpronetwork.org/photos/SPN-Ivy-Park-Belmont.jpg">
-<meta property="og:image:alt" content="Senior Pro Network gathering at Ivy Park at Belmont">
+<meta property="og:description" content="A free monthly gathering of senior-care professionals on the Peninsula. Next event Wednesday, December 16, 2026, 4-6 PM at Atria at Foster Square, Foster City: Christmas Networking Event.">
+<meta property="og:image" content="https://seniorpronetwork.org/photos/SPN-Atria-Foster-Square.jpg">
+<meta property="og:image:alt" content="Atria at Foster Square, host of the December Senior Pro Network">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Senior Pro Network | Peninsula Senior-Care Networking">
-<meta name="twitter:description" content="A free monthly gathering of senior-care professionals on the Peninsula. Next event October 28, 2026: Halloween Networking Event at Ivy Park at Belmont.">
-<meta name="twitter:image" content="https://seniorpronetwork.org/photos/SPN-Ivy-Park-Belmont.jpg">
+<meta name="twitter:description" content="A free monthly gathering of senior-care professionals on the Peninsula. Next event Wednesday, December 16, 2026, 4-6 PM at Atria at Foster Square, Foster City: Christmas Networking Event.">
+<meta name="twitter:image" content="https://seniorpronetwork.org/photos/SPN-Atria-Foster-Square.jpg">
 
 <!-- Favicon: add these files to your publish folder -->
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -37,914 +37,382 @@
      ===================================================================== -->
 <div id="the-mixer-site">
      <!-- ==========================================================================
-     SENIOR PRO NETWORK  |  HALLOWEEN LAYER  ("Moonlit Manor")
+     SENIOR PRO NETWORK  |  CHRISTMAS LAYER  ("Evergreen & Frost")
      --------------------------------------------------------------------------
      INSTALL   Paste this whole block ONCE, directly below the line
                    <div id="the-mixer-site">
-               (same spot whether the page lives in index.html on Netlify or
-               in the WordPress Custom HTML block). Nothing else changes.
+               (same spot the Halloween block used to live). Nothing else changes.
+     IMAGES    Upload the 16 spn-xmas-*.webp files into your /photos/ folder.
+               If they live somewhere else, change the 16 url(...) lines just
+               below "image paths" - that is the only place they are listed.
      REMOVE    Delete this block. The site goes back to its normal look.
-     AUTO-OFF  Switches itself off Nov 1, 2026 at 12:00 AM Pacific.
-     PREVIEW   Add ?halloween=on or ?halloween=off to the page address.
-     NEXT YEAR Change HW_OFF_AT in the script at the bottom.
+     AUTO-OFF  Switches itself off Jan 1, 2027 at 12:00 AM Pacific.
+               To keep it longer, change XM_OFF_AT in the script at the bottom.
+     PREVIEW   Add ?christmas=on or ?christmas=off to the page address.
      ========================================================================== -->
-<style id="tm-hw-css">
-/* ---------- palette + accent swap (blue accents become Ember) ---------- */
-#the-mixer-site.tm-halloween{
-  --hw-night:#0A0E2A; --hw-plum:#2B1D5C; --hw-moon:#F6EFD9; --hw-pumpkin:#F2791C;
-  --hw-candle:#FFB266; --hw-ember:#C2410C; --hw-ember-dk:#9A3412; --hw-ground:#070A1F;
-  --blue:#C2410C; --blue-600:#9A3412;
-}
-#the-mixer-site.tm-halloween .tm-page[data-page="terms"]{--blue:#2B51D8; --blue-600:#2745C2}
-#the-mixer-site.tm-halloween .tm-eyebrow{color:var(--hw-ember) !important}
-#the-mixer-site.tm-halloween .tm-page[data-page="terms"] .tm-eyebrow{color:var(--blue) !important}
-#the-mixer-site.tm-halloween .tm-btn-primary{
-  background:linear-gradient(135deg,var(--hw-ember) 0%,var(--hw-ember-dk) 100%) !important;
-  border-color:transparent !important; color:#fff !important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 10px 24px -12px rgba(154,52,18,.8) !important;
-}
-#the-mixer-site.tm-halloween .tm-btn-primary:hover{filter:brightness(1.08)}
-
-/* ---------- dark areas ---------- */
-#the-mixer-site.tm-halloween .tm-ribbon{
-  background:linear-gradient(90deg,#0A0E2A 0%,#2B1D5C 58%,#3A2370 100%) !important;
-  color:#ECE6F8 !important; border-color:rgba(246,239,217,.08) !important;
-}
-#the-mixer-site.tm-halloween .tm-hw-ribbat{display:inline-block;width:1.6em;height:.8em;margin:0 .3em 0 0;vertical-align:-.04em;fill:var(--hw-candle);overflow:visible}
-#the-mixer-site.tm-halloween .tm-hero{background:var(--hw-ground) !important; isolation:isolate}
-#the-mixer-site.tm-halloween .tm-hero-scrim{display:none !important}
-#the-mixer-site.tm-halloween .tm-hero-bg{opacity:0 !important}
-#the-mixer-site.tm-halloween .tm-hero h1{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.30'/%3E%3C/svg%3E"),
-    linear-gradient(110deg,#F6EFD9 0%,#FFD9A0 18%,#FFB266 34%,#F2791C 50%,#FFB266 66%,#FFD9A0 82%,#F6EFD9 100%) !important;
-  background-size:140px 140px,260% 100% !important;
-  -webkit-background-clip:text !important; background-clip:text !important;
-  -webkit-text-fill-color:transparent !important; color:transparent !important;
-  text-shadow:none !important;
-  filter:drop-shadow(0 0 20px rgba(242,121,28,.30));
-  animation:tmHwGrad 9s ease-in-out infinite;
-}
-@keyframes tmHwGrad{0%,100%{background-position:0 0,0% 50%}50%{background-position:0 0,100% 50%}}
-#the-mixer-site.tm-halloween .tm-hero .tm-eyebrow{color:var(--hw-pumpkin) !important}
-#the-mixer-site.tm-halloween .tm-hero-photo{
-  border-color:rgba(246,239,217,.92) !important;
-  box-shadow:0 34px 80px -34px rgba(0,0,0,.9),0 0 0 1px rgba(246,239,217,.18),0 0 70px -24px rgba(242,121,28,.4) !important;
-}
-#the-mixer-site.tm-halloween .tm-hero .tm-btn-primary{
-  background:linear-gradient(135deg,#FFA24D 0%,var(--hw-pumpkin) 55%,#E0620F 100%) !important;
-  color:var(--hw-night) !important;
-  box-shadow:inset 0 0 0 1px rgba(255,200,140,.45),0 12px 30px -12px rgba(242,121,28,.9),0 0 36px rgba(242,121,28,.28) !important;
-}
-#the-mixer-site.tm-halloween :is(.tm-count-card,.tm-hw-countcard){
-  background:linear-gradient(180deg,rgba(43,29,92,.8),rgba(10,14,42,.92)) !important;
-  background-color:#141238 !important;
-  border:1px solid rgba(246,239,217,.2) !important;
-  box-shadow:0 26px 60px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(246,239,217,.06) !important;
-}
-#the-mixer-site.tm-halloween .tm-hw-darktile{
-  background:linear-gradient(180deg,rgba(62,44,128,.55),rgba(14,18,56,.6)) !important;
-  background-color:rgba(30,24,78,.75) !important;
-  border-color:rgba(246,239,217,.12) !important; box-shadow:none !important;
-}
-#the-mixer-site.tm-halloween .tm-hw-glownum{
-  color:#FFE7C2 !important; -webkit-text-fill-color:#FFE7C2 !important; background:none !important;
-  text-shadow:0 0 14px rgba(242,121,28,.75),0 0 2px rgba(255,190,120,.6) !important;
-}
-#the-mixer-site.tm-halloween :is(.tm-trio-invite,.tm-hw-invite){
-  background:radial-gradient(120% 90% at 88% 0%,rgba(122,96,200,.38),transparent 62%),linear-gradient(160deg,#2B1D5C 0%,#1B1850 62%,#0E1A57 100%) !important;
-  background-color:#2B1D5C !important; border-color:rgba(246,239,217,.16) !important; color:var(--hw-moon) !important;
-}
-#the-mixer-site.tm-halloween :is(.tm-trust,.tm-hw-trust){
-  background:linear-gradient(90deg,#070A1F 0%,#15143D 50%,#070A1F 100%) !important;
-  background-color:#0A0E2A !important; color:var(--hw-moon) !important; border-color:rgba(246,239,217,.1) !important;
-}
-#the-mixer-site.tm-halloween :is(.tm-summary,.tm-hw-summary){
-  background:radial-gradient(90% 60% at 100% 0%,rgba(122,96,200,.32),transparent 60%),linear-gradient(165deg,#1B1850 0%,#0A0E2A 70%) !important;
-  background-color:#0A0E2A !important; color:var(--hw-moon) !important; border-color:rgba(246,239,217,.14) !important;
-}
-#the-mixer-site.tm-halloween .tm-page:not([data-page="terms"]) .tm-subhero{
-  background:radial-gradient(55% 130% at 86% 0%,rgba(122,96,200,.42),transparent 66%),linear-gradient(180deg,#2B1D5C 0%,#1B1850 48%,#0E1A57 100%) !important;
-  background-color:#1B1850 !important; isolation:isolate;
-}
-#the-mixer-site.tm-halloween .tm-footer{
-  background:radial-gradient(45% 90% at 92% 0%,rgba(122,96,200,.22),transparent 70%),linear-gradient(180deg,#0E1A57 0%,#0A0E2A 55%,#070A1F 100%) !important;
-  background-color:#0A0E2A !important;
-}
-/* first-paint text flip (the script replaces this with exact per-element fixes) */
-#the-mixer-site.tm-halloween.tm-hw-preflip :is(.tm-hero,.tm-ribbon,.tm-trust,.tm-page:not([data-page="terms"]) .tm-subhero) :is(h1,h2,h3,h4,h5,h6,p,li,small,strong,b,em,span,div,figcaption,label,a):not(.tm-btn):not(.tm-btn *):not([class*="tm-hw"]){color:var(--hw-moon)}
-/* per-element contrast fixes */
-#the-mixer-site.tm-halloween .tm-hw-lt{color:var(--hw-moon) !important}
-#the-mixer-site.tm-halloween .tm-hw-st{color:rgba(246,239,217,.86) !important}
-#the-mixer-site.tm-halloween .tm-hw-mt{color:rgba(246,239,217,.74) !important}
-#the-mixer-site.tm-halloween .tm-hw-at{color:var(--hw-pumpkin) !important}
-#the-mixer-site.tm-halloween .tm-hw-lk{color:var(--hw-candle) !important;border-color:rgba(255,178,102,.45) !important;text-decoration-color:rgba(255,178,102,.55) !important}
-#the-mixer-site.tm-halloween .tm-hw-ct{background-image:linear-gradient(110deg,#F6EFD9,#FFD08A 45%,#F2791C 75%,#FFB266) !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent !important;color:transparent !important}
-#the-mixer-site.tm-halloween .tm-hw-gb{color:var(--hw-moon) !important;border-color:rgba(246,239,217,.55) !important;background:rgba(246,239,217,.05) !important;box-shadow:none !important}
-#the-mixer-site.tm-halloween .tm-hw-gb:hover{background:rgba(246,239,217,.13) !important}
-#the-mixer-site.tm-halloween .tm-hw-lf{fill:var(--hw-candle) !important}
-#the-mixer-site.tm-halloween .tm-hw-ls{stroke:var(--hw-candle) !important}
-#the-mixer-site.tm-halloween .tm-hw-lb{border-color:rgba(246,239,217,.22) !important}
-#the-mixer-site.tm-halloween .tm-hw-pkicon{overflow:visible}
-#the-mixer-site.tm-halloween .tm-hw-pkicon *{stroke:none !important}
-#the-mixer-site.tm-halloween .tm-hw-pkicon .pb{fill:#F2791C !important}
-#the-mixer-site.tm-halloween .tm-hw-pkicon .ps{fill:#7FA04A !important}
-#the-mixer-site.tm-halloween .tm-hw-pkicon .pf{fill:#1B1233 !important}
-
-/* ---------- hero night scene ---------- */
-#the-mixer-site.tm-halloween .tm-hw-scene{
-  position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none; contain:paint;
-  --hw-webw:clamp(84px,10vw,168px); --hw-moon-size:clamp(62px,9vw,150px); --hw-moon-top:clamp(10px,1.5vw,24px);
-  --hw-moon-right:calc(var(--hw-webw) + 3%); --hw-witch:clamp(78px,8.2vw,140px); --hw-bs:1;
-  --hw-band:150px; --hw-h:700px; --hw-drop:120px;
-  background:
-    radial-gradient(780px 480px at calc(100% - var(--hw-moon-right) - var(--hw-moon-size) / 2) 60px,rgba(128,104,210,.44),rgba(128,104,210,0) 70%),
-    linear-gradient(180deg,#2B1D5C 0px,#1D1852 calc(var(--hw-h) * .34),#0E1A57 calc(var(--hw-h) * .8),#0A0E2A var(--hw-h),var(--hw-ground) calc(var(--hw-h) + 30px));
-}
-#the-mixer-site.tm-halloween :is(.tm-hw-scene,.tm-hw-over,.tm-hw-subsky,.tm-hw-burst) svg:not(.tm-hw-web):not(.tm-hw-hills){display:block;width:100%;height:auto;overflow:visible;max-width:none}
-#the-mixer-site.tm-halloween .tm-hw-defs{position:absolute;width:0 !important;height:0 !important;overflow:hidden}
-#the-mixer-site.tm-halloween .tm-hw-stars{position:absolute;left:0;top:0;width:2px;height:2px;border-radius:50%}
-#the-mixer-site.tm-halloween .tm-hw-stars.s1{animation:tmHwTwinkle 4.8s ease-in-out infinite alternate}
-#the-mixer-site.tm-halloween .tm-hw-stars.s2{animation:tmHwTwinkle 6.2s ease-in-out -2.4s infinite alternate}
-@keyframes tmHwTwinkle{from{opacity:.3}to{opacity:1}}
-#the-mixer-site.tm-halloween .tm-hw-moon{
-  position:absolute; z-index:2; top:var(--hw-moon-top); right:var(--hw-moon-right);
-  width:var(--hw-moon-size); height:var(--hw-moon-size); border-radius:50%;
-  background:radial-gradient(circle at 36% 33%,#FFFDF5 0%,#F7F0DB 40%,#E8DCB9 76%,#D6C69A 100%);
-  box-shadow:0 0 0 1px rgba(255,248,225,.3),0 0 34px 6px rgba(246,239,217,.3),0 0 120px 34px rgba(170,150,232,.2);
-  animation:tmHwMoonIn 2s ease-out .1s both;
-}
-#the-mixer-site.tm-halloween .tm-hw-moon i{position:absolute;border-radius:50%;background:rgba(160,142,104,.22);box-shadow:inset 1px 1px 0 rgba(120,100,70,.18)}
-#the-mixer-site.tm-halloween .tm-hw-moon i:nth-child(1){width:20%;height:20%;left:22%;top:50%}
-#the-mixer-site.tm-halloween .tm-hw-moon i:nth-child(2){width:12%;height:12%;left:58%;top:26%}
-#the-mixer-site.tm-halloween .tm-hw-moon i:nth-child(3){width:9%;height:9%;left:64%;top:64%}
-#the-mixer-site.tm-halloween .tm-hw-moon i:nth-child(4){width:6%;height:6%;left:40%;top:30%}
-@keyframes tmHwMoonIn{from{opacity:.15;filter:brightness(.6)}to{opacity:1;filter:none}}
-
-/* bats */
-#the-mixer-site.tm-halloween .tm-hw-batgroup{position:absolute;inset:0;animation:tmHwFade 1.4s ease-out 1.8s both}
-#the-mixer-site.tm-halloween .tm-hw-batgroup.bk{z-index:1}
-#the-mixer-site.tm-halloween .tm-hw-batgroup.fr{z-index:3}
-@keyframes tmHwFade{from{opacity:0}to{opacity:1}}
-#the-mixer-site.tm-halloween .tm-hw-track{
-  position:absolute; left:0; top:calc(var(--hw-band) * var(--yf,.3)); width:100%; height:0;
-  transform:translateX(var(--rx,30%)); will-change:transform;
-  animation:tmHwAcross var(--t,20s) linear var(--d,0s) infinite;
-}
-#the-mixer-site.tm-halloween .tm-hw-track.rev{animation-direction:reverse}
-@keyframes tmHwAcross{from{transform:translateX(-70px)}to{transform:translateX(calc(100% + 70px))}}
-#the-mixer-site.tm-halloween .tm-hw-bob{position:absolute;left:0;top:0;animation:tmHwBob var(--b,2.6s) ease-in-out infinite alternate}
-@keyframes tmHwBob{from{transform:translateY(-7px)}to{transform:translateY(8px)}}
-#the-mixer-site.tm-halloween .tm-hw-bat{width:calc(var(--s,28px) * var(--hw-bs,1));transform:translate(-50%,-50%);filter:drop-shadow(0 0 1px rgba(210,200,245,.45))}
-#the-mixer-site.tm-halloween .tm-hw-bat svg{fill:#07061A}
-#the-mixer-site.tm-halloween .tm-hw-bat .wl,#the-mixer-site.tm-halloween .tm-hw-bat .wr{transform-box:fill-box;animation:tmHwFlapL var(--f,.34s) ease-in-out infinite alternate}
-#the-mixer-site.tm-halloween .tm-hw-bat .wl{transform-origin:100% 55%}
-#the-mixer-site.tm-halloween .tm-hw-bat .wr{transform-origin:0% 55%;animation-name:tmHwFlapR}
-@keyframes tmHwFlapL{from{transform:rotate(18deg)}to{transform:rotate(-24deg) scaleY(.72)}}
-@keyframes tmHwFlapR{from{transform:rotate(-18deg)}to{transform:rotate(24deg) scaleY(.72)}}
-#the-mixer-site.tm-halloween .tm-hw-flurry{
-  top:0; opacity:0; z-index:3;
-  animation:tmHwFlurry var(--t,3.4s) cubic-bezier(.35,.1,.25,1) var(--d,0s) 1 both;
-}
-@keyframes tmHwFlurry{
-  0%{transform:translate(-80px,calc(var(--hw-band) * var(--fy0,.8)));opacity:0}
-  8%{opacity:1} 85%{opacity:1}
-  100%{transform:translate(calc(100% + 80px),calc(var(--hw-band) * var(--fy1,.1)));opacity:0}
+<style id="tm-xm-css">
+/* ---------- image paths (edit here only) ---------- */
+#the-mixer-site.tm-christmas{
+  --xm-img-tl:url("/photos/spn-xmas-corner-tl.webp");
+  --xm-img-tr:url("/photos/spn-xmas-corner-tr.webp");
+  --xm-img-bl:url("/photos/spn-xmas-corner-bl.webp");
+  --xm-img-br:url("/photos/spn-xmas-corner-br.webp");
+  --xm-img-forest:url("/photos/spn-xmas-forest.webp");
+  --xm-img-snow:url("/photos/spn-xmas-snowbank.webp");
+  --xm-img-flake:url("/photos/spn-xmas-snowflake.webp");
+  --xm-img-flake2:url("/photos/spn-xmas-snowflake-blue.webp");
+  --xm-img-divider:url("/photos/spn-xmas-divider.webp");
+  --xm-img-sprig:url("/photos/spn-xmas-sprig.webp");
+  --xm-img-santa:url("/photos/spn-xmas-santa.webp");
+  --xm-img-snowman:url("/photos/spn-xmas-snowman.webp");
+  --xm-img-reindeer:url("/photos/spn-xmas-reindeer.webp");
+  --xm-img-gifts-l:url("/photos/spn-xmas-gifts-left.webp");
+  --xm-img-gifts-r:url("/photos/spn-xmas-gifts-right.webp");
+  --xm-img-gifts-s:url("/photos/spn-xmas-gifts-small.webp");
 }
 
-/* witch */
-#the-mixer-site.tm-halloween .tm-hw-wtrack{
-  position:absolute; z-index:3; left:0; top:0; width:100%; height:0;
-  transform:translateX(var(--hw-wrx,70%)); will-change:transform;
-  animation:tmHwWitchX 26s linear 1s infinite both;
+/* ---------- palette + accent swap (blue accents become Evergreen) ---------- */
+#the-mixer-site.tm-christmas{
+  --xm-ever:#0B3B2A; --xm-ever-2:#16523A; --xm-ever-3:#1F6347;
+  --xm-gold:#C6A766; --xm-gold-lt:#E6D7AE; --xm-frost:#EEF3F4; --xm-frost-2:#E2EAEC;
+  --xm-sage:#DCE3DA; --xm-snow:#F8FAF9;
+  --blue:#16523A; --blue-600:#0F4430; --blue-deep:#0B3B2A; --navy:#0B3B2A;
+  --ink:#1B2622; --slate:#2F3D37; --muted:#56635D; --faint:#7D8A84;
+  --line:#E6DAB8; --line-soft:#EDF0EC; --tint:#F4F7F5; --tint2:#E1E8E2; --tint3:#FAFBFA;
+  --panel:#EAF0F1; --panel-deep:#DDE7E2; --panel-line:#E1D4AE;
+  --grad-soft:linear-gradient(180deg,#EEF3F4 0%,#F8FAF9 70%);
+  --sh-md:0 14px 40px -18px rgba(11,59,42,.28);
+  --sh-lg:0 30px 70px -30px rgba(11,59,42,.38);
+  background:var(--xm-snow);
 }
-@keyframes tmHwWitchX{0%{transform:translateX(calc(-1 * var(--hw-witch) - 30px))}42%,100%{transform:translateX(calc(100% + 30px))}}
-#the-mixer-site.tm-halloween .tm-hw-warc{
-  position:absolute; left:0; top:0;
-  transform:translateY(var(--hw-wry,30px)) rotate(-8deg);
-  animation:tmHwWitchY 26s linear 1s infinite both;
+#the-mixer-site.tm-christmas .tm-page[data-page="terms"],
+#the-mixer-site.tm-christmas #tm-page-terms{--blue:#16523A}
+
+/* ---------- fixed snowy ground: trees + snow stay put while the page scrolls ---------- */
+#the-mixer-site.tm-christmas{isolation:isolate}
+#the-mixer-site.tm-christmas .tm-xm-ground{
+  position:fixed; left:0; right:0; bottom:0; z-index:-1; pointer-events:none;
+  height:clamp(150px,22vw,320px); opacity:.9;
 }
-@keyframes tmHwWitchY{0%{transform:translateY(var(--hw-wy0,100px)) rotate(-5deg)}42%,100%{transform:translateY(var(--hw-wy1,0px)) rotate(-11deg)}}
-#the-mixer-site.tm-halloween .tm-hw-warc .tm-hw-bob{position:relative;animation-duration:1.9s}
-#the-mixer-site.tm-halloween .tm-hw-witch{width:var(--hw-witch);filter:drop-shadow(0 0 1.5px rgba(246,239,217,.4))}
-#the-mixer-site.tm-halloween .tm-hw-witch svg{fill:#05040D}
-#the-mixer-site.tm-halloween .tm-hw-witch .cape{transform-box:fill-box;transform-origin:100% 15%;animation:tmHwCape .7s ease-in-out infinite alternate}
-@keyframes tmHwCape{from{transform:none}to{transform:skewY(-7deg) scaleX(.92)}}
-#the-mixer-site.tm-halloween .tm-hw-witch .spark path{fill:#FFD08A;animation:tmHwSpark 1.3s ease-in-out infinite alternate}
-#the-mixer-site.tm-halloween .tm-hw-witch .spark path:nth-child(2){animation-delay:-.45s}
-#the-mixer-site.tm-halloween .tm-hw-witch .spark path:nth-child(3){animation-delay:-.9s}
-@keyframes tmHwSpark{from{opacity:.15}to{opacity:1}}
-
-/* cobwebs */
-#the-mixer-site.tm-halloween svg.tm-hw-web{display:block;max-width:none;overflow:visible;position:absolute;z-index:4;top:-1px;width:var(--hw-webw);height:var(--hw-webw)}
-#the-mixer-site.tm-halloween .tm-hw-web path{fill:none;stroke:rgba(246,239,217,.42);stroke-width:1;stroke-linecap:round;vector-effect:non-scaling-stroke}
-#the-mixer-site.tm-halloween .tm-hw-web path.rad{stroke:rgba(246,239,217,.56)}
-#the-mixer-site.tm-halloween .tm-hw-web.tl{left:-1px;transform-origin:0 0;animation:tmHwSway 7s ease-in-out infinite alternate}
-#the-mixer-site.tm-halloween .tm-hw-web.tr{right:-1px;transform-origin:100% 0;animation:tmHwSway 8.5s ease-in-out -3s infinite alternate}
-@keyframes tmHwSway{from{transform:rotate(0deg)}to{transform:rotate(1.4deg)}}
-#the-mixer-site.tm-halloween .tm-hw-over .tm-hw-web{top:0;left:0;animation:none;display:none}
-
-/* spider */
-#the-mixer-site.tm-halloween .tm-hw-spider{position:absolute;z-index:5;top:0;right:calc(var(--hw-webw) * .44);width:clamp(24px,2.2vw,34px);height:0}
-#the-mixer-site.tm-halloween .tm-hw-drop{
-  position:absolute; left:0; top:0; width:100%;
-  transform:translateY(var(--hw-drop)); will-change:transform;
-  animation:tmHwDrop 20s cubic-bezier(.45,.05,.35,1) 2.6s infinite both;
+#the-mixer-site.tm-christmas .tm-xm-ground::before,
+#the-mixer-site.tm-christmas .tm-xm-ground::after{
+  content:""; position:absolute; bottom:0; width:50%; height:100%; background-repeat:no-repeat;
+  background-image:var(--xm-img-snow),var(--xm-img-forest); background-size:200% 30%,auto 100%;
 }
-@keyframes tmHwDrop{
-  0%{transform:translateY(-70px)}
-  14%{transform:translateY(var(--hw-drop))}
-  17%{transform:translateY(calc(var(--hw-drop) - 14px))}
-  20%{transform:translateY(calc(var(--hw-drop) - 2px))}
-  23%,50%{transform:translateY(calc(var(--hw-drop) - 6px))}
-  63%{transform:translateY(calc(var(--hw-drop) * .45))}
-  75%,100%{transform:translateY(-70px)}
+#the-mixer-site.tm-christmas .tm-xm-ground::before{left:0; background-position:left bottom,left bottom}
+#the-mixer-site.tm-christmas .tm-xm-ground::after{right:0; background-position:right bottom,right bottom}
+
+/* ---------- typography: serif caps wordmark ---------- */
+#the-mixer-site.tm-christmas .tm-eyebrow{color:var(--xm-ever)}
+#the-mixer-site.tm-christmas .tm-logo{
+  font-family:var(--serif); font-weight:700; text-transform:uppercase; letter-spacing:.02em; font-size:26px;
+  background:none; color:var(--xm-ever); -webkit-text-fill-color:var(--xm-ever);
 }
-#the-mixer-site.tm-halloween .tm-hw-swing{position:relative;transform-origin:50% -400px;animation:tmHwSwing 3.4s ease-in-out infinite alternate}
-@keyframes tmHwSwing{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
-#the-mixer-site.tm-halloween .tm-hw-silk{position:absolute;left:50%;bottom:calc(100% - 6px);width:1px;height:440px;margin-left:-.5px;background:linear-gradient(to bottom,rgba(246,239,217,0),rgba(246,239,217,.55) 30%,rgba(246,239,217,.85))}
-#the-mixer-site.tm-halloween .tm-hw-spi{filter:drop-shadow(0 0 1.2px rgba(246,239,217,.6))}
-#the-mixer-site.tm-halloween .tm-hw-spi .legs{transform-box:fill-box;transform-origin:50% 40%;animation:tmHwLegs 1.1s ease-in-out infinite alternate}
-@keyframes tmHwLegs{from{transform:none}to{transform:scale(1.05,.93)}}
-
-/* ground */
-#the-mixer-site.tm-halloween .tm-hw-mist{
-  position:absolute; z-index:4; left:0; top:calc(var(--hw-h) - 78px); width:200%; height:96px;
-  background:radial-gradient(22% 55% at 12% 60%,rgba(214,208,255,.15),transparent 70%),radial-gradient(26% 50% at 38% 50%,rgba(214,208,255,.10),transparent 70%),radial-gradient(22% 55% at 62% 60%,rgba(214,208,255,.15),transparent 70%),radial-gradient(26% 50% at 88% 50%,rgba(214,208,255,.10),transparent 70%);
-  animation:tmHwMist 48s linear infinite;
+#the-mixer-site.tm-christmas .tm-hero h1{
+  font-family:var(--serif); font-weight:700; text-transform:uppercase; letter-spacing:.005em;
+  font-size:clamp(44px,8.4vw,112px); line-height:.95; margin:4px 0 14px;
+  background:none; animation:none; color:var(--xm-ever); -webkit-text-fill-color:var(--xm-ever);
 }
-@keyframes tmHwMist{to{transform:translateX(-50%)}}
-#the-mixer-site.tm-halloween .tm-hw-hills{position:absolute;z-index:5;left:0;top:calc(var(--hw-h) - 70px);width:100%;height:92px}
-#the-mixer-site.tm-halloween .tm-hw-scene svg.tm-hw-hills{height:92px}
-#the-mixer-site.tm-halloween .tm-hw-pk{position:absolute;z-index:6;top:calc(var(--hw-h) - 6px);left:0;width:var(--w,70px);transform:translateY(-100%);isolation:isolate;display:none}
-#the-mixer-site.tm-halloween .tm-hw-pk.on{display:block}
-#the-mixer-site.tm-halloween .tm-hw-pk::before{content:"";position:absolute;z-index:-1;left:50%;top:28%;width:200%;height:115%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(242,121,28,.45),rgba(242,121,28,.12) 60%,transparent);animation:tmHwFlicker 2.8s ease-in-out infinite}
-#the-mixer-site.tm-halloween .tm-hw-pk .pb{fill:url(#tmHwPkBody);stroke:rgba(60,18,4,.55);stroke-width:1}
-#the-mixer-site.tm-halloween .tm-hw-pk .face{fill:url(#tmHwPkGlow);animation:tmHwFlicker 2.8s ease-in-out infinite}
-#the-mixer-site.tm-halloween .tm-hw-pk.p2 .face,#the-mixer-site.tm-halloween .tm-hw-pk.p2::before{animation-delay:-1.1s}
-#the-mixer-site.tm-halloween .tm-hw-pk.p3 .face,#the-mixer-site.tm-halloween .tm-hw-pk.p3::before{animation-delay:-1.9s}
-@keyframes tmHwFlicker{0%,100%{opacity:1}17%{opacity:.84}31%{opacity:.97}49%{opacity:.8}66%{opacity:1}83%{opacity:.9}}
-#the-mixer-site.tm-halloween .tm-hw-over{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:visible}
-#the-mixer-site.tm-halloween .tm-hw-over .tm-hw-pk{z-index:1}
+#the-mixer-site.tm-christmas :is(.tm-h2,.tm-subhero h1,.tm-form-title,.tm-org-name,.tm-vn){color:var(--xm-ever)}
+#the-mixer-site.tm-christmas .tm-h2{font-weight:700}
 
-/* pause button */
-#the-mixer-site.tm-halloween .tm-hw-toggle{
-  position:absolute; z-index:4; right:14px; bottom:10px; margin:0;
-  display:inline-flex; align-items:center; gap:8px; padding:8px 15px 8px 12px;
-  border-radius:999px; border:1px solid rgba(246,239,217,.4); background:rgba(10,14,42,.8);
-  color:#F6EFD9; font-family:'Inter',system-ui,-apple-system,sans-serif; font-size:14px; font-weight:600; line-height:1.1;
-  cursor:pointer; -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
-  box-shadow:0 8px 20px -10px rgba(0,0,0,.7); transition:background .2s,border-color .2s;
+/* ---------- buttons ---------- */
+#the-mixer-site.tm-christmas .tm-btn-primary{
+  background:linear-gradient(135deg,var(--xm-ever-2) 0%,var(--xm-ever) 100%);
+  border-color:transparent; color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 10px 24px -12px rgba(11,59,42,.75);
 }
-#the-mixer-site.tm-halloween .tm-hw-toggle:hover{background:rgba(43,29,92,.92);border-color:rgba(255,178,102,.7)}
-#the-mixer-site.tm-halloween .tm-hw-toggle:focus-visible{outline:2px solid var(--hw-candle);outline-offset:3px}
-#the-mixer-site.tm-halloween .tm-hw-toggle svg{width:14px;height:14px;fill:var(--hw-candle);flex:none}
-#the-mixer-site.tm-halloween .tm-hw-toggle .i-play,#the-mixer-site.tm-halloween.tm-hw-still .tm-hw-toggle .i-pause{display:none}
-#the-mixer-site.tm-halloween.tm-hw-still .tm-hw-toggle .i-play{display:inline}
+#the-mixer-site.tm-christmas .tm-btn-primary:hover{filter:brightness(1.1)}
+#the-mixer-site.tm-christmas .tm-btn-outline{background:#fff; border-color:rgba(22,82,58,.45)}
+#the-mixer-site.tm-christmas .tm-btn-outline:hover{border-color:var(--xm-ever)}
 
-/* card cobwebs, summary spider, calendar pumpkin */
-#the-mixer-site.tm-halloween :is(.tm-hw-cw-tl,.tm-hw-cw-tr)::before{content:"";position:absolute;z-index:3;top:-1px;width:clamp(52px,18%,86px);aspect-ratio:1;pointer-events:none;background:no-repeat 0 0/100% 100%}
-#the-mixer-site.tm-halloween .tm-hw-cw-tl::before{left:-1px;background-image:var(--hw-web-tl)}
-#the-mixer-site.tm-halloween .tm-hw-cw-tr::before{right:-1px;background-image:var(--hw-web-tr)}
-#the-mixer-site.tm-halloween .tm-hw-sumspider::after{
-  content:""; position:absolute; z-index:3; top:0; right:calc(clamp(52px,18%,86px) * .32); width:22px; height:var(--hw-sd,46px);
-  pointer-events:none;
-  background:var(--hw-spider-img) no-repeat 50% 100%/22px 24px,linear-gradient(rgba(246,239,217,.7),rgba(246,239,217,.7)) no-repeat 50% 0/1px calc(100% - 18px);
-  filter:drop-shadow(0 0 1px rgba(246,239,217,.5));
-  animation:tmHwSumDrop 16s ease-in-out 4s infinite both;
+/* ---------- ribbon + nav ---------- */
+#the-mixer-site.tm-christmas .tm-ribbon{background:var(--xm-ever); color:#EAF2EC}
+#the-mixer-site.tm-christmas .tm-ribbon::before,
+#the-mixer-site.tm-christmas .tm-ribbon::after{
+  content:""; display:inline-block; width:14px; height:14px; vertical-align:-2px; margin:0 10px;
+  background:var(--xm-img-flake) center/contain no-repeat; filter:brightness(1.6);
 }
-@keyframes tmHwSumDrop{0%{height:0}12%{height:var(--hw-sd,46px)}15%{height:calc(var(--hw-sd,46px) - 7px)}18%,58%{height:var(--hw-sd,46px)}74%,100%{height:0}}
-#the-mixer-site.tm-halloween :is(.tm-hw-pkday,.tm-hw-pkday-b){position:relative}
-#the-mixer-site.tm-halloween .tm-hw-pkday::after,#the-mixer-site.tm-halloween .tm-hw-pkday-b::before{content:"";position:absolute;z-index:2;top:3px;right:3px;width:clamp(14px,34%,24px);aspect-ratio:1;background:var(--hw-pk-img) no-repeat center/contain;pointer-events:none}
+#the-mixer-site.tm-christmas .tm-nav-wrap{background:rgba(250,251,250,.9)}
+#the-mixer-site.tm-christmas .tm-nav-links a:hover{color:var(--xm-ever)}
 
-/* inner page headers */
-#the-mixer-site.tm-halloween .tm-hw-subsky{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;--hw-band:70px}
-#the-mixer-site.tm-halloween .tm-hw-submoon{position:absolute;display:none;border-radius:50%;background:radial-gradient(circle at 36% 33%,#FFFDF5 0%,#F7F0DB 42%,#E3D5AE 100%);box-shadow:0 0 30px 6px rgba(246,239,217,.22),0 0 90px 26px rgba(170,150,232,.18)}
-#the-mixer-site.tm-halloween .tm-hw-subsky .tm-hw-track{display:none}
-#the-mixer-site.tm-halloween .tm-hw-subsky.bats .tm-hw-track{display:block}
+/* ---------- hero: frosted backdrop, evergreen corners, snowflakes ---------- */
+#the-mixer-site.tm-christmas .tm-hero-video,
+#the-mixer-site.tm-christmas .tm-hero-scrim{display:none}
+#the-mixer-site.tm-christmas .tm-hero-bg{
+  background:radial-gradient(120% 60% at 50% 0%,#FFFFFF 0%,rgba(243,247,248,.85) 50%,rgba(248,250,249,0) 100%);
+}
+#the-mixer-site.tm-christmas .tm-hero-inner{position:relative; padding-top:78px}
+#the-mixer-site.tm-christmas .tm-hero-inner > :not(.tm-xm-corner):not(.tm-xm-flake):not(.tm-xm-char){position:relative}
+#the-mixer-site.tm-christmas .tm-xm-corner{
+  position:absolute; top:0; z-index:2; width:clamp(110px,17vw,270px); aspect-ratio:1;
+  background:center/contain no-repeat; pointer-events:none;
+}
+#the-mixer-site.tm-christmas .tm-xm-corner.tl{left:0; background-image:var(--xm-img-tl); background-position:left top}
+#the-mixer-site.tm-christmas .tm-xm-corner.tr{right:0; background-image:var(--xm-img-tr); background-position:right top}
+#the-mixer-site.tm-christmas .tm-subhero{position:relative; overflow:hidden; isolation:isolate}
+#the-mixer-site.tm-christmas .tm-subhero .tm-xm-corner{width:clamp(90px,12vw,190px)}
+#the-mixer-site.tm-christmas .tm-subhero > :not(.tm-xm-corner):not(.tm-xm-flake){position:relative; z-index:3}
 
-/* confirmation bat burst */
-#the-mixer-site.tm-halloween .tm-hw-burst{position:fixed;inset:0;z-index:2147483000;pointer-events:none;overflow:hidden}
-#the-mixer-site.tm-halloween .tm-hw-bb{position:absolute;left:50%;top:46%;width:0;height:0;animation:tmHwBurst var(--dur,2.6s) cubic-bezier(.16,.7,.3,1) var(--d,0s) both}
-#the-mixer-site.tm-halloween .tm-hw-bb .tm-hw-bat{filter:none}
-@keyframes tmHwBurst{0%{transform:translate(0,0) scale(.35);opacity:0}10%,78%{opacity:1}100%{transform:translate(var(--tx),var(--ty)) scale(var(--sc,1));opacity:0}}
+#the-mixer-site.tm-christmas .tm-xm-flake{
+  position:absolute; z-index:0; width:var(--fs,30px); aspect-ratio:1; pointer-events:none;
+  background:var(--xm-img-flake2) center/contain no-repeat; opacity:var(--fo,.7);
+  animation:tmXmSway var(--fd,9s) ease-in-out var(--fdl,0s) infinite alternate;
+}
+#the-mixer-site.tm-christmas .tm-xm-flake.w{background-image:var(--xm-img-flake)}
+@keyframes tmXmSway{from{transform:translateY(-5px) rotate(-12deg)} to{transform:translateY(7px) rotate(14deg)}}
 
-/* phones */
-@media (max-width:640px){
-  #the-mixer-site.tm-halloween .tm-hw-scene{--hw-bs:.8}
-  #the-mixer-site.tm-halloween .tm-hw-sm-hide{display:none}
+/* gold divider halves either side of the tagline / "Host Venue" */
+#the-mixer-site.tm-christmas .tm-hero-tag,
+#the-mixer-site.tm-christmas .tm-xm-ruled{display:flex; align-items:center; justify-content:center; gap:22px}
+#the-mixer-site.tm-christmas .tm-hero-tag{color:var(--xm-ever)}
+#the-mixer-site.tm-christmas .tm-hero-tag::before,#the-mixer-site.tm-christmas .tm-hero-tag::after,
+#the-mixer-site.tm-christmas .tm-xm-ruled::before,#the-mixer-site.tm-christmas .tm-xm-ruled::after{
+  content:""; flex:0 1 230px; min-width:30px; height:12px;
+  background:var(--xm-img-divider) no-repeat; background-size:200% 100%;
+}
+#the-mixer-site.tm-christmas .tm-hero-tag::before,#the-mixer-site.tm-christmas .tm-xm-ruled::before{background-position:left center}
+#the-mixer-site.tm-christmas .tm-hero-tag::after,#the-mixer-site.tm-christmas .tm-xm-ruled::after{background-position:right center}
+#the-mixer-site.tm-christmas .tm-xm-ruled .tm-eyebrow{margin-bottom:0; white-space:nowrap}
+
+#the-mixer-site.tm-christmas .tm-hero-photo{border-color:#fff; border-radius:14px; box-shadow:0 26px 60px -30px rgba(11,59,42,.45)}
+#the-mixer-site.tm-christmas .tm-hero-where b{color:var(--xm-ink)}
+#the-mixer-site.tm-christmas .tm-hero-where a{color:var(--xm-ever-2); border-bottom-color:rgba(22,82,58,.35)}
+
+/* countdown */
+#the-mixer-site.tm-christmas .tm-count-card{
+  position:relative; background:#fff; border:1.5px solid #DCC58F; border-radius:14px;
+  box-shadow:0 18px 40px -24px rgba(11,59,42,.35);
+}
+#the-mixer-site.tm-christmas .tm-count-label{color:var(--xm-ever)}
+#the-mixer-site.tm-christmas .tm-count{gap:0}
+#the-mixer-site.tm-christmas .tm-count-cell{background:none; border:0; border-radius:0}
+#the-mixer-site.tm-christmas .tm-count-cell + .tm-count-cell{border-left:1px solid #E3D2A6}
+#the-mixer-site.tm-christmas .tm-count-num{font-family:var(--display); font-weight:700; color:var(--xm-ever); font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1,"tnum" 1}
+#the-mixer-site.tm-christmas .tm-count-lbl{color:var(--xm-ever); font-weight:700}
+
+/* photo + invite card */
+#the-mixer-site.tm-christmas .tm-trio{position:relative; z-index:1}
+#the-mixer-site.tm-christmas .tm-trio-item{border-radius:14px}
+#the-mixer-site.tm-christmas .tm-trio-invite{
+  position:relative; overflow:hidden; border-radius:14px;
+  background:linear-gradient(160deg,#F3F7F8 0%,#E3EBEE 100%);
+  box-shadow:0 18px 40px -26px rgba(11,59,42,.4); border:1px solid #E6EDEF;
+}
+#the-mixer-site.tm-christmas .tm-trio-invite .tm-ti-k{
+  font-family:var(--serif); font-weight:700; text-transform:uppercase; letter-spacing:.01em; color:var(--xm-ever);
+}
+#the-mixer-site.tm-christmas .tm-trio-invite .tm-ti-s{font-family:var(--serif); font-style:italic; font-size:20px; color:var(--xm-ever)}
+#the-mixer-site.tm-christmas .tm-trio-invite > *{position:relative; z-index:1}
+
+/* trust strip with holly sprigs */
+#the-mixer-site.tm-christmas .tm-trust{background:var(--xm-sage); color:var(--xm-ever)}
+#the-mixer-site.tm-christmas .tm-trust-row span,
+#the-mixer-site.tm-christmas .tm-trust-row span.tm-no-dot{font-family:var(--serif); font-style:italic; font-size:22px; gap:22px}
+#the-mixer-site.tm-christmas .tm-trust-row span.tm-no-dot::before,
+#the-mixer-site.tm-christmas .tm-trust-row span.tm-no-dot::after{
+  content:""; display:inline-block; flex:none; width:96px; height:30px; border-radius:0; box-shadow:none; border:0; background-color:transparent;
+  background:var(--xm-img-sprig) center/contain no-repeat;
+}
+#the-mixer-site.tm-christmas .tm-trust-row span.tm-no-dot::after{transform:scaleX(-1)}
+
+/* ---------- home sections (tagged by the script) ---------- */
+#the-mixer-site.tm-christmas .tm-xm-sec{position:relative; isolation:isolate}
+#the-mixer-site.tm-christmas .tm-xm-sec > :not(.tm-xm-flake):not(.tm-xm-char){position:relative; z-index:1}
+#the-mixer-site.tm-christmas .tm-xm-sec.tm-xm-reg{z-index:2}
+#the-mixer-site.tm-christmas .tm-section.tm-tinted{background:transparent}
+#the-mixer-site.tm-christmas .tm-tag{background:var(--tint2); color:var(--xm-ever); border-radius:999px}
+
+#the-mixer-site.tm-christmas .tm-about-card{
+  position:relative; overflow:visible; border-radius:14px; border:1px solid #E3D3A8;
+  background:linear-gradient(160deg,#F3F7F8 0%,#E3EBEE 100%); box-shadow:0 18px 40px -26px rgba(11,59,42,.4);
+}
+#the-mixer-site.tm-christmas .tm-about-card .tm-acq{color:var(--xm-ever); position:relative; z-index:1}
+#the-mixer-site.tm-christmas .tm-about-card::after{background:none}
+
+#the-mixer-site.tm-christmas .tm-venue{position:relative; border-radius:14px; border:1.5px solid #DCC58F; background:#FBFCFB}
+#the-mixer-site.tm-christmas .tm-venue > *{position:relative; z-index:1}
+#the-mixer-site.tm-christmas .tm-vt{color:var(--xm-ever-2)}
+
+#the-mixer-site.tm-christmas .tm-org-card{border-radius:14px; border-color:#E6D7AE; background:rgba(255,255,255,.92)}
+#the-mixer-site.tm-christmas .tm-org-photo{box-shadow:0 0 0 3px #fff,0 0 0 4.5px #D8C089}
+#the-mixer-site.tm-christmas .tm-org-role{color:var(--xm-ever-2); font-style:italic}
+
+#the-mixer-site.tm-christmas .tm-form-card{border-radius:14px; border-color:#E6D7AE; background:rgba(255,255,255,.95)}
+#the-mixer-site.tm-christmas .tm-consent{background:#F3F6F4}
+#the-mixer-site.tm-christmas .tm-consent input{accent-color:var(--xm-ever)}
+#the-mixer-site.tm-christmas .tm-summary{background:linear-gradient(165deg,#0F4330 0%,#0A3426 100%); border-radius:14px}
+#the-mixer-site.tm-christmas .tm-sum-k{color:#F1E6C6}
+#the-mixer-site.tm-christmas .tm-sum-ico{color:#E6D7AE; background:rgba(255,255,255,.08)}
+
+/* ---------- footer ---------- */
+#the-mixer-site.tm-christmas .tm-footer{position:relative; overflow:hidden; background:#0A3426; color:#CFE0D6}
+#the-mixer-site.tm-christmas .tm-footer > *{position:relative; z-index:1}
+#the-mixer-site.tm-christmas .tm-footer-logo{
+  font-family:var(--serif); font-weight:700; text-transform:uppercase; letter-spacing:.02em;
+  background:none; color:#fff; -webkit-text-fill-color:#fff;
+}
+#the-mixer-site.tm-christmas .tm-footer-tag{color:#E2EDE6}
+#the-mixer-site.tm-christmas .tm-footer-links a{color:#D6E4DB}
+#the-mixer-site.tm-christmas .tm-footer-bottom{color:#9DB8A9}
+
+/* ---------- below-the-fold artwork (loads after the page has finished) ---------- */
+#the-mixer-site.tm-christmas.tm-xm-late :is(.tm-trio-invite,.tm-about-card,.tm-venue)::before,
+#the-mixer-site.tm-christmas.tm-xm-late :is(.tm-trio-invite,.tm-about-card,.tm-venue)::after,
+#the-mixer-site.tm-christmas.tm-xm-late .tm-footer::before,
+#the-mixer-site.tm-christmas.tm-xm-late .tm-footer::after{
+  content:""; position:absolute; z-index:0; pointer-events:none; aspect-ratio:1;
+  background:center/contain no-repeat; border-radius:0; transform:none; inset:auto; height:auto; opacity:1;
+}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-trio-invite::before{top:-4px; right:-4px; width:clamp(90px,26%,170px); background-image:var(--xm-img-tr)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-trio-invite::after{bottom:-4px; right:-4px; width:clamp(90px,26%,170px); background-image:var(--xm-img-br)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-about-card::before{display:none}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-about-card::after{bottom:-34px; right:-24px; width:clamp(100px,34%,170px); background-image:var(--xm-img-br); opacity:1}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-venue::before{bottom:-6px; left:-8px; width:clamp(100px,20%,210px); background-image:var(--xm-img-bl)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-venue::after{bottom:-6px; right:-8px; width:clamp(100px,20%,210px); background-image:var(--xm-img-br)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-footer::before{bottom:-10px; left:-10px; width:clamp(100px,16vw,230px); background-image:var(--xm-img-bl)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-footer::after{bottom:-10px; right:-10px; width:clamp(100px,16vw,230px); background-image:var(--xm-img-br)}
+
+/* ---------- characters: Santa, snowman, reindeer, gifts (load after the page) ---------- */
+#the-mixer-site.tm-christmas .tm-xm-char{
+  position:absolute; z-index:2; pointer-events:none; background:center bottom/contain no-repeat;
+}
+#the-mixer-site.tm-christmas .tm-xm-char.santa{right:max(16px,calc(50% - 640px)); bottom:-14px; width:clamp(140px,12vw,190px); aspect-ratio:420/776}
+#the-mixer-site.tm-christmas .tm-xm-char.santa::after{
+  content:""; position:absolute; left:-46%; bottom:-2%; width:64%; aspect-ratio:240/168; background:center bottom/contain no-repeat;
+}
+#the-mixer-site.tm-christmas .tm-xm-char.snowman{left:max(4px,calc(50% - 740px)); bottom:40px; width:clamp(110px,9.5vw,150px); aspect-ratio:320/472}
+#the-mixer-site.tm-christmas .tm-xm-char.reindeer{right:max(4px,calc(50% - 735px)); bottom:60px; width:clamp(120px,10.5vw,170px); aspect-ratio:380/749}
+#the-mixer-site.tm-christmas .tm-xm-char.gifts{bottom:-30px; width:clamp(110px,12.5vw,195px); aspect-ratio:400/267}
+#the-mixer-site.tm-christmas .tm-xm-char.gifts.l{left:max(0px,calc(50% - 730px))}
+#the-mixer-site.tm-christmas .tm-xm-char.gifts.r{right:max(0px,calc(50% - 730px))}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-xm-char.santa{background-image:var(--xm-img-santa)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-xm-char.santa::after{background-image:var(--xm-img-gifts-s)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-xm-char.snowman{background-image:var(--xm-img-snowman)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-xm-char.reindeer{background-image:var(--xm-img-reindeer)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-xm-char.gifts.l{background-image:var(--xm-img-gifts-l)}
+#the-mixer-site.tm-christmas.tm-xm-late .tm-xm-char.gifts.r{background-image:var(--xm-img-gifts-r)}
+@media (max-width:1179px){
+  #the-mixer-site.tm-christmas .tm-xm-char.snowman,
+  #the-mixer-site.tm-christmas .tm-xm-char.reindeer{display:none}
+}
+@media (max-width:999px){
+  #the-mixer-site.tm-christmas .tm-xm-char.santa{display:none}
 }
 
-/* still mode (pause button), off-screen pause, reduced motion */
-#the-mixer-site.tm-halloween.tm-hw-still :is(.tm-hw-scene,.tm-hw-subsky,.tm-hw-over) *,
-#the-mixer-site.tm-halloween.tm-hw-still :is(.tm-hw-scene,.tm-hw-subsky,.tm-hw-over) *::before,
-#the-mixer-site.tm-halloween.tm-hw-still [class*="tm-hw"]::before,
-#the-mixer-site.tm-halloween.tm-hw-still [class*="tm-hw"]::after{animation:none !important}
-#the-mixer-site.tm-halloween.tm-hw-still .tm-hero h1{animation:none}
-#the-mixer-site.tm-halloween.tm-hw-offscreen .tm-hw-scene *,
-#the-mixer-site.tm-halloween.tm-hw-offscreen .tm-hw-scene *::before{animation-play-state:paused !important}
-#the-mixer-site.tm-halloween.tm-hw-offscreen .tm-hero h1{animation-play-state:paused}
+/* ---------- small screens ---------- */
+@media (max-width:760px){
+  #the-mixer-site.tm-christmas .tm-hero-inner{padding-top:96px}
+  #the-mixer-site.tm-christmas .tm-hero-tag,
+  #the-mixer-site.tm-christmas .tm-xm-ruled{gap:12px}
+  #the-mixer-site.tm-christmas .tm-hero-tag::before,#the-mixer-site.tm-christmas .tm-hero-tag::after,
+  #the-mixer-site.tm-christmas .tm-xm-ruled::before,#the-mixer-site.tm-christmas .tm-xm-ruled::after{flex:0 0 34px; min-width:0}
+  #the-mixer-site.tm-christmas .tm-count-cell + .tm-count-cell{border-left:0}
+  #the-mixer-site.tm-christmas .tm-count-cell:nth-child(even){border-left:1px solid #E3D2A6}
+  #the-mixer-site.tm-christmas .tm-count-cell:nth-child(n+3){border-top:1px solid #EFE4C8}
+  #the-mixer-site.tm-christmas .tm-trust-row span,
+  #the-mixer-site.tm-christmas .tm-trust-row span.tm-no-dot{font-size:18px; gap:10px}
+  #the-mixer-site.tm-christmas .tm-trust-row span.tm-no-dot::before,
+  #the-mixer-site.tm-christmas .tm-trust-row span.tm-no-dot::after{width:54px; height:20px}
+  #the-mixer-site.tm-christmas .tm-xm-ground{height:120px; opacity:.6}
+  #the-mixer-site.tm-christmas .tm-xm-flake{display:none}
+  #the-mixer-site.tm-christmas .tm-xm-flake.m{display:block}
+  #the-mixer-site.tm-christmas.tm-xm-late .tm-footer::before,
+  #the-mixer-site.tm-christmas.tm-xm-late .tm-footer::after{width:92px}
+  #the-mixer-site.tm-christmas .tm-footer{padding-bottom:90px}
+}
 @media (prefers-reduced-motion:reduce){
-  #the-mixer-site.tm-halloween :is(.tm-hw-scene,.tm-hw-subsky,.tm-hw-over) *,
-  #the-mixer-site.tm-halloween :is(.tm-hw-scene,.tm-hw-subsky,.tm-hw-over) *::before,
-  #the-mixer-site.tm-halloween [class*="tm-hw"]::before,
-  #the-mixer-site.tm-halloween [class*="tm-hw"]::after,
-  #the-mixer-site.tm-halloween .tm-hero h1{animation:none !important}
-  #the-mixer-site.tm-halloween .tm-hw-toggle{display:none}
+  #the-mixer-site.tm-christmas .tm-xm-flake{animation:none}
 }
 </style>
-<script id="tm-hw-js">
+<script id="tm-xm-js">
 (function () {
   'use strict';
-  var HW_OFF_AT = Date.UTC(2026, 10, 1, 7, 0, 0); // Nov 1, 2026, 12:00 AM Pacific
-  var qm = /[?&]halloween=(on|off)\b/i.exec(location.search);
+  var XM_OFF_AT = Date.UTC(2027, 0, 1, 8, 0, 0); // Jan 1, 2027, 12:00 AM Pacific
+  var qm = /[?&]christmas=(on|off)\b/i.exec(location.search);
   var force = qm ? qm[1].toLowerCase() : '';
-  if (force === 'off' || (force !== 'on' && Date.now() >= HW_OFF_AT)) return;
+  if (force === 'off' || (force !== 'on' && Date.now() >= XM_OFF_AT)) return;
 
   var root = document.getElementById('the-mixer-site');
-  var KEY = 'spnHalloweenMotion';
-  var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
-  function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-  function store(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
-  function arm(r) {
-    r.classList.add('tm-halloween');
-    if (!r.getAttribute('data-hw-init')) r.classList.add('tm-hw-preflip');
-    if (stored() === 'paused') r.classList.add('tm-hw-still');
-  }
-  if (root) arm(root);
+  if (!root) return;
+  root.classList.add('tm-christmas');
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 
-  /* ---------------- artwork ---------------- */
-  var BAT = '<svg viewBox="0 0 64 32" aria-hidden="true" focusable="false"><path class="wl" d="M30 13C24 6 14 4 2 9C6 11 8 14 8 17C11 15 14 15 16 18C18 15 22 15 24 19C26 16 28 17 30 19Z"/><path class="wr" d="M34 13C40 6 50 4 62 9C58 11 56 14 56 17C53 15 50 15 48 18C46 15 42 15 40 19C38 16 36 17 34 19Z"/><ellipse cx="32" cy="16" rx="4.2" ry="6"/><circle cx="32" cy="9.6" r="3.4"/><path d="M29.4 8.2 29.8 4.2 31.3 7.2ZM34.6 8.2 34.2 4.2 32.7 7.2Z"/></svg>';
-  var INK = '#05040D';
-  var WITCH = '<svg viewBox="0 0 144 90" aria-hidden="true" focusable="false">' +
-    '<g class="spark"><path d="M10 62l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/><path d="M3 74l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z"/><path d="M17 79l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></g>' +
-    '<g transform="translate(24 0)">' +
-    '<path d="M8 68 116 54" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>' +
-    '<path d="M24 63 2 54 6 62 0 66 6 70 1 78 24 70Z"/><rect x="22" y="61" width="4.5" height="10" rx="1"/>' +
-    '<ellipse cx="34" cy="59" rx="5" ry="5.6"/><circle cx="37.4" cy="52" r="3.4"/><path d="M34.6 50.4 35.2 45.8 37.2 49.6ZM38.2 49.4 40 45.8 40.4 50.4Z"/>' +
-    '<path d="M29.6 61C24.5 60.5 24.2 53 28 50.5" fill="none" stroke="' + INK + '" stroke-width="1.6" stroke-linecap="round"/>' +
-    '<path class="cape" d="M62 32C50 36 40 34 28 42 38 43 44 47 47 53 51 45 56 40 63 38Z"/>' +
-    '<path d="M64 30C58 38 52 50 44 63L80 59C77 50 73 40 68 32Z"/>' +
-    '<path d="M68 60C71 67 75 72 81 74" fill="none" stroke="' + INK + '" stroke-width="3.4" stroke-linecap="round"/><path d="M79 71 89 75 80 77Z"/>' +
-    '<path d="M67 38C73 44 80 50 88 57" fill="none" stroke="' + INK + '" stroke-width="3.2" stroke-linecap="round"/><circle cx="88" cy="57" r="2.4"/>' +
-    '<circle cx="68" cy="26" r="5.2"/><path d="M72.5 25 79.5 27.6 72.5 28.6Z"/><path d="M63.5 24.5C58 26 55 30 51 30.5 55.5 28 58 26 61.5 23Z"/>' +
-    '<ellipse cx="67" cy="21.4" rx="11.8" ry="2.6"/><path d="M60.5 21C62 14 60 8 55 1.5 63 6 69 12 74.5 21Z"/>' +
-    '</g></svg>';
-  var SPIDER_BODY = '<path d="M16 26 8 19 3 25M15.6 28 6 25.5 1 32M15.8 30.5 7.5 32.5 3.5 39M17 32.5 11 37 9 41.5M24 26 32 19 37 25M24.4 28 34 25.5 39 32M24.2 30.5 32.5 32.5 36.5 39M23 32.5 29 37 31 41.5" fill="none" stroke="#231B3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>' +
-    '<ellipse cx="20" cy="15" rx="8.6" ry="9.6" fill="#120D22" stroke="rgba(246,239,217,.4)" stroke-width=".8"/>' +
-    '<ellipse cx="17" cy="11.5" rx="2.6" ry="3.4" fill="rgba(255,255,255,.16)"/>' +
-    '<circle cx="20" cy="28.5" r="5.8" fill="#120D22" stroke="rgba(246,239,217,.4)" stroke-width=".8"/>' +
-    '<circle cx="17.6" cy="28.8" r="2" fill="#fff"/><circle cx="22.4" cy="28.8" r="2" fill="#fff"/>' +
-    '<circle cx="17.9" cy="29.3" r=".95" fill="#120D22"/><circle cx="22.7" cy="29.3" r=".95" fill="#120D22"/>';
-  var SPIDER = '<svg class="tm-hw-spi" viewBox="0 0 40 42" aria-hidden="true" focusable="false"><g class="legs">' +
-    SPIDER_BODY.slice(0, SPIDER_BODY.indexOf('<ellipse')) + '</g>' + SPIDER_BODY.slice(SPIDER_BODY.indexOf('<ellipse')) + '</svg>';
-  var WEB_PATHS = '<path class="rad" d="M0 0L118 0M0 0L114 30.5M0 0L102.2 59M0 0L83.4 83.4M0 0L59 102.2M0 0L30.5 114M0 0L0 118"/>' +
-    '<path d="M22 0Q18.8 2.5 21.3 5.7Q17.5 7.2 19.1 11Q15 11.5 15.6 15.6Q11.5 15 11 19.1Q7.2 17.5 5.7 21.3Q2.5 18.8 0 22"/>' +
-    '<path d="M42 0Q35.8 4.7 40.6 10.9Q33.4 13.8 36.4 21Q28.7 22 29.7 29.7Q22 28.7 21 36.4Q13.8 33.4 10.9 40.6Q4.7 35.8 0 42"/>' +
-    '<path d="M64 0Q54.6 7.2 61.8 16.6Q50.9 21.1 55.4 32Q43.7 33.5 45.3 45.3Q33.5 43.7 32 55.4Q21.1 50.9 16.6 61.8Q7.2 54.6 0 64"/>' +
-    '<path d="M88 0Q75 9.9 85 22.8Q69.9 29 76.2 44Q60 46.1 62.2 62.2Q46.1 60 44 76.2Q29 69.9 22.8 85Q9.9 75 0 88"/>' +
-    '<path d="M110 0Q93.8 12.4 106.3 28.5Q87.4 36.2 95.3 55Q75.1 57.6 77.8 77.8M55 95.3Q36.2 87.4 28.5 106.3Q12.4 93.8 0 110M77.8 77.8Q80 88 76 100"/>';
-  function web(cls, mirror) {
-    return '<svg class="tm-hw-web ' + cls + '" viewBox="0 0 120 120" aria-hidden="true" focusable="false">' +
-      (mirror ? '<g transform="matrix(-1 0 0 1 120 0)">' + WEB_PATHS + '</g>' : WEB_PATHS) + '</svg>';
-  }
-  var PUMPKIN = '<svg viewBox="0 0 100 86" aria-hidden="true" focusable="false">' +
-    '<path d="M46.5 17c-.6-6 .8-11 6.6-14 1.6 3.2-.6 6.6.4 14z" fill="#3E5A24"/>' +
-    '<path d="M53 9.5c5.5-4 12-1.8 10.4 3.6" fill="none" stroke="#3E5A24" stroke-width="1.6" stroke-linecap="round"/>' +
-    '<g class="pb"><ellipse cx="29" cy="51" rx="25" ry="29"/><ellipse cx="71" cy="51" rx="25" ry="29"/><ellipse cx="41" cy="52" rx="21" ry="32.5"/><ellipse cx="59" cy="52" rx="21" ry="32.5"/><ellipse cx="50" cy="52" rx="15" ry="33.5"/></g>' +
-    '<g class="face"><path d="M28.5 45h12l-6-11z"/><path d="M59.5 45h12l-6-11z"/><path d="M47 53.5h6l-3-5.5z"/><path d="M25 58.5q25 26 50 0l-8.2 2.2-2.7 5.6-3-4.8h-22.2l-3 4.8-2.7-5.6z"/></g></svg>';
-  var DEFS = '<svg class="tm-hw-defs" aria-hidden="true" focusable="false"><defs>' +
-    '<radialGradient id="tmHwPkBody" cx="40%" cy="34%" r="72%"><stop offset="0" stop-color="#F59A45"/><stop offset=".5" stop-color="#D2661F"/><stop offset="1" stop-color="#6E260B"/></radialGradient>' +
-    '<radialGradient id="tmHwPkGlow" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#FFF6C8"/><stop offset=".45" stop-color="#FFC857"/><stop offset="1" stop-color="#F28A1E"/></radialGradient>' +
-    '</defs></svg>';
-  var PK_ICON = '<path class="ps" d="M11.3 6.2c-.2-1.6.3-2.9 1.8-3.6.4.9-.1 1.8.2 3.6z"/>' +
-    '<path class="pb" d="M12 6.6c-1.3-.8-3.4-.9-5 0C4.6 7.8 3.4 10.2 3.4 13.4c0 3.9 2.4 6.3 5.6 6.3 1.2 0 2.2-.4 3-.9.8.5 1.8.9 3 .9 3.2 0 5.6-2.4 5.6-6.3 0-3.2-1.2-5.6-3.6-6.8-1.6-.9-3.7-.8-5 0z"/>' +
-    '<path class="pf" d="M7.6 12.2h2.6L8.9 9.9zM13.8 12.2h2.6l-1.3-2.3zM7 14.4c1.3 2.8 8.7 2.8 10 0l-1.8.7-.8 1.2-.9-1h-3l-.9 1-.8-1.2z"/>';
-  function dataUri(svg) { return 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")'; }
-  function webImg(mirror) {
-    return dataUri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><g fill="none" stroke="rgba(246,239,217,0.5)" stroke-width="1.1" stroke-linecap="round"' +
-      (mirror ? ' transform="matrix(-1 0 0 1 120 0)"' : '') + '>' + WEB_PATHS.replace(/ class="rad"/, '') + '</g></svg>');
-  }
+  function $(s, c) { return (c || document).querySelector(s); }
+  function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+  function el(cls, style) { var d = document.createElement('div'); d.className = cls; d.setAttribute('aria-hidden', 'true'); if (style) d.style.cssText = style; return d; }
 
-  // tracks: [className, yf, size, dur, delay, restX, flap, bob, hideOnPhones]
-  var BATS_FRONT = [['b1', .30, 34, 19, -3, '18%', .32, 2.6, 0], ['b3 rev', .56, 28, 22, -7, '31%', .30, 2.3, 0], ['b5 rev', .14, 24, 17, -9, '7%', .34, 2.8, 1], ['b6', .66, 20, 24, -15, '66%', .38, 2.2, 1]];
-  var BATS_BACK = [['b2', .22, 22, 26, -12, '44%', .36, 3.1, 0], ['b4', .44, 18, 30, -20, '56%', .40, 3.4, 1]];
-  var FLURRY = [[.80, .05, 30, 3.2, .35, 0], [.92, .22, 24, 3.6, .55, 0], [.70, -.05, 20, 3.0, .75, 1], [.86, .12, 26, 3.4, .95, 0], [.96, .28, 18, 3.8, 1.15, 1]];
-  function batTrack(b) {
-    return '<div class="tm-hw-track ' + b[0] + (b[8] ? ' tm-hw-sm-hide' : '') + '" style="--yf:' + b[1] + ';--t:' + b[3] + 's;--d:' + b[4] + 's;--rx:' + b[5] + '">' +
-      '<div class="tm-hw-bob" style="--b:' + b[7] + 's"><div class="tm-hw-bat" style="--s:' + b[2] + 'px;--f:' + b[6] + 's">' + BAT + '</div></div></div>';
-  }
-  function flurryTrack(f) {
-    return '<div class="tm-hw-track tm-hw-flurry' + (f[5] ? ' tm-hw-sm-hide' : '') + '" style="--fy0:' + f[0] + ';--fy1:' + f[1] + ';--t:' + f[3] + 's;--d:' + f[4] + 's">' +
-      '<div class="tm-hw-bob" style="--b:1.4s"><div class="tm-hw-bat" style="--s:' + f[2] + 'px;--f:.22s">' + BAT + '</div></div></div>';
-  }
-
-  /* ---------------- helpers ---------------- */
-  function $(sel, ctx) { return (ctx || root).querySelector(sel); }
-  function $$(sel, ctx) { return Array.prototype.slice.call((ctx || root).querySelectorAll(sel)); }
-  function safe(fn) { try { fn(); } catch (e) { if (window.console) console.warn('[halloween layer]', e); } }
-  function rgb(s) {
-    var m = s && /rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:\s*[,\/]\s*([\d.]+%?))?\s*\)/.exec(s);
-    if (!m) return null;
-    var a = m[4] == null ? 1 : (m[4].slice(-1) === '%' ? parseFloat(m[4]) / 100 : parseFloat(m[4]));
-    return { r: +m[1], g: +m[2], b: +m[3], a: a };
-  }
-  function lum(c) { function f(v) { v /= 255; return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); } return 0.2126 * f(c.r) + 0.7152 * f(c.g) + 0.0722 * f(c.b); }
-  function sat(c) { return Math.max(c.r, c.g, c.b) - Math.min(c.r, c.g, c.b); }
-  function bgOf(el) {
-    var cs = getComputedStyle(el), c = rgb(cs.backgroundColor);
-    if (c && c.a >= 0.4) return c;
-    var bi = cs.backgroundImage;
-    if (bi && bi !== 'none') {
-      if (bi.indexOf('gradient') < 0) return { img: true };
-      var g = rgb(bi); if (g && g.a >= 0.4) return g;
-    }
-    return null;
-  }
-  function isDecor(el) { return !!(el && el.closest && el.closest('.tm-hw-scene,.tm-hw-over,.tm-hw-subsky,.tm-hw-toggle,.tm-hw-burst,.tm-hw-ribbat')); }
-  function onDark(el) {
-    for (var n = el; n && n !== document.documentElement; n = n.parentElement) {
-      var b = bgOf(n);
-      if (b) return b.img ? false : lum(b) < 0.2;
-    }
-    return false;
-  }
-  function ownText(el) { for (var c = el.firstChild; c; c = c.nextSibling) if (c.nodeType === 3 && /\S/.test(c.nodeValue)) return true; return false; }
-  function findText(ctx, re) {
-    if (!ctx) return null;
-    var w = document.createTreeWalker(ctx, NodeFilter.SHOW_TEXT, null), n;
-    while ((n = w.nextNode())) if (re.test(n.nodeValue)) return n.parentElement;
-    return null;
-  }
-  function boxOf(el, stop) { for (var n = el; n && n !== stop; n = n.parentElement) if (bgOf(n)) return n; return null; }
-  function pseudoFree(el, which) { var c = getComputedStyle(el, which).content; return !c || c === 'none' || c === 'normal'; }
-  function positioned(el) { if (getComputedStyle(el).position === 'static') el.style.position = 'relative'; }
-  function frag(html) { var t = document.createElement('div'); t.innerHTML = html; return t.firstChild; }
-  function hit(a, b, pad) { pad = pad || 0; return a.left < b.right + pad && a.right > b.left - pad && a.top < b.bottom + pad && a.bottom > b.top - pad; }
-
-  /* contrast pass for areas we turned dark */
-  function fixArea(area) {
-    if (!area) return;
-    var els = area.querySelectorAll('*');
-    for (var i = 0; i < els.length; i++) {
-      var el = els[i], tag = el.tagName.toUpperCase();
-      if (isDecor(el) || /^(SCRIPT|STYLE|TEMPLATE|NOSCRIPT|INPUT|TEXTAREA|SELECT|OPTION|IMG|VIDEO|CANVAS|IFRAME|PICTURE|SOURCE)$/.test(tag)) continue;
-      if (el instanceof SVGElement) { if (tag !== 'SVG') svgFix(el); continue; }
-      if (el.closest('.tm-hw-pkicon')) continue;
-      var cs = getComputedStyle(el);
-      var btn = el.classList.contains('tm-btn') || tag === 'BUTTON';
-      if (btn) { if (!bgOf(el) && onDark(el)) el.classList.add('tm-hw-gb'); continue; }
-      if (el.parentElement && el.parentElement.closest('.tm-btn,button')) continue;
-      if (!ownText(el)) { borderFix(el, cs); continue; }
-      if (!onDark(el)) continue;
-      borderFix(el, cs);
-      var fill = rgb(cs.webkitTextFillColor || cs.getPropertyValue('-webkit-text-fill-color'));
-      var clip = cs.webkitBackgroundClip || cs.backgroundClip;
-      if (fill && fill.a === 0) { if (clip === 'text' && !el.matches('.tm-hero h1')) el.classList.add('tm-hw-ct'); continue; }
-      var c = rgb(cs.color); if (!c) continue;
-      var L = lum(c);
-      if (L >= 0.42) continue;
-      if (el.closest('a')) el.classList.add('tm-hw-lk');
-      else if (sat(c) >= 70 && L >= 0.05) el.classList.add('tm-hw-at');
-      else if (/^(H[1-6]|STRONG|B)$/.test(tag)) el.classList.add('tm-hw-lt');
-      else el.classList.add(L < 0.07 ? 'tm-hw-st' : 'tm-hw-mt');
-    }
-  }
-  function borderFix(el, cs) {
-    var w = parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
-    if (!w) return;
-    var c = rgb(cs.borderTopColor) || rgb(cs.borderBottomColor);
-    if (c && c.a > 0.2 && lum(c) < 0.12 && onDark(el)) el.classList.add('tm-hw-lb');
-  }
-  function svgFix(el) {
-    var cs = getComputedStyle(el), f = rgb(cs.fill), s = rgb(cs.stroke);
-    function dark(c) { return c && c.a > 0.3 && lum(c) < 0.09; }
-    if (!dark(f) && !dark(s)) return;
-    var host = el.ownerSVGElement;
-    if (!host || !onDark(host.parentElement || host)) return;
-    if (dark(f)) el.classList.add('tm-hw-lf');
-    if (dark(s)) el.classList.add('tm-hw-ls');
-  }
-
-  /* ---------------- build ---------------- */
-  var hero, h1, scene, over, moon, wbob, spider, spw, pks = [], perch = [], photo, photoWeb, toggle, countCard, trio, summary, subs = [], starsLayers;
+  // [left/right, top, size, opacity, white?, also on phones?]
+  var HERO_FLAKES = [
+    ['left:8%', 'top:300px', 34, .75, 0, 0], ['right:8%', 'top:330px', 34, .75, 0, 0],
+    ['left:4%', 'top:500px', 40, .7, 0, 1], ['right:5%', 'top:520px', 40, .7, 1, 1],
+    ['left:9%', 'top:1040px', 32, .65, 1, 0], ['right:13%', 'top:1050px', 34, .7, 0, 0]
+  ];
 
   function init() {
-    root = root || document.getElementById('the-mixer-site');
-    if (!root || root.getAttribute('data-hw-init')) return;
-    arm(root);
-    root.setAttribute('data-hw-init', '1');
-    var css = document.getElementById('tm-hw-css');
-    if (css && css.parentNode) root.appendChild(css);
-    root.style.setProperty('--hw-web-tl', webImg(false));
-    root.style.setProperty('--hw-web-tr', webImg(true));
-    root.style.setProperty('--hw-spider-img', dataUri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 42">' + SPIDER_BODY + '</svg>'));
-    root.style.setProperty('--hw-pk-img', dataUri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><style>.pb{fill:#F2791C}.ps{fill:#6B8E23}.pf{fill:#3A1606}</style>' + PK_ICON + '</svg>'));
+    try {
+      // ribbon: drop the base sparkle glyph (snowflakes are added by CSS)
+      var rib = $('.tm-ribbon', root);
+      if (rib && rib.firstChild && rib.firstChild.nodeType === 3) rib.firstChild.nodeValue = rib.firstChild.nodeValue.replace(/^\s*✦\s*/, ' ');
 
-    var home = $('.tm-page[data-page="home"]') || root;
-    hero = $('.tm-hero', home) || $('.tm-hero');
-    h1 = hero && hero.querySelector('h1');
-    countCard = hero && ($('.tm-count-card', hero) || boxOf(findText(hero, /counting down/i), hero));
-    if (countCard && !countCard.classList.contains('tm-count-card')) countCard.classList.add('tm-hw-countcard');
-    trio = hero && $('.tm-trio', hero);
-    var invite = hero && ($('.tm-trio-invite', hero) || boxOf(findText(hero, /you[’']re invited/i), hero));
-    if (invite && !invite.classList.contains('tm-trio-invite')) invite.classList.add('tm-hw-invite');
-    var trust = $('.tm-trust');
-    if (!trust && hero) {
-      for (var sib = hero.nextElementSibling; sib && !trust; sib = sib.nextElementSibling) {
-        var t = findText(sib, /complimentary to attend/i);
-        if (t) { trust = sib; trust.classList.add('tm-hw-trust'); }
-        break;
+      // fixed snowy ground behind everything
+      root.insertBefore(el('tm-xm-ground'), root.firstChild);
+
+      // hero: corners + snowflakes
+      var heroInner = $('.tm-hero-inner', root);
+      if (heroInner) {
+        heroInner.appendChild(el('tm-xm-corner tl'));
+        heroInner.appendChild(el('tm-xm-corner tr'));
+        HERO_FLAKES.forEach(function (f, i) {
+          heroInner.appendChild(el('tm-xm-flake' + (f[4] ? ' w' : '') + (f[5] ? ' m' : ''),
+            f[0] + ';' + f[1] + ';--fs:' + f[2] + 'px;--fo:' + f[3] + ';--fd:' + (8 + i) + 's;--fdl:-' + i * 1.3 + 's'));
+        });
       }
-    }
-    summary = $('.tm-summary');
-    if (!summary) { summary = boxOf(findText(root, /^\s*event summary\s*$/i), root); if (summary) summary.classList.add('tm-hw-summary'); }
-    subs = $$('.tm-subhero').filter(function (s) { return !s.closest('.tm-page[data-page="terms"]'); });
-
-    // exact contrast fixes, measured against the original colors
-    root.classList.remove('tm-hw-preflip');
-    if (countCard) safe(function () { darkTiles(countCard); });
-    safe(function () {
-      [hero].concat($$('.tm-ribbon'), [trust, summary, $('.tm-footer') || $('footer')], subs).forEach(fixArea);
-    });
-
-    safe(ribbonBats);
-    if (summary) safe(function () { themeIcon(summary); });
-    if (hero) safe(buildHero);
-    safe(function () { if (countCard) cardWeb(countCard, 'tl'); if (invite) cardWeb(invite, 'tr'); });
-    if (summary) safe(function () {
-      if (pseudoFree(summary, '::before') && pseudoFree(summary, '::after')) { positioned(summary); summary.classList.add('tm-hw-cw-tr', 'tm-hw-sumspider'); }
-    });
-    subs.forEach(function (s) { safe(function () { buildSub(s); }); });
-    safe(watchPages);
-    safe(watchCalendar);
-
-    window.addEventListener('resize', function () { padHero(); schedule(); });
-    window.addEventListener('load', function () { padHero(); schedule(); });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
-    if ('ResizeObserver' in window) {
-      var ro = new ResizeObserver(schedule);
-      [hero, summary].concat(subs).forEach(function (el) { if (el) ro.observe(el); });
-    }
-    padHero();
-    schedule();
-  }
-
-  function darkTiles(card) {
-    $$('*', card).forEach(function (el) {
-      var b = bgOf(el);
-      if (b && !b.img && lum(b) >= 0.2) el.classList.add('tm-hw-darktile');
-    });
-    $$('*', card).forEach(function (el) {
-      if (!ownText(el)) return;
-      var txt = el.textContent.trim();
-      if ((/^\d{1,3}$/.test(txt) || /num|digit/i.test(el.className)) && parseFloat(getComputedStyle(el).fontSize) >= 22) el.classList.add('tm-hw-glownum');
-    });
-  }
-  function cardWeb(el, side) {
-    if (!pseudoFree(el, '::before')) return;
-    positioned(el);
-    el.classList.add(side === 'tl' ? 'tm-hw-cw-tl' : 'tm-hw-cw-tr');
-  }
-  function ribbonBats() {
-    $$('.tm-ribbon').forEach(function (rib) {
-      var w = document.createTreeWalker(rib, NodeFilter.SHOW_TEXT, null), n;
-      while ((n = w.nextNode())) {
-        var i = n.nodeValue.indexOf('\u2726');
-        if (i < 0) continue;
-        var after = n.splitText(i);
-        after.nodeValue = after.nodeValue.slice(1);
-        var bat = frag(BAT.replace('<svg ', '<svg class="tm-hw-ribbat" '));
-        after.parentNode.insertBefore(bat, after);
-        return;
-      }
-    });
-  }
-  function themeIcon(sum) {
-    var t = findText(sum, /^\s*theme\b/i);
-    for (var n = t, k = 0; n && n !== sum && k < 3; n = n.parentElement, k++) {
-      var svg = n.querySelector('svg');
-      if (svg) { svg.setAttribute('viewBox', '0 0 24 24'); svg.innerHTML = PK_ICON; svg.classList.add('tm-hw-pkicon'); return; }
-    }
-  }
-
-  function buildHero() {
-    positioned(hero);
-    var html = '<div class="tm-hw-scene" aria-hidden="true">' + DEFS +
-      '<div class="tm-hw-stars s0"></div><div class="tm-hw-stars s1"></div><div class="tm-hw-stars s2"></div>' +
-      '<div class="tm-hw-batgroup bk">' + BATS_BACK.map(batTrack).join('') + '</div>' +
-      '<div class="tm-hw-moon"><i></i><i></i><i></i><i></i></div>' +
-      '<div class="tm-hw-wtrack"><div class="tm-hw-warc"><div class="tm-hw-bob"><div class="tm-hw-witch">' + WITCH + '</div></div></div></div>' +
-      '<div class="tm-hw-batgroup fr">' + BATS_FRONT.map(batTrack).join('') + '</div>' +
-      FLURRY.map(flurryTrack).join('') +
-      web('tl', false) + web('tr', true) +
-      '<div class="tm-hw-spider"><div class="tm-hw-drop"><div class="tm-hw-swing"><span class="tm-hw-silk"></span>' + SPIDER + '</div></div></div>' +
-      '<div class="tm-hw-mist"></div>' +
-      '<svg class="tm-hw-hills" viewBox="0 0 1440 92" preserveAspectRatio="none" aria-hidden="true" focusable="false">' +
-      '<path d="M0 46C160 22 330 26 520 40S860 30 1040 28 1330 40 1440 34V92H0Z" fill="#141A4A"/>' +
-      '<path d="M0 62C200 48 380 54 600 60S1000 50 1200 52 1390 58 1440 56V92H0Z" fill="#070A1F"/>' +
-      '<path d="M0 62C200 48 380 54 600 60S1000 50 1200 52 1390 58 1440 56" fill="none" stroke="rgba(246,239,217,.14)" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>' +
-      '<div class="tm-hw-pk p1" style="--w:clamp(56px,5.6vw,96px)">' + PUMPKIN + '</div>' +
-      '<div class="tm-hw-pk p2" style="--w:clamp(38px,3.8vw,62px)">' + PUMPKIN + '</div>' +
-      '<div class="tm-hw-pk p3" style="--w:clamp(48px,4.6vw,80px)">' + PUMPKIN + '</div>' +
-      '</div>';
-    scene = frag(html);
-    hero.appendChild(scene);
-    moon = scene.querySelector('.tm-hw-moon');
-    wbob = scene.querySelector('.tm-hw-warc .tm-hw-bob');
-    spider = scene.querySelector('.tm-hw-spider');
-    pks = $$('.tm-hw-pk', scene);
-    starsLayers = $$('.tm-hw-stars', scene);
-
-    over = frag('<div class="tm-hw-over" aria-hidden="true">' + web('pw', false) +
-      '<div class="tm-hw-pk q1" style="--w:40px">' + PUMPKIN + '</div><div class="tm-hw-pk q2" style="--w:32px">' + PUMPKIN + '</div></div>');
-    hero.appendChild(over);
-    photoWeb = over.querySelector('.tm-hw-web');
-    perch = $$('.tm-hw-pk', over);
-    photo = $('.tm-hero-photo', hero);
-    if (!photo) {
-      var best = null, area = 0;
-      $$('img', hero).forEach(function (im) { if (trio && trio.contains(im)) return; var r = im.getBoundingClientRect(); if (r.width * r.height > area) { area = r.width * r.height; best = im; } });
-      photo = best;
-    }
-
-    toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'tm-hw-toggle';
-    toggle.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="i-pause" d="M4.2 3h2.6v10H4.2zM9.2 3h2.6v10H9.2z"/><path class="i-play" d="M5 2.8v10.4L13 8z"/></svg><span></span>';
-    function sync() { toggle.querySelector('span').textContent = root.classList.contains('tm-hw-still') ? 'Play animations' : 'Pause animations'; }
-    toggle.addEventListener('click', function () {
-      var still = !root.classList.contains('tm-hw-still');
-      root.classList.toggle('tm-hw-still', still);
-      store(still ? 'paused' : 'playing');
-      sync();
-    });
-    sync();
-    hero.appendChild(toggle);
-
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (es) {
-        es.forEach(function (e) { root.classList.toggle('tm-hw-offscreen', !e.isIntersecting); });
-      }).observe(hero);
-    }
-  }
-
-  function buildSub(sh) {
-    positioned(sh);
-    var sky = frag('<div class="tm-hw-subsky" aria-hidden="true"><div class="tm-hw-submoon"></div>' +
-      batTrack(['s1', .38, 18, 21, -4, '22%', .34, 2.4, 0]) + batTrack(['s2 rev', .66, 14, 27, -13, '64%', .38, 2.9, 1]) + '</div>');
-    sh.appendChild(sky);
-  }
-
-  /* ---------------- layout ---------------- */
-  var rq = 0;
-  function schedule() { if (rq) return; rq = requestAnimationFrame(function () { rq = 0; safe(layoutHero); subs.forEach(function (s) { safe(function () { layoutSub(s); }); }); safe(layoutSummary); }); }
-
-  function padHero() {
-    if (!hero) return;
-    safe(function () {
-      hero.style.paddingTop = '';
-      var w = hero.getBoundingClientRect().width;
-      if (!w) return;
-      var base = parseFloat(getComputedStyle(hero).paddingTop) || 0;
-      var extra = w >= 1024 ? 84 : w >= 640 ? 68 : 52;
-      hero.style.paddingTop = (base + extra) + 'px';
-    });
-  }
-
-  function textRects(area) {
-    var out = [], rg = document.createRange();
-    var w = document.createTreeWalker(area, NodeFilter.SHOW_TEXT, { acceptNode: function (n) { return /\S/.test(n.nodeValue) && !isDecor(n.parentElement) ? 1 : 3; } });
-    var n;
-    while ((n = w.nextNode())) {
-      rg.selectNodeContents(n);
-      var rs = rg.getClientRects();
-      for (var i = 0; i < rs.length; i++) if (rs[i].width > 0) out.push(rs[i]);
-    }
-    return out;
-  }
-  function obstacles(area) {
-    var ar = area.getBoundingClientRect(), max = ar.width * ar.height * 0.6, out = textRects(area);
-    $$('*', area).forEach(function (el) {
-      if (isDecor(el) || el === area) return;
-      var tag = el.tagName.toUpperCase();
-      var r = el.getBoundingClientRect();
-      if (!r.width || !r.height || r.width * r.height > max) return;
-      if (/^(IMG|VIDEO|IFRAME|BUTTON|INPUT|SELECT|TEXTAREA)$/.test(tag) || el.classList.contains('tm-btn') || bgOf(el)) out.push(r);
-    });
-    return out;
-  }
-  function free(r, obs) { for (var i = 0; i < obs.length; i++) if (hit(r, obs[i], 6)) return false; return true; }
-  function stars(n, W, H, seed, amin) {
-    var s = seed, out = [];
-    function rnd() { s = (s * 16807) % 2147483647; return s / 2147483647; }
-    for (var i = 0; i < n; i++) {
-      out.push(Math.round(rnd() * W) + 'px ' + Math.round(rnd() * H) + 'px 0 ' + (rnd() > 0.86 ? '.6px' : '0') + ' rgba(255,250,235,' + (amin + rnd() * (1 - amin)).toFixed(2) + ')');
-    }
-    return out.join(',');
-  }
-
-  function layoutHero() {
-    if (!hero || !scene) return;
-    var hr = hero.getBoundingClientRect();
-    if (hr.width < 10 || hr.height < 10) return;
-    var W = hr.width, H = hr.height, st = scene.style;
-    function rel(r) { return { left: r.left - hr.left, right: r.right - hr.left, top: r.top - hr.top, bottom: r.bottom - hr.top }; }
-
-    // sky band = space above the first line of text
-    var tr = textRects(hero).map(rel);
-    var firstTop = tr.length ? Math.min.apply(null, tr.map(function (r) { return r.top; })) : 150;
-    var band = Math.max(70, firstTop - 6);
-    st.setProperty('--hw-band', band + 'px');
-
-    // moon: fit inside the band
-    st.removeProperty('--hw-moon-size');
-    var mr = rel(moon.getBoundingClientRect());
-    var maxM = band - mr.top - 10;
-    if (mr.bottom - mr.top > maxM) { st.setProperty('--hw-moon-size', Math.max(40, maxM) + 'px'); mr = rel(moon.getBoundingClientRect()); }
-    var mcx = (mr.left + mr.right) / 2, mcy = (mr.top + mr.bottom) / 2;
-
-    // witch: straight climb that crosses the moon, never dipping into the text
-    var ww = wbob.offsetWidth || 100, wh = ww * 0.625;
-    var x0 = -ww - 30, x1 = W + 30;
-    var floor = band - wh - 12;
-    var wy0 = Math.max(2, floor);
-    var target = Math.min(mcy - wh / 2, floor);
-    var tm = Math.max(0.2, (mcx - ww / 2 - x0) / (x1 - x0));
-    var wy1 = Math.max(-wh * 0.5, Math.min(floor, wy0 + (target - wy0) / tm));
-    st.setProperty('--hw-wy0', wy0 + 'px');
-    st.setProperty('--hw-wy1', wy1 + 'px');
-    st.setProperty('--hw-wrx', (mcx - ww / 2) + 'px');
-    st.setProperty('--hw-wry', Math.max(2, target) + 'px');
-
-    // stars
-    var skyH = Math.max(band + 40, H * 0.55);
-    starsLayers[0].style.boxShadow = stars(Math.round(W * skyH / 26000), W, skyH, 7, 0.15);
-    starsLayers[1].style.boxShadow = stars(Math.round(W * band / 7000), W, band, 13, 0.35);
-    starsLayers[2].style.boxShadow = stars(Math.round(W * band / 9000), W, band, 29, 0.3);
-
-    var obs = obstacles(hero).map(rel);
-
-    // spider: drop as far as the side margin allows
-    var sr = rel(spider.getBoundingClientRect());
-    var spW = spider.offsetWidth || 30, spH = spW * 1.05;
-    var lim = Math.min(H * 0.5, band + 240);
-    obs.forEach(function (o) { if (o.right > sr.left - 16 && o.left < sr.left + spW + 16) lim = Math.min(lim, o.top - spH - 10); });
-    st.setProperty('--hw-drop', Math.max(30, lim) + 'px');
-
-    // horizon + pumpkins
-    var cc = countCard && countCard.getBoundingClientRect().height ? rel(countCard.getBoundingClientRect()) : null;
-    var tt = trio && trio.getBoundingClientRect().height ? rel(trio.getBoundingClientRect()) : null;
-    var h = cc ? cc.bottom - Math.min(44, (cc.bottom - cc.top) * 0.32) : tt ? tt.top - 24 : H - 70;
-    h = Math.max(band + 160, Math.min(h, H - 24));
-    st.setProperty('--hw-h', h + 'px');
-
-    var sizes = pks.map(function (p) { p.classList.add('on'); var w = p.offsetWidth; return { w: w, h: w * 0.86 }; });
-    var edge = Math.max(10, W * 0.035);
-    var spots = [
-      { x: edge, i: 0 },
-      { x: edge + sizes[0].w * 0.78, i: 1 },
-      { x: W - edge - sizes[2].w, i: 2 }
-    ];
-    var shown = 0;
-    spots.forEach(function (s) {
-      var sz = sizes[s.i], p = pks[s.i];
-      var r = { left: s.x, right: s.x + sz.w, top: h - 6 - sz.h, bottom: h - 6 };
-      var ok = free(r, obs) && (s.i !== 1 || pks[0].classList.contains('on'));
-      p.classList.toggle('on', ok);
-      if (ok) { p.style.left = s.x + 'px'; shown++; }
-    });
-    // phones: if the hillside is covered, perch two small pumpkins on the countdown card
-    perch.forEach(function (p) { p.classList.remove('on'); });
-    if (!shown && cc) {
-      var others = obs.filter(function (o) { return !(o.left >= cc.left - 1 && o.right <= cc.right + 1 && o.top >= cc.top - 1 && o.bottom <= cc.bottom + 1); });
-      [[perch[0], cc.left + 10], [perch[1], cc.right - 10 - 32]].forEach(function (pp) {
-        var p = pp[0];
-        p.classList.add('on');
-        var w = p.offsetWidth, hh = w * 0.86;
-        var r = { left: pp[1], right: pp[1] + w, top: cc.top + 5 - hh, bottom: cc.top + 5 };
-        if (free(r, others)) { p.style.left = pp[1] + 'px'; p.style.top = (cc.top + 5) + 'px'; } else p.classList.remove('on');
+      // inner pages: small corners on the page banner (not on Terms)
+      $$('.tm-subhero', root).forEach(function (s) {
+        if (s.closest('#tm-page-terms')) return;
+        s.appendChild(el('tm-xm-corner tl'));
+        s.appendChild(el('tm-xm-corner tr'));
       });
-    }
 
-    // cobweb on the photo's top-left corner
-    if (photo && photoWeb) {
-      var pr = photo.getBoundingClientRect();
-      if (pr.width > 140 && pr.height > 80) {
-        var p2 = rel(pr), s2 = Math.max(60, Math.min(130, pr.width * 0.12));
-        photoWeb.style.cssText = 'display:block;left:' + p2.left + 'px;top:' + p2.top + 'px;width:' + s2 + 'px;height:' + s2 + 'px';
-      } else photoWeb.style.display = 'none';
-    }
-
-    // pause button: bottom-right if clear, otherwise in the sky band
-    toggle.style.cssText = '';
-    var tb = rel(toggle.getBoundingClientRect());
-    if (!free(tb, obs)) {
-      var th = tb.bottom - tb.top;
-      toggle.style.cssText = 'right:auto;bottom:auto;left:14px;top:' + Math.max(8, band - th - 10) + 'px';
-    }
-  }
-
-  function layoutSub(sh) {
-    var sky = sh.querySelector('.tm-hw-subsky');
-    if (!sky) return;
-    var r = sh.getBoundingClientRect();
-    if (!r.width || !r.height) return;
-    var tr = textRects(sh);
-    if (!tr.length) return;
-    var top = Math.min.apply(null, tr.map(function (t) { return t.top; })) - r.top;
-    var right = Math.max.apply(null, tr.map(function (t) { return t.right; })) - r.left;
-    var bottom = Math.max.apply(null, tr.map(function (t) { return t.bottom; })) - r.top;
-    sky.style.setProperty('--hw-band', Math.max(20, top - 6) + 'px');
-    sky.classList.toggle('bats', top >= 44);
-    var m = sky.querySelector('.tm-hw-submoon');
-    var size = Math.min(84, Math.max(40, r.width * 0.055));
-    var zone = r.width - right;
-    if (zone >= size + 48) {
-      m.style.cssText = 'display:block;width:' + size + 'px;height:' + size + 'px;left:' + (right + (zone - size) / 2) + 'px;top:' + Math.max(10, Math.min((top + bottom) / 2, r.height - size / 2 - 10) - size / 2) + 'px';
-    } else if (top - 20 >= 40) {
-      size = Math.min(size, top - 20);
-      m.style.cssText = 'display:block;width:' + size + 'px;height:' + size + 'px;right:6%;top:10px';
-    } else m.style.display = 'none';
-  }
-
-  function layoutSummary() {
-    if (!summary || !summary.classList.contains('tm-hw-sumspider')) return;
-    var r = summary.getBoundingClientRect();
-    if (!r.width) return;
-    var webW = Math.max(52, Math.min(86, r.width * 0.18));
-    var cx = r.right - webW * 0.32 - 11;
-    var lim = Math.min(90, r.height * 0.4);
-    textRects(summary).concat($$('svg,img,a,button', summary).map(function (e) { return e.getBoundingClientRect(); })).forEach(function (t) {
-      if (t.width && t.right > cx - 18 && t.left < cx + 18 && t.top > r.top + 2) lim = Math.min(lim, t.top - r.top - 8);
-    });
-    summary.style.setProperty('--hw-sd', Math.max(0, lim) + 'px');
-    summary.classList.toggle('tm-hw-nospider', lim < 30);
-    if (lim < 30) summary.style.setProperty('--hw-sd', '0px');
-  }
-
-  /* ---------------- pages, confirmation, calendar ---------------- */
-  var burstDone = false;
-  function burst() {
-    if (burstDone || reduce || root.classList.contains('tm-hw-still')) return;
-    burstDone = true;
-    var html = '';
-    var vw = Math.max(window.innerWidth, 500), vh = Math.max(window.innerHeight, 500);
-    for (var i = 0; i < 12; i++) {
-      var a = (i / 12) * Math.PI * 2 + (Math.random() - 0.5) * 0.4, d = 0.55 + Math.random() * 0.35;
-      html += '<div class="tm-hw-bb" style="--tx:' + Math.round(Math.cos(a) * d * vw * 0.6) + 'px;--ty:' + Math.round(Math.sin(a) * d * vh * 0.6 - 60) +
-        'px;--sc:' + (1 + Math.random() * 0.5).toFixed(2) + ';--d:' + (Math.random() * 0.35).toFixed(2) + 's;--dur:' + (2.2 + Math.random() * 0.8).toFixed(2) +
-        's"><div class="tm-hw-bat" style="--s:' + (26 + Math.round(Math.random() * 26)) + 'px;--f:' + (0.18 + Math.random() * 0.08).toFixed(2) + 's">' + BAT + '</div></div>';
-    }
-    var box = frag('<div class="tm-hw-burst" aria-hidden="true">' + html + '</div>');
-    root.appendChild(box);
-    setTimeout(function () { if (box.parentNode) box.parentNode.removeChild(box); }, 3800);
-  }
-  function watchPages() {
-    var pages = $$('.tm-page');
-    pages.forEach(function (p) { p._hwOn = p.classList.contains('tm-active'); });
-    var mo = new MutationObserver(function (muts) {
-      muts.forEach(function (m) {
-        var p = m.target, on = p.classList.contains('tm-active');
-        if (on && !p._hwOn) {
-          schedule();
-          if (p.getAttribute('data-page') === 'confirmation') setTimeout(burst, 250);
-        }
-        p._hwOn = on;
-      });
-    });
-    pages.forEach(function (p) { mo.observe(p, { attributes: true, attributeFilter: ['class'] }); });
-    var conf = $('.tm-page[data-page="confirmation"]');
-    if (conf && conf.classList.contains('tm-active')) setTimeout(burst, 600);
-  }
-  function isPumpkinDay(c) {
-    var names = c.getAttributeNames ? c.getAttributeNames() : [];
-    for (var i = 0; i < names.length; i++) if ((c.getAttribute(names[i]) || '').indexOf('2026-10-28') > -1) return true;
-    if (c.querySelector('[data-date="2026-10-28"],[data-key="2026-10-28"],[onclick*="2026-10-28"]')) return true;
-    var scope = c.closest('.tm-page') || root;
-    return /^\s*28\b/.test(c.textContent) && /event/i.test(c.className) && !!findText(scope, /october\s+2026/i) && !/muted|other|outside|prev|next/i.test(c.className);
-  }
-  function markCalendar() {
-    $$('.tm-cal-cell').forEach(function (c) {
-      if (c.classList.contains('tm-hw-pkday') || c.classList.contains('tm-hw-pkday-b')) {
-        if (!isPumpkinDay(c)) c.classList.remove('tm-hw-pkday', 'tm-hw-pkday-b');
-        return;
+      // home sections
+      var home = $('#tm-page-home', root) || root;
+      var about = $('.tm-about-grid', home);
+      var aboutSec = about && about.closest('.tm-section');
+      var venue = $('.tm-venue', home);
+      var venueSec = venue && venue.closest('.tm-section');
+      var org = $('.tm-org-grid', home);
+      var orgSec = org && org.closest('.tm-section');
+      var regSec = $('#tmRegister', home);
+      [aboutSec, venueSec, orgSec, regSec].forEach(function (s) { if (s) s.classList.add('tm-xm-sec'); });
+      if (aboutSec) {
+        aboutSec.appendChild(el('tm-xm-flake', 'left:4%;top:120px;--fs:30px;--fo:.6;--fd:10s'));
+        aboutSec.appendChild(el('tm-xm-flake w', 'right:4%;top:150px;--fs:30px;--fo:.7;--fd:11s;--fdl:-3s'));
       }
-      if (!isPumpkinDay(c)) return;
-      if (pseudoFree(c, '::after')) c.classList.add('tm-hw-pkday');
-      else if (pseudoFree(c, '::before')) c.classList.add('tm-hw-pkday-b');
-    });
-  }
-  function watchCalendar() {
-    markCalendar();
-    var host = $('.tm-page[data-page="calendar"]');
-    if (!host) return;
-    var tmr = 0;
-    new MutationObserver(function () { clearTimeout(tmr); tmr = setTimeout(function () { safe(markCalendar); }, 80); })
-      .observe(host, { childList: true, subtree: true, characterData: true });
+      // characters
+      if (heroInner) heroInner.appendChild(el('tm-xm-char santa'));
+      if (aboutSec) aboutSec.appendChild(el('tm-xm-char snowman'));
+      if (venueSec) venueSec.appendChild(el('tm-xm-char reindeer'));
+      if (regSec) {
+        regSec.classList.add('tm-xm-reg');
+        regSec.appendChild(el('tm-xm-char gifts l'));
+        regSec.appendChild(el('tm-xm-char gifts r'));
+      }
+      // "Host Venue" heading gets the gold rules
+      if (venueSec) {
+        var eb = $('.tm-eyebrow', venueSec);
+        if (eb && eb.parentNode) eb.parentNode.classList.add('tm-xm-ruled');
+      }
+    } catch (e) { /* decoration only - never break the page */ }
+
+    // below-the-fold artwork waits until everything else has loaded
+    function late() { root.classList.add('tm-xm-late'); }
+    function idle() { (window.requestIdleCallback || function (f) { setTimeout(f, 200); })(late); }
+    if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle);
   }
 })();
 </script>
+     <!-- ======================  END CHRISTMAS LAYER  ====================== -->
 <script>
 /* Viewport guard: ensures the page renders at true device width on phones/tablets.
    Adds a viewport meta if the theme is missing one, and corrects an existing tag
@@ -1838,7 +1306,7 @@
 
 <!-- ====================  RIBBON  ==================== -->
 <div class="tm-ribbon">
-  &#x2726; Next Senior Pro Network: <b>Wednesday, October 28th, 4:00&nbsp;PM</b> &middot; Ivy Park at Belmont &middot; Halloween Networking Event
+  &#x2726; Next Senior Pro Network: <b>Wednesday, December 16th, 4:00&nbsp;PM</b> &middot; Atria at Foster Square &middot; Christmas Networking Event
   <span class="tm-ribbon-count" id="tmRibbonCount">&hellip;</span>
 </div>
 
@@ -1895,13 +1363,13 @@
       <h1>Senior Pro Network</h1>
       <div class="tm-hero-tag">A professional networking event</div>
       <div class="tm-hero-photo">
-        <img src="/photos/SPN-Ivy-Park-Belmont.jpg" alt="Senior Pro Network at Ivy Park at Belmont">
+        <img src="/photos/SPN-Atria-Foster-Square.webp" width="1400" height="732" fetchpriority="high" alt="Atria at Foster Square, host of the December Senior Pro Network">
       </div>
       <div class="tm-hero-where">
-        <b>Wednesday, October 28th &middot; 4:00&nbsp;&ndash;&nbsp;6:00&nbsp;PM</b><br>
-        <a href="https://ivyliving.com/belmont/" target="_blank" rel="noopener">Ivy Park at Belmont</a>
-        &middot; <a href="https://maps.app.goo.gl/BpBAkxHguodCP5bg6" target="_blank" rel="noopener">1010 Alameda de las Pulgas, Belmont</a><br>
-        <b>&#127875; Theme: Halloween</b>
+        <b>Wednesday, December 16th &middot; 4:00&nbsp;&ndash;&nbsp;6:00&nbsp;PM</b><br>
+        <a href="https://www.atriaseniorliving.com/retirement-communities/atria-at-foster-square-foster-city-ca" target="_blank" rel="noopener">Atria at Foster Square</a>
+        &middot; <a href="https://maps.app.goo.gl/wdFzcCCXynJhMNGr6" target="_blank" rel="noopener">707 Thayer Lane, Foster City</a><br>
+        <b>&#127876; Theme: Christmas</b>
       </div>
       <div class="tm-hero-cta">
         <a class="tm-btn tm-btn-primary tm-btn-lg" href="#register" data-page="home" data-scroll="tmRegister">Reserve Your Spot</a>
@@ -1968,15 +1436,14 @@
     </div>
     <div class="tm-container">
       <div class="tm-venue">
-<img class="tm-venue-logo" src="/photos/ivyparkbelmontlogo.jpg" alt="Ivy Park at Belmont">        
+<img class="tm-venue-logo" src="/photos/atria-foster-square-logo.webp" width="527" height="224" loading="lazy" decoding="async" style="width:min(380px,80%); height:auto; margin:6px auto 4px;" alt="Atria at Foster Square">        
      <div class="tm-venue-info">
-          <div class="tm-vn">Ivy Park at Belmont</div>
-          <div class="tm-vt">Assisted Living</div>
-          <div class="tm-va">1010 Alameda de las Pulgas &middot; Belmont, CA 94002</div>
+          <div class="tm-vn">Atria at Foster Square</div>
+          <div class="tm-va">707 Thayer Lane &middot; Foster City, CA 94404</div>
         </div>
         <div class="tm-venue-links">
-          <a class="tm-btn tm-btn-outline" href="https://ivyliving.com/belmont/" target="_blank" rel="noopener">Website</a>
-          <a class="tm-btn tm-btn-outline" href="https://maps.app.goo.gl/BpBAkxHguodCP5bg6" target="_blank" rel="noopener">View map</a>
+          <a class="tm-btn tm-btn-outline" href="https://www.atriaseniorliving.com/retirement-communities/atria-at-foster-square-foster-city-ca" target="_blank" rel="noopener">Website</a>
+          <a class="tm-btn tm-btn-outline" href="https://maps.app.goo.gl/wdFzcCCXynJhMNGr6" target="_blank" rel="noopener">View map</a>
         </div>
       </div>
       <!-- HOST VENUE PHOTO (large, boxed). Put the file in /photos/ and use
@@ -2022,7 +1489,7 @@
   <div class="tm-section" id="tmRegister">
     <div class="tm-container tm-center" style="margin-bottom:40px;">
       <h2 class="tm-h2">Reserve Your Seat for the Senior Pro Network Event</h2>
-      <p class="tm-lede" style="margin:14px auto 0;">Join us on October 28th for our Halloween Networking Event, and stay in the loop for every future Senior Pro Network event. Signing up also means we'll send you a monthly announcement of the next event.</p>
+      <p class="tm-lede" style="margin:14px auto 0;">Join us on December 16th for our Christmas Networking Event, and stay in the loop for every future Senior Pro Network event. Signing up also means we'll send you a monthly announcement of the next event.</p>
     </div>
     <div class="tm-container tm-reg-grid">
       <div class="tm-form-card">
@@ -2059,7 +1526,7 @@
         <h3>Event Summary</h3>
         <div class="tm-sum-row">
           <div class="tm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-          <div><div class="tm-sum-k">Date</div><div class="tm-sum-v">Wednesday, October 28th, 2026</div></div>
+          <div><div class="tm-sum-k">Date</div><div class="tm-sum-v">Wednesday, December 16th, 2026</div></div>
         </div>
         <div class="tm-sum-row">
           <div class="tm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
@@ -2067,11 +1534,11 @@
         </div>
         <div class="tm-sum-row">
           <div class="tm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="tm-sum-k">Venue</div><div class="tm-sum-v"><a href="https://ivyliving.com/belmont/" target="_blank" rel="noopener">Ivy Park at Belmont</a><br><a href="https://maps.app.goo.gl/BpBAkxHguodCP5bg6" target="_blank" rel="noopener">1010 Alameda de las Pulgas, Belmont, CA</a><br><button type="button" class="tm-parking-btn" id="tmParkingOpen"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>Parking Guidelines</button></div></div>
+          <div><div class="tm-sum-k">Venue</div><div class="tm-sum-v"><a href="https://www.atriaseniorliving.com/retirement-communities/atria-at-foster-square-foster-city-ca" target="_blank" rel="noopener">Atria at Foster Square</a><br><a href="https://maps.app.goo.gl/wdFzcCCXynJhMNGr6" target="_blank" rel="noopener">707 Thayer Lane, Foster City, CA</a></div></div>
         </div>
         <div class="tm-sum-row">
           <div class="tm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m12 3 2.1 4.9 5.4.5-4.1 3.5 1.3 5.2L12 14.4 7.3 17.1l1.3-5.2L4.5 8.4l5.4-.5Z"/></svg></div>
-          <div><div class="tm-sum-k">Theme</div><div class="tm-sum-v">Halloween</div></div>
+          <div><div class="tm-sum-k">Theme</div><div class="tm-sum-v">Christmas</div></div>
         </div>
         <div class="tm-sum-row">
           <div class="tm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
@@ -2081,7 +1548,7 @@
           <div class="tm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6 9 17l-5-5"/></svg></div>
           <div><div class="tm-sum-k">Cost</div><div class="tm-sum-v">Complimentary</div></div>
         </div>
-        <div class="tm-sum-note">Light refreshments will be provided. Costumes encouraged &mdash; business attire equally welcome.</div>
+        <div class="tm-sum-note">Light refreshments will be provided.</div>
       </aside>
     </div>
   </div>
@@ -2131,7 +1598,7 @@
     <div class="tm-container tm-faq" id="tmFaq">
       <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">What is the purpose of Senior Pro Network?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Senior Pro Network is a small, intentional gathering of senior-service professionals across the Peninsula: senior living, home care, healthcare, elder law, financial planning, move managers, and the nonprofits that work alongside them. The goal is simple: get to know each other in person, build genuine relationships over time, and eventually pass referrals back and forth with people you actually trust.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Is there a cost to attend?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Senior Pro Network is complimentary thanks to our generous hosts and sponsors. We ask only that you register in advance so we can plan for refreshments and seating.</div></div></div>
-<div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Where and when is the next Senior Pro Network event?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Our next gathering is Wednesday, October 28th from 4:00&ndash;6:00 PM at <a href="https://ivyliving.com/belmont/" target="_blank" rel="noopener">Ivy Park at Belmont</a>, <a href="https://maps.app.goo.gl/BpBAkxHguodCP5bg6" target="_blank" rel="noopener">1010 Alameda de las Pulgas, Belmont, CA</a>. This one is our Halloween Networking Event, so come in costume if you would like &mdash; business attire is equally welcome. See the Calendar page for upcoming dates.</div></div></div>
+<div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Where and when is the next Senior Pro Network event?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Our next gathering is our Christmas Networking Event on Wednesday, December 16th from 4:00&ndash;6:00 PM at <a href="https://www.atriaseniorliving.com/retirement-communities/atria-at-foster-square-foster-city-ca" target="_blank" rel="noopener">Atria at Foster Square</a>, <a href="https://maps.app.goo.gl/wdFzcCCXynJhMNGr6" target="_blank" rel="noopener">707 Thayer Lane, Foster City, CA</a>. See the Calendar page for upcoming dates.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Who should attend?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Anyone whose work touches the senior community: senior living operators, home-care providers, geriatric care managers, elder-law attorneys, move managers, financial planners, healthcare professionals, memory care specialists, and the nonprofit partners who serve them.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Will refreshments be served?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Always. Light refreshments are always thoughtfully provided by the host venue.</div></div></div>
 <div class="tm-faq-item"><button class="tm-faq-q" aria-expanded="false">Can I sponsor or host a future Senior Pro Network event?<span class="tm-faq-ico">+</span></button><div class="tm-faq-a"><div class="tm-faq-a-inner">Yes, please. Hosting a Senior Pro Network event is a beautiful way to introduce your community or service to peers in the senior-care space. Reach out via the registration form and we'll be in touch.</div></div></div>
@@ -2408,14 +1875,14 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
 
-          <h2>October Senior Pro Network</h2>
+          <h2>December Senior Pro Network</h2>
 
           <hr class="tm-confirm-rule">
 
           <div class="tm-confirm-details">
             <div class="tm-confirm-row">
               <span class="tm-confirm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="1"></rect><line x1="3" y1="9.5" x2="21" y2="9.5"></line><line x1="8" y1="2.5" x2="8" y2="6.5"></line><line x1="16" y1="2.5" x2="16" y2="6.5"></line></svg></span>
-              <span class="tm-confirm-txt">Wednesday, October 28, 2026</span>
+              <span class="tm-confirm-txt">Wednesday, December 16, 2026</span>
             </div>
             <div class="tm-confirm-row">
               <span class="tm-confirm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 6.8 12 12 15.6 14"></polyline></svg></span>
@@ -2423,7 +1890,7 @@
             </div>
             <div class="tm-confirm-row">
               <span class="tm-confirm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.2 7-11.3A7 7 0 0 0 5 10.2c0 5.1 7 11.3 7 11.3z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span>
-              <span class="tm-confirm-txt">Ivy Park at Belmont &middot; Halloween Networking Event</span>
+              <span class="tm-confirm-txt">Atria at Foster Square &middot; Christmas Networking Event</span>
             </div>
           </div>
 
@@ -2431,11 +1898,11 @@
           <div class="tm-addcal">
             <p class="tm-addcal-label">Add it to your calendar</p>
             <div class="tm-addcal-grid">
-              <a class="tm-btn tm-btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=October%20Senior%20Pro%20Network%3A%20Halloween%20Costume%20Party&amp;dates=20261028T160000/20261028T180000&amp;details=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Ivy%20Park%20at%20Belmont%2C%201010%20Alameda%20de%20las%20Pulgas%2C%20Belmont%2C%20CA&amp;ctz=America%2FLos_Angeles" target="_blank" rel="noopener noreferrer">Google Calendar<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-outline" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=October%20Senior%20Pro%20Network%3A%20Halloween%20Costume%20Party&amp;startdt=2026-10-28T23%3A00%3A00Z&amp;enddt=2026-10-29T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Ivy%20Park%20at%20Belmont%2C%201010%20Alameda%20de%20las%20Pulgas%2C%20Belmont%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook.com<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-outline" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=October%20Senior%20Pro%20Network%3A%20Halloween%20Costume%20Party&amp;startdt=2026-10-28T23%3A00%3A00Z&amp;enddt=2026-10-29T01%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Ivy%20Park%20at%20Belmont%2C%201010%20Alameda%20de%20las%20Pulgas%2C%20Belmont%2C%20CA" target="_blank" rel="noopener noreferrer">Outlook &ndash; work or school<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-outline" href="https://calendar.yahoo.com/?v=60&amp;title=October%20Senior%20Pro%20Network%3A%20Halloween%20Costume%20Party&amp;st=20261028T230000Z&amp;et=20261029T010000Z&amp;desc=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;in_loc=Ivy%20Park%20at%20Belmont%2C%201010%20Alameda%20de%20las%20Pulgas%2C%20Belmont%2C%20CA" target="_blank" rel="noopener noreferrer">Yahoo Calendar<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-primary tm-btn-lg tm-addcal-file" id="tmCalIcs" href="/save-the-date.ics" download="senior-pro-network-aug-26.ics">Apple Calendar or other app (.ics)<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
+              <a class="tm-btn tm-btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=December%20Senior%20Pro%20Network%3A%20Christmas%20Networking%20Event&amp;dates=20261216T160000/20261216T180000&amp;details=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Atria%20at%20Foster%20Square%2C%20707%20Thayer%20Lane%2C%20Foster%20City%2C%20CA%2094404&amp;ctz=America%2FLos_Angeles" target="_blank" rel="noopener noreferrer">Google Calendar<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=December%20Senior%20Pro%20Network%3A%20Christmas%20Networking%20Event&amp;startdt=2026-12-17T00%3A00%3A00Z&amp;enddt=2026-12-17T02%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Atria%20at%20Foster%20Square%2C%20707%20Thayer%20Lane%2C%20Foster%20City%2C%20CA%2094404" target="_blank" rel="noopener noreferrer">Outlook.com<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=December%20Senior%20Pro%20Network%3A%20Christmas%20Networking%20Event&amp;startdt=2026-12-17T00%3A00%3A00Z&amp;enddt=2026-12-17T02%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Atria%20at%20Foster%20Square%2C%20707%20Thayer%20Lane%2C%20Foster%20City%2C%20CA%2094404" target="_blank" rel="noopener noreferrer">Outlook &ndash; work or school<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-outline" href="https://calendar.yahoo.com/?v=60&amp;title=December%20Senior%20Pro%20Network%3A%20Christmas%20Networking%20Event&amp;st=20261217T000000Z&amp;et=20261217T020000Z&amp;desc=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;in_loc=Atria%20at%20Foster%20Square%2C%20707%20Thayer%20Lane%2C%20Foster%20City%2C%20CA%2094404" target="_blank" rel="noopener noreferrer">Yahoo Calendar<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
+              <a class="tm-btn tm-btn-primary tm-btn-lg tm-addcal-file" id="tmCalIcs" href="/save-the-date-dec16.ics" download="senior-pro-network-dec-16.ics">Apple Calendar or other app (.ics)<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
             </div>
             <p class="tm-addcal-note">Times are Pacific. Your calendar will convert to your own time zone.</p>
           </div>
@@ -2597,7 +2064,7 @@
   </div>
   <div class="tm-footer-bottom">
     &copy; 2026 Senior Pro Network &middot; Co-organized by Vabrato Real Estate Services &amp; Peninsula Senior Referral Services<br>
-    Next gathering: Wednesday, October 28th &middot; 4:00&nbsp;&ndash;&nbsp;6:00&nbsp;PM &middot; Ivy Park at Belmont &middot; 1010 Alameda de las Pulgas, Belmont &middot; Halloween Networking Event
+    Next gathering: Wednesday, December 16th &middot; 4:00&nbsp;&ndash;&nbsp;6:00&nbsp;PM &middot; Atria at Foster Square &middot; 707 Thayer Lane, Foster City &middot; Christmas Networking Event
   </div>
 </footer>
 
@@ -2636,59 +2103,6 @@
     </figcaption>
   </figure>
 </div>
-<!-- ====================  PARKING GUIDELINES POP-UP  ==================== -->
-<style>
-#the-mixer-site .tm-parking-btn{
-  display:inline-flex; align-items:center; gap:7px; margin-top:10px;
-  padding:7px 14px; border-radius:999px; border:1px solid rgba(255,255,255,.45);
-  background:rgba(255,255,255,.1); color:#fff; font-family:var(--sans);
-  font-size:14px; font-weight:600; line-height:1.2; cursor:pointer;
-  transition:background .18s, border-color .18s;
-}
-#the-mixer-site .tm-parking-btn:hover{ background:rgba(255,255,255,.2); border-color:#fff; }
-#the-mixer-site .tm-parking-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
-#the-mixer-site .tm-parking-modal{
-  position:fixed; inset:0; z-index:220; display:none; align-items:center; justify-content:center;
-  padding:24px; background:rgba(10,18,46,.78); backdrop-filter:blur(4px);
-}
-#the-mixer-site .tm-parking-modal.tm-open{ display:flex; animation:tmFade .25s ease; }
-#the-mixer-site .tm-parking-inner{
-  position:relative; background:#fff; padding:18px; max-width:min(560px,94vw);
-  max-height:92vh; overflow:auto; box-shadow:var(--sh-lg); text-align:center;
-}
-#the-mixer-site .tm-parking-inner h3{
-  font-family:var(--serif); font-weight:600; font-size:26px; color:var(--navy); margin:4px 44px 14px;
-}
-#the-mixer-site .tm-parking-inner img{ display:block; width:100%; height:auto; max-height:78vh; object-fit:contain; margin:0 auto; }
-#the-mixer-site .tm-parking-close{
-  position:absolute; top:12px; right:12px; width:38px; height:38px; border-radius:50%;
-  border:1px solid var(--line); background:#fff; font-size:22px; line-height:1; color:var(--slate); cursor:pointer;
-}
-#the-mixer-site .tm-parking-close:hover{ border-color:var(--blue); color:var(--blue); }
-</style>
-
-<div class="tm-parking-modal" id="tmParkingModal" role="dialog" aria-modal="true" aria-labelledby="tmParkingTitle" aria-hidden="true">
-  <div class="tm-parking-inner">
-    <button type="button" class="tm-parking-close" id="tmParkingClose" aria-label="Close parking guidelines">&times;</button>
-    <h3 id="tmParkingTitle">Parking Guidelines</h3>
-    <img src="/photos/parking-guidelines.png" alt="Parking and event directions for Ivy Park at Belmont: enter from Alameda de las Pulgas, follow the gold arrows to Event Parking, then walk to the entrance of Ivy Park. Do not park in the Immaculate Heart of Mary School lot or the front drive.">
-  </div>
-</div>
-
-<script>
-(function(){
-  var modal = document.getElementById('tmParkingModal');
-  var openBtn = document.getElementById('tmParkingOpen');
-  var closeBtn = document.getElementById('tmParkingClose');
-  if(!modal || !openBtn) return;
-  function open(){ modal.classList.add('tm-open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; closeBtn.focus(); }
-  function close(){ modal.classList.remove('tm-open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; openBtn.focus(); }
-  openBtn.addEventListener('click', open);
-  closeBtn.addEventListener('click', close);
-  modal.addEventListener('click', function(e){ if(e.target === modal) close(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('tm-open')) close(); });
-})();
-</script>
 <!-- ====================  SCRIPTS  ==================== -->
 <script>
 (function(){
@@ -2734,7 +2148,7 @@
   }
 
   /* ---------- Countdown ---------- */
-  var TARGET = new Date('2026-10-28T23:00:00Z').getTime(); // 4:00 PM Pacific
+  var TARGET = new Date('2026-12-17T00:00:00Z').getTime(); // Dec 16, 4:00 PM Pacific
   function pad(n){ return n < 10 ? '0' + n : '' + n; }
   function tick(){
     var diff = Math.max(0, TARGET - Date.now());
@@ -2745,7 +2159,7 @@
     var set = function(id,v){ var el = document.getElementById(id); if(el) el.textContent = pad(v); };
     set('tmDays',d); set('tmHrs',h); set('tmMin',m); set('tmSec',s);
     var ribbon = document.getElementById('tmRibbonCount');
-    if(ribbon) ribbon.textContent = d > 0 ? '\u00b7 ' + d + ' days to go' : '\u00b7 Today!';
+    if(ribbon) ribbon.textContent = d > 0 ? '\u00b7 ' + d + ' days to go' : (diff > 0 ? '\u00b7 Today!' : '');
   }
   tick(); setInterval(tick, 1000);
 
@@ -2881,8 +2295,7 @@
     '2026-7-29':  { title: 'July Senior Pro Network',      venue: 'Rooftop, Harbor at Hillsdale',             url: 'https://maps.app.goo.gl/1GPjTwRQ2ukPrJJ38' },
     '2026-8-26':  { title: 'August Senior Pro Network',    venue: 'Cogir at Belmont',          url: 'https://www.google.com/maps/search/?api=1&query=Cogir%20at%20Belmont%2C%20900%206th%20Ave%2C%20Belmont%2C%20CA' },
     '2026-10-28': { title: 'October Senior Pro Network: Halloween Networking Event', venue: 'Ivy Park at Belmont', url: 'https://maps.app.goo.gl/BpBAkxHguodCP5bg6' },
-    '2026-11-25': { title: 'November Senior Pro Network',  venue: 'TBA: Venue Coming Soon',          url: '' },
-    '2026-12-30': { title: 'December Senior Pro Network',  venue: 'TBA: Venue Coming Soon',          url: '' },
+    '2026-12-16': { title: 'December Senior Pro Network: Christmas Networking Event', venue: 'Atria at Foster Square', url: 'https://maps.app.goo.gl/wdFzcCCXynJhMNGr6' },
     '2027-1-27':  { title: 'January Senior Pro Network',   venue: 'TBA: Venue Coming Soon',          url: '' }
   };
   /* Open on the month of the next upcoming event, so the calendar never lands
@@ -3268,15 +2681,15 @@
     'BEGIN:VCALENDAR','VERSION:2.0',
     'PRODID:-//Senior Pro Network//Save the Date//EN',
     'CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',
-    'UID:spn-20261028@seniorpronetwork.org',
-    'DTSTAMP:20260906T000000Z',
-    'DTSTART:20261028T230000Z',
-    'DTEND:20261029T010000Z',
-    'SUMMARY:October Senior Pro Network: Halloween Networking Event',
-    'DESCRIPTION:Senior Pro Network networking event. Halloween Networking Event. Details: https://seniorpronetwork.org/#confirmation',
-    'LOCATION:Ivy Park at Belmont\\, 1010 Alameda de las Pulgas\\, Belmont\\, CA',
+    'UID:spn-20261216@seniorpronetwork.org',
+    'DTSTAMP:20261105T000000Z',
+    'DTSTART:20261217T000000Z',
+    'DTEND:20261217T020000Z',
+    'SUMMARY:December Senior Pro Network: Christmas Networking Event',
+    'DESCRIPTION:Senior Pro Network networking event. Christmas Networking Event. Details: https://seniorpronetwork.org/#confirmation',
+    'LOCATION:Atria at Foster Square\\, 707 Thayer Lane\\, Foster City\\, CA 94404',
     'STATUS:CONFIRMED','BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY',
-    'DESCRIPTION:Tomorrow: Senior Pro Network at Ivy Park at Belmont',
+    'DESCRIPTION:Tomorrow: Senior Pro Network at Atria at Foster Square',
     'END:VALARM','END:VEVENT','END:VCALENDAR'
   ].join('\r\n');
   /* The hosted /save-the-date.ics is the primary path - iOS hands a real
