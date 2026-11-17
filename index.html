@@ -2018,7 +2018,7 @@
               <a class="tm-btn tm-btn-outline" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=December%20Senior%20Pro%20Network%3A%20Holiday%20Networking%20Event&amp;startdt=2026-12-17T00%3A00%3A00Z&amp;enddt=2026-12-17T02%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Atria%20at%20Foster%20Square%2C%20707%20Thayer%20Lane%2C%20Foster%20City%2C%20CA%2094404" target="_blank" rel="noopener noreferrer">Outlook.com<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
               <a class="tm-btn tm-btn-outline" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=December%20Senior%20Pro%20Network%3A%20Holiday%20Networking%20Event&amp;startdt=2026-12-17T00%3A00%3A00Z&amp;enddt=2026-12-17T02%3A00%3A00Z&amp;body=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;location=Atria%20at%20Foster%20Square%2C%20707%20Thayer%20Lane%2C%20Foster%20City%2C%20CA%2094404" target="_blank" rel="noopener noreferrer">Outlook &ndash; work or school<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
               <a class="tm-btn tm-btn-outline" href="https://calendar.yahoo.com/?v=60&amp;title=December%20Senior%20Pro%20Network%3A%20Holiday%20Networking%20Event&amp;st=20261217T000000Z&amp;et=20261217T020000Z&amp;desc=Senior%20Pro%20Network%20networking%20event.%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation&amp;in_loc=Atria%20at%20Foster%20Square%2C%20707%20Thayer%20Lane%2C%20Foster%20City%2C%20CA%2094404" target="_blank" rel="noopener noreferrer">Yahoo Calendar<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="tm-addcal-sr"> (opens in a new tab)</span></a>
-              <a class="tm-btn tm-btn-primary tm-btn-lg tm-addcal-file" id="tmCalIcs" href="/save-the-date-dec16.ics" download="senior-pro-network-dec-16.ics">Apple Calendar or other app (.ics)<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
+              <a class="tm-btn tm-btn-primary tm-btn-lg tm-addcal-file" id="tmCalIcs" href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-%2F%2FSenior%20Pro%20Network%2F%2FSave%20the%20Date%2F%2FEN%0D%0ACALSCALE%3AGREGORIAN%0D%0AMETHOD%3APUBLISH%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Aspn-20261216%40seniorpronetwork.org%0D%0ADTSTAMP%3A20261105T000000Z%0D%0ADTSTART%3A20261217T000000Z%0D%0ADTEND%3A20261217T020000Z%0D%0ASUMMARY%3ADecember%20Senior%20Pro%20Network%3A%20Holiday%20Networking%20Event%0D%0ADESCRIPTION%3ASenior%20Pro%20Network%20networking%20event.%20Holiday%20Networking%20Event.%20%0D%0A%20Details%3A%20https%3A%2F%2Fseniorpronetwork.org%2F%23confirmation%0D%0ALOCATION%3AAtria%20at%20Foster%20Square%5C%2C%20707%20Thayer%20Lane%5C%2C%20Foster%20City%5C%2C%20CA%2094404%0D%0ASTATUS%3ACONFIRMED%0D%0ABEGIN%3AVALARM%0D%0ATRIGGER%3A-P1D%0D%0AACTION%3ADISPLAY%0D%0ADESCRIPTION%3ATomorrow%3A%20Senior%20Pro%20Network%20at%20Atria%20at%20Foster%20Square%0D%0AEND%3AVALARM%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A" download="senior-pro-network-dec-16.ics">Apple Calendar or other app (.ics)<svg class="tm-addcal-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
             </div>
             <p class="tm-addcal-note">Times are Pacific. Your calendar will convert to your own time zone.</p>
           </div>
@@ -2823,36 +2823,19 @@
 })();
 </script>
 <script>
-/* Builds the .ics in the browser, so nothing needs uploading to the server.
-   (WordPress blocks .ics in the Media Library by default.) */
+/* The .ics lives inside the button's href (a data: link), so it works with
+   no file on the server and nothing for a link checker to report as broken.
+   To change the event, regenerate that href. On non-Apple browsers, hand
+   the same file over as a Blob so the download keeps its file name. */
 (function(){
   var a=document.getElementById('tmCalIcs'); if(!a) return;
-  var ics=[
-    'BEGIN:VCALENDAR','VERSION:2.0',
-    'PRODID:-//Senior Pro Network//Save the Date//EN',
-    'CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',
-    'UID:spn-20261216@seniorpronetwork.org',
-    'DTSTAMP:20261105T000000Z',
-    'DTSTART:20261217T000000Z',
-    'DTEND:20261217T020000Z',
-    'SUMMARY:December Senior Pro Network: Holiday Networking Event',
-    'DESCRIPTION:Senior Pro Network networking event. Holiday Networking Event. Details: https://seniorpronetwork.org/#confirmation',
-    'LOCATION:Atria at Foster Square\\, 707 Thayer Lane\\, Foster City\\, CA 94404',
-    'STATUS:CONFIRMED','BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY',
-    'DESCRIPTION:Tomorrow: Senior Pro Network at Atria at Foster Square',
-    'END:VALARM','END:VEVENT','END:VCALENDAR'
-  ].join('\r\n');
-  /* The hosted /save-the-date.ics is the primary path - iOS hands a real
-     hosted file straight to Calendar. Only take over if it is missing. */
-  fetch(a.getAttribute('href'),{method:'HEAD'})
-    .then(function(r){ if(!r.ok) throw 0; })
-    .catch(function(){
-      if(/iP(hone|ad|od)|Macintosh/.test(navigator.userAgent)){
-        a.setAttribute('href','data:text/calendar;charset=utf-8,'+encodeURIComponent(ics));
-      }else{
-        a.setAttribute('href',URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'})));
-      }
-    });
+  if(/iP(hone|ad|od)|Macintosh/.test(navigator.userAgent)) return;
+  try{
+    var h=a.getAttribute('href'), i=h.indexOf(',');
+    if(h.indexOf('data:text/calendar')!==0 || i<0) return;
+    var ics=decodeURIComponent(h.slice(i+1));
+    a.setAttribute('href',URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'})));
+  }catch(e){ /* keep the data: link */ }
 })();
 </script>
 </div>
